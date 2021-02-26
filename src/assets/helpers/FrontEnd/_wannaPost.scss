@@ -1,0 +1,301 @@
+.wanna-post-bg {
+    position: relative;
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        background-image: url('./assets/image/images/fixedbg-pc-2.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        width: 100%;
+        height: 100%;
+        filter: alpha(opacity=20);
+        z-index: -1;
+    }
+}
+.wanna-post-content {
+    margin-top: 80px;
+}
+//發文位置文字樣式
+.post_position {
+    p {
+        font-size: $font-size-md;
+        color: $main-red;
+    }
+}
+.sign_step_one {
+    border-bottom: 1px solid #D8D7D6;
+    padding-bottom: $font-size-sm;
+    margin-bottom: $font-size-sm;
+    border-radius: 5px;
+}
+.step_num {
+    width: $block-md + 10px;
+    height: $block-md + 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #dc131a;
+    border-radius: 50%;
+    color:#fff;
+    font-weight: bold;
+    font-size: $font-size-lg + 6px;
+    line-height: $block-md + 5px;
+    z-index: 2;
+}
+.step_num_disabled {
+    background-color: #8B8B8B;
+    width: $block-md;
+    height: $block-md;
+}
+.sign_step_active {
+    font-weight: bold;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    color: $brilliantRed;
+}
+.sign_step_dis {
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    color: #8B8B8B;
+}
+.sign_progress {
+    width: 800px;
+    margin: 40px auto 50px auto;
+    transition: all 3s;
+    @media(max-width: 768px) {
+        width: 600px;
+        margin: 30px auto 50px auto;
+    }
+    @media(max-width: 576px) {
+        width: 300px;
+    }
+    li {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: $brilliantRed;
+        position: relative;
+        line-height: 40px;
+        color: #fff;
+        text-align: center;
+        &:not(:first-child)::before{
+            transition: all 3s;
+            content: '';
+            position: absolute;
+            width: 849%;
+            height: 10px;
+            background-color: $brilliantRed;
+            top: 0;
+            bottom: 0;
+            right: 100%;
+            margin: auto;
+            @media(max-width: 768px) {
+                width: 600%;
+            }
+            @media(max-width: 576px) {
+                width: 225%;
+            }
+        }
+        .step_text_content {
+            width: 150px;
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translate(-50%);
+            color: #000;
+            font-size: 20px;
+            line-height: $block-md;
+            color: $brilliantRed;
+            @media(max-width: 576px) {
+                font-size: $font-size-sm; 
+            }
+        }
+    }
+    .active {
+        background-color: $brilliantRed;
+        span {
+            color: $brilliantRed;
+        }
+    }
+    .active ~ li {
+        background-color: #999;
+        span {
+            color: #8B8B8B;
+        }
+    }
+    .active ~ li::before{
+        background-color: #ccc;
+    }
+}
+
+
+// .sign_step_line {
+//     position: relative;
+//     transition: all 0.4s ease-in-out;
+//     &:before {
+//         background-color: $brilliantRed;
+//         content: '';
+//         height: 10px;
+//         width: 450px;
+//         position: absolute;
+//         top: 15px;
+//         right: 25px;
+//         .sign_step_sec {
+//             width: 480px;
+//         }
+//     }
+// }
+// .sign_step_sec {
+//     position: relative;
+//     transition: all 0.4s ease-in-out;
+//     &:before {
+//         background-color: $brilliantRed;
+//         content: '';
+//         height: 10px;
+//         width: 480px;
+//         position: absolute;
+//         top: 15px;
+//         right: 25px;
+//     }
+// }
+// .sign_step_thr {
+//     position: relative;
+//     transition: all 0.4s ease-in-out;
+//     &:before {
+//         background-color: $brilliantRed;
+//         content: '';
+//         height: 10px;
+//         width: 450px;
+//         position: absolute;
+//         top: 15px;
+//         right: 50px;
+//     } 
+// }
+// .sign_step_disline {
+//     position: relative;
+//     transition: all 0.4s ease-in-out;
+//     &:before {
+//         background-color: #8B8B8B;
+//         content: '';
+//         height: 10px;
+//         width: 470px;
+//         position: absolute;
+//         top: 15px;
+//         right: 50px;
+//     }
+// }
+.choose_tribe_block {
+    padding: $block-md;
+    background: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    border-radius: $block-sm;
+    @media(max-width: 576px) {
+        padding: $block-md $block-sm*4;
+    }
+    @media(max-width: 375px) {
+        padding: $block-md;
+    }
+}
+
+.step_block {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 550px;
+    flex-direction: row;
+    width: 100%;
+}
+//必填項目樣式
+.have_to {
+    color: #8b8b8b;
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    margin-bottom: $block-sm;
+    span {
+        color: $brilliantRed;
+    }
+}
+.tribe_option_text {
+    color: #8b8b8b;
+    font-size: $font-size-lg + 6px;
+    font-weight: 500;
+    line-height: $block-md + 5px;
+    margin-bottom: $block-sm * 2;
+    span {
+        color: $brilliantRed;
+    }
+    @media(max-width: 576px) {
+        font-size: $font-size-md;
+    }
+}
+.remarks_text {
+    font-size: $font-size-md;
+    line-height: $block-sm * 2;
+    color: #959595;
+}
+.sec_step_block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 530px;
+    flex-direction: row;
+    width: 100%;
+    padding-top: $block-md;
+}
+.thr_step_block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1407px;
+    flex-direction: row;
+    width: 100%;
+}
+//編輯器高度
+.ck .ck-content {
+    min-height: 300px;
+    @media(max-width: 576px) {
+        min-height: 150px;
+    }
+}
+//上傳圖片btn
+.postUpimg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    background: #FF8730;
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.next_step_btn {
+    padding-left: 30px;
+    padding-right: 30px;
+    @media(max-width: 576px) {
+        display: flex;
+        justify-content: center;
+        padding-left: 20px;
+        padding-right: 20px; 
+    }
+}
+
+.choosehg-select {
+    padding: 0 $block-md;
+    @media(max-width:576px) {
+        padding: 0;
+    }
+}
+
+.choose_hg_block {
+    width: 600px;
+    @media(max-width: 576px) {
+        width: 350px;
+    }
+    @media(max-width: 320px) {
+        width: 300px;
+    }
+}

@@ -1,0 +1,103 @@
+.searchTitle {
+  padding: 14px 0 14px 30px;
+  background-color:#EDEDED;
+  margin-top:46px;
+  margin-bottom: 34px;
+  h5 {
+    font-size: $font-size-lg;
+    line-height: 23px;
+    color: #555555;
+    span {
+      color: #DC131A;
+      padding-left: $block-sm;
+    }
+  }
+}
+//每個搜尋字卡
+.sear-card {
+  border-bottom: 1px solid #C9C9C9;
+}
+.search-img-block {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  border-radius: $block-sm;
+  min-height: 300px;
+  span {
+    position: absolute;
+    top: 0;
+    left:0;
+    background: linear-gradient(223deg, #FFA45B 4.24%, #FFA128 97.99%);
+    border-radius: $block-sm 0;
+    padding: 5px $block-sm *2;
+    color:#ffffff;
+  }
+}
+.search-icon {
+  img {
+    width: 20px;
+    height:20px;
+    margin-right: 5px;
+  }
+  li {
+    padding-right: $block-sm;
+  }
+}
+.countinue-read-btn {
+  padding: 5px 20px;
+}
+.searchart_title {
+  font-weight: 500;
+  font-size: $font-size-lg + 6px;
+  line-height: $block-md + 5px;
+  letter-spacing: 0.6px;
+  color: #000000;
+  margin-bottom: $block-sm * 2;
+}
+.searchart_sub_title {
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  letter-spacing: 0.6px;
+  color: #686868;
+}
+.search_des_list {
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  li {
+    p {
+      font-size: $font-size-lg;
+      line-height: $block-md - 4px;
+      letter-spacing: 0.4px;
+      color: #522C14;
+    }
+  }
+}
+.search_art_img {
+  background-image: url('https://images.unsplash.com/photo-1585995603310-9cc1bff2894d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.search-art-card-tag {
+  background: linear-gradient(223deg, #FFA45B 4.24%, #FFA128 97.99%);
+  border-radius: 10px 0px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  font-size: $font-size-md;
+  line-height: $block-sm * 2;
+  letter-spacing: 0.3px;
+  color: #FFFFFF;
+  padding: 5px 15px;
+}
+.search-padding {
+  padding: 0 15px 0 15px;
+}
+.card-margin {
+  margin-bottom: $block-md;
+}

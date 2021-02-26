@@ -1,0 +1,184 @@
+.harv_season_firbg {
+    background-image: url(./assets/image/harves_season/harSea01.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    margin-top: $block-sm * 9;
+    @media(max-width: 576px) {
+        min-height: 300px;
+    }
+}
+
+.harv_season_secbg {
+    background-image: url(./assets/image/harves_season/harSea02.jpg);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    @media(max-width: 576px) {
+        min-height: 300px;
+    }
+}
+
+.harv_btn {
+    padding: 18px 40px;
+    border: 1px solid #FFB9C0;
+    background: #F8F8F8;
+    border-radius: $block-sm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    @media(max-width: 768px) {
+        margin-bottom: $block-md;
+    }
+    @media(max-width: 576px) {
+        margin-bottom: $block-sm * 2;
+    }
+    p {
+        color: $main-red;
+    }
+
+    span {
+        color: #FFB9C0;
+    }
+}
+
+.over_btn {
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    background: #604646;
+    border-radius: 40px;
+    color: #FFFFFF;
+    padding: 14px 50px;
+    transition: all .3s;
+    &:hover {
+        color: #FFFFFF;
+        text-decoration: none;
+        background: #523c3c;
+    }
+}
+
+.days_picker {
+    img {
+        width: 22px;
+        height: 32px;
+    }
+}
+
+.date_show {
+    font-family: 'Noto Sans TC';
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 52px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: #434343;
+}
+
+.over_card_top {
+    background: url(./assets/image/harves_season/Bitmap.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 250px;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.over_card_content {
+    h3 {
+        font-family: 'Noto Sans TC';
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 35px;
+        letter-spacing: 0.05em;
+        color: #000000;
+    }
+}
+
+//競技場頁面
+.arena_animation01 {
+    img {
+        animation: bounce-down 2.8s linear infinite;
+    }
+}
+.arena_animation02 {
+    img {
+        animation: bounce-down 3.2s linear infinite;
+    }
+}
+.arena_animation03 {
+    img {
+        animation: bounce-down 3.4s linear infinite;
+    }
+}
+@-webkit-keyframes bounce-down {
+    25% {
+        -webkit-transform: translateY(-4px);
+    }
+
+    50%,
+    100% {
+        -webkit-transform: translateY(0);
+    }
+
+    75% {
+        -webkit-transform: translateY(4px);
+    }
+}
+
+@keyframes bounce-down {
+    25% {
+        transform: translateY(-4px);
+    }
+
+    50%,
+    100% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(4px);
+    }
+}
+.arena_all_bg {
+    background-image:url(./assets/image/arena/arena_bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: $block-sm * 8;
+}
+
+.br-img-block {
+    background-image: url('./assets/image/harves_season/bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.arena-title-block {
+    position: relative;
+}
+.arena-title {
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 45px;
+    line-height: 45px;
+    text-align: center;
+    letter-spacing: 4px;
+    background: repeating-linear-gradient(135deg, rgb(255, 221, 155) 0, rgb(254, 215, 146) 20px, rgb(255, 225, 172) 40px, rgb(255, 255, 255) 70px, rgb(250, 198, 107) 125px, rgb(246, 194, 107) 160px, rgb(231, 177, 85) 175px, rgb(244, 193, 107) 185px, rgb(241, 191, 107) 220px, rgb(243, 190, 102) 235px, rgb(233, 177, 83) 250px, rgb(245, 190, 97) 280px, rgb(249, 188, 86) 305px, rgb(255, 251, 245) 385px, rgb(252, 195, 98) 415px, rgb(252, 195, 121) 450px, rgb(255, 221, 155) 500px);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    backface-visibility: none;
+    color: rgb(255, 221, 155);
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+    -webkit-text-stroke: 3px black;
+}

@@ -1,0 +1,66 @@
+.signevery-mission {
+  img {
+    border-radius: $block-sm;
+  }
+}
+
+.mission-card-block ,.mission-card-complete-block{
+  h2 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+  }
+}
+.mission-confirm-card {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: $block-sm;
+  padding: 20px 40px;
+  margin-bottom: 25px;
+}
+.mission-sm-bar {
+  padding: 5px;
+  background-color: $main-red;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+.go-btn {
+  width: 75px;
+  height: 75px;;
+  border-radius: 75px;
+}
+//任務完成
+.mission-card-complete-block {
+  background-color: #F3F3F3;
+  padding: 50px 0;
+}
+.mission-card-complete-card {
+  position: relative;
+  opacity: 0.5;
+  .complete-stamp {
+    position: absolute;
+    top:15%;
+    left:40%;
+    z-index: 3;
+  }
+}
+@media(max-width: 1024px) {
+  .mission-card-complete-card {
+    .complete-stamp {
+      left:30%;
+    }
+  }
+}
+@media(max-width: 768px) {
+  .mission-card-complete-card {
+    .complete-stamp {
+      left:40%;
+    }
+  }
+}
+@media(max-width: 576px) {
+  .mission-card-complete-card {
+    .complete-stamp {
+      left:30%;
+    }
+  }
+}

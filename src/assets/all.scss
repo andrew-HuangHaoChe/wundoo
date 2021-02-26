@@ -1,0 +1,237 @@
+@import "~bootstrap/scss/functions";
+@import "./helpers/_variables.scss";
+@import "~bootstrap/scss/bootstrap";
+@import "./helpers/FrontEnd/_navbar.scss";
+@import "./helpers/FrontEnd/_homePage.scss";
+@import "./helpers/FrontEnd/_footer.scss";
+@import "./helpers/FrontEnd/_signUp.scss";
+@import "./helpers/FrontEnd/_rePassword.scss";
+@import "./helpers/FrontEnd/_notice.scss";
+@import "./helpers/FrontEnd/_searchArt.scss";
+@import "./helpers/FrontEnd/_missionPage.scss";
+@import "./helpers/FrontEnd/signinModal.scss";
+@import "./helpers/FrontEnd/lilehuntgd.scss";
+@import "./helpers/FrontEnd/buildNewHg.scss";
+@import "./helpers/FrontEnd/iwanttosay.scss";
+@import "./helpers/FrontEnd/searchlhg.scss";
+@import "./helpers/FrontEnd/wannaPost.scss";
+@import "./helpers/FrontEnd/membermgmt.scss";
+@import "./helpers/FrontEnd/adstep.scss";
+@import "./helpers/FrontEnd/adsort.scss";
+@import "./helpers/FrontEnd/harvSeason.scss";
+@import "./helpers/FrontEnd/memberCenter.scss";
+@import "./helpers/FrontEnd/tempeveryday.scss";
+@import "./helpers/FrontEnd/wundoo_lottery.scss";
+@import "./helpers/FrontEnd/participated.scss";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.mt-6 {
+    margin-top: 60px;
+}
+
+.mt-7 {
+    margin-top: 70px;
+}
+
+.mt-8 {
+    margin-top: 80px;
+}
+
+.mt-9 {
+    margin-top: 90px;
+}
+
+.mt-10 {
+    margin-top: 100px;
+}
+
+.mt-11 {
+    margin-top: 110px;
+}
+
+.mt-12 {
+    margin-top: 120px;
+}
+
+.mt-13 {
+    margin-top: 130px;
+}
+
+.mb-6 {
+    margin-bottom: 60px;
+}
+
+.mb-7 {
+    margin-bottom: 70px;
+}
+
+.mb-8 {
+    margin-bottom: 80px;
+}
+
+.mb-9 {
+    margin-bottom: 90px;
+}
+
+.mb-10 {
+    margin-bottom: 100px;
+}
+
+.mb-11 {
+    margin-bottom: 110px;
+}
+
+.mb-12 {
+    margin-bottom: 120px;
+}
+
+.mb-13 {
+    margin-bottom: 130px;
+}
+
+.pt-6 {
+    padding-top: 60px;
+}
+
+.pt-7 {
+    padding-top: 70px;
+}
+
+.pt-8 {
+    padding-top: 80px;
+}
+
+.pt-9 {
+    padding-top: 90px;
+}
+
+.pt-10 {
+    padding-top: 100px;
+}
+
+.pt-11 {
+    padding-top: 110px;
+}
+
+.pt-12 {
+    padding-top: 120px;
+}
+
+.pt-13 {
+    padding-top: 130px;
+}
+
+.pb-6 {
+    padding-bottom: 60px;
+}
+
+.pb-7 {
+    padding-bottom: 70px;
+}
+
+.pb-8 {
+    padding-bottom: 80px;
+}
+
+.pb-9 {
+    padding-bottom: 90px;
+}
+
+.pb-10 {
+    padding-bottom: 100px;
+}
+
+.pb-11 {
+    padding-bottom: 110px;
+}
+
+.pb-12 {
+    padding-bottom: 120px;
+}
+
+.pb-13 {
+    padding-bottom: 130px;
+}
+
+.px-6 {
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.px-7 {
+    padding-right: 70px;
+    padding-left: 70px;
+}
+
+.px-8 {
+    padding-right: 80px;
+    padding-left: 80px;
+}
+
+.px-9 {
+    padding-right: 90px;
+    padding-left: 90px;
+}
+
+.px-10 {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.px-11 {
+    padding-right: 110px;
+    padding-left: 110px;
+}
+
+.px-12 {
+    padding-right: 120px;
+    padding-left: 120px;
+}
+
+.px-13 {
+    padding-right: 130px;
+    padding-left: 130px;
+}
+
+.py-6 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.py-7 {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.py-8 {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.py-9 {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.py-10 {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+.py-11 {
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
+
+.py-12 {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.py-13 {
+    padding-top: 130px;
+    padding-bottom: 130px;
+}

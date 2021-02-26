@@ -1,0 +1,531 @@
+.rich_prizes {
+    background: radial-gradient(68% 68% at 50% 32%, #FFFFFF 0%, rgba(255, 223, 128, 0.3) 36.8%, #B30006 100%);
+    position: relative;
+    padding: $block-md * 2 0;
+}
+
+.cloud {
+    position: absolute;
+    top: $block-md;
+    left: $block-md;
+}
+
+.mark_left {
+    position: absolute;
+    bottom: $block-md;
+    left: 0; 
+}
+
+.mark_right {
+    position: absolute;
+    bottom: $block-md;
+    right: 0; 
+}
+
+.medal_top {
+    position: relative;
+    margin-bottom: -$block-md * 2;
+    z-index: 2;
+    @media(max-width: 576px) {
+        margin-bottom: $block-sm * 8;
+    }
+}
+
+.medal_top_img {
+    max-width: 350px;
+    @media(max-width: 576px) {
+        max-width: 300px;
+    }
+}
+
+.rich_prize_count_block {
+    p {
+        font-weight: 900;
+        font-size: $block-md;
+        line-height: $block-md + 5px;
+        letter-spacing: 3px;
+        color: #FFFFFF;
+        -webkit-text-stroke: 2px #FF0D0D;
+        text-shadow: 2px#FF0D0D;
+        margin-right: $block-sm;
+        @media(max-width:576px) {
+            font-size: $block-sm * 2.5;
+        }
+    }
+    .prize_count_num {
+        font-weight: 900;
+        font-size: $block-md - 2px;
+        line-height: $block-md + $block-sm;
+        letter-spacing: 5px;
+        color: #AA1A29;
+        @media(max-width: 576px) {
+            font-size: $block-sm * 2.5;
+        }
+    }
+}
+
+.lottery_rules {
+    margin-top: -$block-sm * 20;
+    padding: 0 180px;
+    @media(max-width: 768px) {
+        margin-top: -$block-sm * 10;
+        padding: 0 $block-sm * 10;
+    }
+    @media(max-width: 576px) {
+        margin-top: -$block-sm * 5;
+        padding: 0 $block-sm;
+    }
+}
+.medal_medium {
+    img {
+        @media(max-width: 576px) {
+            display: none;
+        }
+    }
+}
+.medal_bottom {
+    margin-top: -74px;
+    z-index: 1;
+    @media(max-width: 576px) {
+        display: none;
+    }
+}
+
+.probily_is_you {
+    font-weight: 900;
+    font-size: $font-size-lg + 6px;
+    line-height: 34px;
+    text-align: center;
+    letter-spacing: 4px;
+    color: #FFFFFF;
+    text-shadow: 0px 2px 2px #FF0D0D;
+    -webkit-text-stroke: 1px #FF0D0D;
+}
+
+.maybe_is_you {
+    width: 100%;
+    margin: auto;
+    background: #FFFFFF;
+    border: 5px solid #FFE699;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.all_in_getmore {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: #664433;
+}
+
+.all_in_getmore_sub {
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    letter-spacing: 0.6px;
+    color: #000000;
+    span {
+        color: #e2273a;
+    }
+}
+
+.lottery_rules_btn {
+    background: linear-gradient(180deg, #FF9580 0%, #FF0D0D 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25.5px;
+    border: none;
+    font-weight: 900;
+    font-size: $font-size-lg + 6px;
+    line-height: $block-md + 5px;
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    text-shadow: 2px 0px 0px #800000;
+    padding: 7px 24px;
+    margin: $font-size-lg + 2px 0;
+    &:focus {
+        outline: none;
+    }
+}
+
+.never_miss_block {
+}
+
+.never_miss {
+    font-weight: 900;
+    font-size: 72px;
+    line-height: 72px;
+    letter-spacing: 8px;
+    background: repeating-linear-gradient(135deg, rgb(255, 221, 155) 0, rgb(254, 215, 146) 20px, rgb(255, 225, 172) 40px, rgb(255, 255, 255) 70px, rgb(250, 198, 107) 125px, rgb(246, 194, 107) 160px, rgb(231, 177, 85) 175px, rgb(244, 193, 107) 185px, rgb(241, 191, 107) 220px, rgb(243, 190, 102) 235px, rgb(233, 177, 83) 250px, rgb(245, 190, 97) 280px, rgb(249, 188, 86) 305px, rgb(255, 251, 245) 385px, rgb(252, 195, 98) 415px, rgb(252, 195, 121) 450px, rgb(255, 221, 155) 500px);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    backface-visibility: none;
+    color: rgb(255, 221, 155);
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 3px 1px #000);
+}
+
+.lottery_ticket_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $block-sm * 2;
+    background: #FFFFFF;
+    border: 5px solid #FFE699;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+//您還剩下文字樣式
+.have_left {
+    font-weight: 500;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    letter-spacing: 1px;
+    color: #664433;
+}
+
+.big_ticket_style {
+    font-weight: 900;
+    font-size: $font-size-lg * 2;
+    letter-spacing: 4px;
+    color: #F2C200;
+}
+
+.samll_ticket_style {
+    font-weight: 900;
+    font-size: $font-size-lg * 2;
+    letter-spacing: 4px;
+    color: #00CC88;
+}
+
+.ticket_style {
+    font-weight: 500;
+    font-size: $font-size-lg + 6px;
+    line-height: $font-size-lg * 2;
+    letter-spacing: 1px;
+    color: #745B4A;
+}
+
+.land_fath_block {
+    // background: linear-gradient(90deg, #C28750 -0.27%, #FED98F 43.11%, #C28750 99.41%);
+    background: radial-gradient(50% 25% at 50% 20%, #B30006 -45%, rgba(255, 223, 128, 0.3) 9.8%, #B30006 100%);
+}
+
+.land_bg_block {
+    background-image: url('./assets/image/wundoo_lottery/linear_bg.svg');
+    background-repeat: repeat;
+}
+
+//部落講樣式
+.awards_block {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0;
+    .awards_block_img {
+        position: relative;
+    }
+    h4 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-weight: 900;
+        font-size: $font-size-sm * 3;
+        line-height: $font-size-sm * 4;
+        letter-spacing: 5px;
+        text-shadow: 5px 30px 70px rgba(0,0,0,0.4);
+        background: -webkit-linear-gradient(top, #FFFDF2 0%, #FFD500 100%);
+	    color:#FFD500;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @media(max-width: 576px) {
+            font-size: $font-size-sm * 2.5;
+        }
+        @media(max-width: 375px) {
+            font-size: $font-size-sm * 2;
+        }
+        @media(max-width: 320px) {
+            font-size: $font-size-sm * 1.5;
+        }
+    }
+}
+
+.awards_content_block {
+    background: #FF2D1A;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.awards_sec_content_block {
+    background: #1A66FF;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: inset 0px 0px 20px 5px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+
+.bigest_prize {
+    margin-left: -50px;
+    @media(max-width: 1024px) {
+        max-width: 280px;
+    }
+    @media(max-width: 768px) {
+        margin-left: 0;
+        max-width: none;
+        width: 100%;
+    }
+}
+
+.lottery_card_margin {
+    margin: 0 200px;
+    @media(max-width: 576px) {
+        margin: 0 20px;
+    }
+}
+
+.prize_dec {
+    background:#AA1A29;
+    padding: 8px 0;
+    h5 {
+        text-align: center;
+        font-size: $font-size-lg;
+        line-height: 17px;
+        color: #FFFFFF;
+        margin-bottom: 0;
+    }
+}
+
+.num_partic {
+    font-size: $block-md + 2px;
+    line-height: $block-sm * 4 + 6px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+.des_bottom_block {
+    span {
+        font-weight: bold;
+        font-size: $font-size-lg + 8px;
+        line-height: $block-md + 8px;
+        letter-spacing: 1px;
+        background: -webkit-linear-gradient(top, #FFFDF2 0%, #FFD500 100%);
+	    color:#FFD500;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+    .bighunt_btn {
+        background: linear-gradient(180deg, #FFFBE6 0%, #FFD500 100%);
+        border-radius: $block-sm;
+        border: none;
+        font-weight: bold;
+        font-size: $block-sm * 2;
+        line-height: $block-md;
+        letter-spacing: 0.05em;
+        color: #BB6946;
+        padding: 12px 24px;
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        @media(max-width: 768px) {
+            padding: 6px 12px;
+        }
+    }
+    .small_rice_btn {
+        background: linear-gradient(180deg, #CCFFEE 0%, #00CC88 100%);
+        border-radius: $block-sm;
+        border: none;
+        font-weight: bold;
+        font-size: $block-sm * 2;
+        line-height: $block-md;
+        letter-spacing: 0.05em;
+        padding: 12px 24px;
+        color: #00734D;
+        cursor: pointer;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        @media(max-width: 768px) {
+            padding: 6px 12px;
+            letter-spacing: 0;
+        }
+        @media(max-width: 375px) {
+            font-size: $font-size-sm !important;
+        }
+    }
+
+
+.partic_text_content {
+    p {
+        font-weight: 500;
+        font-size: $font-size-lg;
+        line-height: $block-sm * 2;
+        display: flex;
+        align-items: center;
+        letter-spacing: 0.6px;
+        color: #FFFFFF;
+    }
+}
+
+.prize_left_count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: $font-size-lg + 6px;
+    line-height: $block-sm * 3;
+    text-align: center;
+    letter-spacing: 0.6px;
+    color: #8C4B2A;
+    background: linear-gradient(180deg, #FFFDF2 0%, #FFD500 100%);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+#prizeDesModalTitle {
+    font-weight: bold;
+    font-size: $font-size-lg + 6px;
+    line-height: $block-md + 5px;
+    color: #000000;
+}
+
+.prize_modal_des {
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    color: #000000;
+}
+
+.use_ticket_block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    span {
+        color: #e2273a;
+    }
+    p {
+        font-size: $block-sm * 2;
+        line-height: $block-md;
+    }
+}
+
+.left_ticket {
+    max-width: 315px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #D8D7D6;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.wannause_block {
+    display: flex;
+    justify-content: center;
+    max-width: 315px;
+    margin: auto;
+    select {
+        border: 1px solid #D8D7D6;
+        border-radius: 5px;
+    }
+}
+
+#bigHuntModalTitle {
+    font-weight: bold;
+    font-size: $font-size-lg + 6px;
+    line-height: $block-md + 5px;
+    color: #000000;
+}
+
+.hunt_prize_img_first_block {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border: 2px solid #8B8B8B;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 110%;
+    display: flex;
+    flex-direction: column;
+    margin-left: -48px;
+    @media(max-width: 768px) {
+        margin-left: 0;
+        margin-bottom: $block-sm;
+    }
+}
+
+.hunt_prize_img_block {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border: 2px solid #8B8B8B;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    width: 110%;
+    display: flex;
+    flex-direction: column;
+    @media(max-width: 768px) {
+        margin-bottom: $block-sm * 2;
+    }
+}
+.hpib_relative {
+    position: relative;
+    .num_of_winners {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        font-weight: bold;
+        font-size: $font-size-md;
+        line-height: $block-sm * 2 + 3px;
+        right: $block-sm;
+        bottom: $block-sm;
+        background: #686868;
+        color: #fff;
+    }
+}
+
+.grey_prize_des {
+    p {
+        cursor: pointer;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 8px 0;
+        background: #8B8B8B;
+    }
+    span {
+        font-size: $font-size-md;
+        line-height: $block-sm * 2;
+        letter-spacing: 0.6px;
+        color: #FF0D0D;
+    }
+    text-align: left;
+    .product_text {
+        color: #745B4A;
+        font-size: $font-size-md;
+        line-height: 25px;
+        background: #fff;
+        text-align: left;
+    }
+}
+
+.hg-award-btn {
+    width: 60%;
+    @media(max-width: 768px) {
+        font-size: $font-size-md;
+    }
+}

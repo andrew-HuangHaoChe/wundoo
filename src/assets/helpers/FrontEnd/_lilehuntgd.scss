@@ -1,0 +1,1076 @@
+.lhg-header {
+  position: relative;
+  background-image: url("https://images.unsplash.com/reserve/NJyKabKSOCpcfYU1SBLw_IMG_2670-2.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 512px;
+  margin-top: $block-sm * 9 + 2px;
+  @media(max-width:1024px) {
+    margin-top: $block-sm * 7;
+  }
+  @media(max-width:768px) {
+    margin-bottom: $font-size-md;
+  }
+  @media(max-width:576px) {
+    padding-top: $block-lg;
+    min-height: 312px;
+  }
+  .build-hg-btn {
+    margin-bottom: 30px;
+    padding: 5px 30px;
+    @media(max-width:576px) {
+      padding: 5px 15px;
+    }
+  }
+}
+.lhg-laoya {
+  margin-bottom: -$block-sm;
+  max-width: 230px;
+  @media (max-width: 768px) {
+    max-width: 150px;
+    margin-bottom: 0;
+  }
+}
+.lhg_banner {
+  margin: 0;
+  @media(max-width: 576px) {
+    margin: 0 -15px;
+  }
+}
+.loudly-img-block {
+  img {
+    max-width: 150px;
+    max-height: 150px;
+  }
+  @media(max-width: 768px) {
+    display: none;
+  } 
+}
+.level-block {
+  span {
+    @media(max-width: 320px) {
+      font-size: 13px;
+    }
+  }
+}
+.level_text {
+  font-weight: 500;
+  font-size: $font-size-lg;
+  line-height: $block-md - 4px;
+  letter-spacing: 0.6px;
+  color: #686868;
+  @media(max-width: 1024px) {
+    font-size: $font-size-sm;
+  }
+  @media(max-width: 320px) {
+    font-size: 12px;
+  }
+}
+.user_name {
+  font-weight: 500;
+  font-size: $font-size-lg;
+  line-height: $block-md - 4px;
+  letter-spacing: 0.6px;
+  color: #357ECD;
+  @media(max-width: 1024px) {
+    font-size: $font-size-sm;
+  }
+}
+.hg-loudly {
+  padding-bottom: 0 !important;
+  border: 1.5px solid #D7C9C3;
+  background: #F4F4F4;
+  border-radius: 5px;
+  padding: 16px;
+  @media(max-width: 576px) {
+    padding: 5px;
+  }
+}
+.pigeon_link {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; //行數
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+  cursor: pointer;
+  color: #39271B;
+  @media(max-width: 576px) {
+    width: 300px;
+  }
+  @media(max-width: 375px) {
+    width: 280px;
+  }
+  @media(max-width: 320px) {
+    width: 200px;
+  }
+  line-height: $font-size-lg + 6px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.sign_to_get {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: $block-sm * 2;
+  text-align: center;
+  letter-spacing: 0.6px;
+  color: #39271B;
+}
+.pigeon_modal_title {
+  font-weight: 500;
+  font-size: $font-size-lg + 6px;
+  line-height: $block-md;
+  letter-spacing: 0.6px;
+}
+//我要大聲說和查看全部
+.hg-want {
+  color: #555555;
+  border: none;
+  background: transparent;
+  &:focus {
+    outline: none;
+  }
+  @media(max-width: 768px) {
+    padding-left: 0!important;
+  }
+}
+.hg-check-all {
+  color: $main-brown-light;
+}
+.hg-announcement {
+  border-bottom: 1px solid #D7C9C3;
+  height: 40px;
+  line-height: 10px;
+  overflow: hidden;
+  @media (max-width: 1024px) {
+    height: 40px;
+    line-height: 20px;
+  }
+  @media (max-width: 768px) {
+    height: 42px;
+  }
+  @media (max-width: 576px) {
+    height: 40px;
+    line-height: 16px;
+  }
+  .flip-time {
+    padding-right: 0;
+    padding-left: 0;
+    span {
+      @media (max-width :576px) {
+        display: none;
+      }
+    }
+  }
+}
+.pigeon_mail {
+  color: $brilliantRed;
+  margin-right: $block-sm;
+}
+.flip {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  animation: animate 10s ease infinite;
+  position: relative;
+}
+@keyframes animate {
+  0% { top: -5px; }
+  20% { top: -5px; }
+  25% { top: -40px; }
+  45% { top: -40px; }
+  50% { top: -80px; }
+  70% { top: -80px; }
+  75% { top: -120px; }
+  90% { top: -120px; }
+  100% { top: -5px; }
+}
+//會員留言和輪播文字特效
+.lhg-avatar {
+  padding: 25px 16px 16px 0;
+  height: 75px;
+  overflow: hidden;
+  @media (max-width: 1024px) {
+    height: 79px;
+  }
+  @media (max-width: 768px) {
+    height: 80px;
+    padding: 25px 0 30px 0;
+  }
+  @media (max-width: 576px) {
+    height: 83px;
+    line-height: 25px;
+    div {
+      padding: 8px 0 2px 0;
+    }
+  }
+  @media (max-width: 375px) {
+    height: 100px;
+    div {
+      padding: 10px 0 2px 0;
+    }
+    .lhg-for-everyone {
+      width: 300px;
+      padding: 5px;
+    }
+  }
+}
+//公告頁面每個user發的公告樣式
+.ann_content {
+  padding: 20px;
+  border-bottom: 1px solid #AAAAAA;
+}
+.aca_des {
+  @media(max-width: 576px) {
+    width: 250px;
+  }
+  @media(max-width: 375px) {
+    width: 150px;
+  }
+}
+.lhg-des {
+  display: -webkit-box;
+  -webkit-line-clamp: 1; //行數
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+  @media(max-width: 576px) {
+    width: 200px;
+  }
+  @media(max-width: 320px) {
+    width: 190px;
+    font-size: 13px;
+  }
+}
+.flip-content {
+  @media(max-width: 567px) {
+    margin: 0 !important;
+  }
+}
+.avatar-flip {
+  animation: animateAvatar 25s ease infinite;
+  position: relative;
+  padding: $block-sm;
+  @media (max-width: 576px) {
+    @keyframes animateAvatar {
+      0% { top: -28px }
+      20% { top: -28px }
+      25% { top: -120px }
+      45% { top: -120px }
+      50% { top: -230px }
+      70% { top: -230px }
+      75% { top: -298px }
+      90% { top: -298px }
+      100% { top: -28px }
+    }
+  }
+}
+@keyframes animateAvatar {
+  0% { top: -28px }
+  20% { top: -28px }
+  25% { top: -120px }
+  45% { top: -120px }
+  50% { top: -210px }
+  70% { top: -210px }
+  75% { top: -298px }
+  90% { top: -298px }
+  100% { top: -28px }
+}
+.caro_lhg {
+  padding-top: 24px;
+  @media(max-width: 1024px)  {
+    padding-top: 10px;
+  }
+}
+//橘色nav
+.hg-nav {
+  ul {
+    background: linear-gradient(180deg, #FFD493 0%, #FF9E2D 100%);
+    border-radius: $block-sm - 5px;
+    a {
+      color: white;
+    }
+  }
+  .hg-orange-menu {
+    @media(max-width:1100px) {
+      padding-bottom: $block-sm;
+    }
+    li {
+      height: 50%;
+      border-top: 2px solid transparent;
+      display: flex;
+      align-items: center;
+      @media(max-width:1100px) {
+        margin-bottom: $block-sm;
+      }
+    }
+  }
+}
+.hg-menu {
+  border-right: 1px solid #ffffff;
+  a {
+    text-shadow: 0px 2px 0px #FF7A00;
+  }
+}
+.hg-nav-search {
+  position: relative;
+  padding: $block-sm * 1.5 $block-sm;
+  input {
+    position: relative;
+    border-radius: $block-sm * 2;
+    border: none;
+    padding: $block-sm $block-sm +5px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+//搜尋icon
+.hg-search-icon {
+  position: absolute;
+  right: 10%;
+  top: 35%;
+  filter: invert(30%) sepia(74%) saturate(604%) hue-rotate(332deg) brightness(107%) contrast(103%);
+}
+.hg-menu-art {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  > a {
+    flex: 1;
+    text-decoration: none;
+    width: 100%;
+  }
+  ul {
+    z-index: 3;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 150px;
+    padding: 5px $block-sm;
+    text-align: center;
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  }
+  &:hover {
+    background-color: #FF7A00;
+    border-top: 2px solid #E4581D;
+    ul {
+      display: block;
+      li {
+        a {
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}
+//同好獵場字卡(pc64張)
+.intohg {
+  font-size: $font-size-sm;
+}
+.hg-card {
+  padding:5px;
+  position: relative;
+  transition: all 0.3s;
+  &:hover {
+    box-shadow: 3px 3px 5px 3px rgba(0, 0, 0, 0.24);
+    border-radius: $block-sm;
+  }
+  .hg-card-content {
+    border-radius: $block-sm - 5px;
+    min-height: 225px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .hg-card-tag {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    padding: 5px 20px;
+    background: linear-gradient(223deg, #FF655B 4.24%, #FF4328 97.99%);
+    color: white;
+    border-radius: 5px 0px;
+  }
+  .hg-card-title {
+    padding-left: 15px;
+    color:white;
+    h3 {
+      font-size: $font-size-lg * 1.2;
+    }
+  }
+}
+.hg-card-bottom-block {
+  .hg-card-icon {
+    filter: invert(100%) sepia(0%) saturate(73%) hue-rotate(180deg) brightness(96%) contrast(187%);
+  }
+}
+.hg-card-people{
+  font-size: $font-size-sm;
+  color: white;
+}
+.hg-card-text-content {
+  border-radius: $block-sm - 5px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+// 獵場首頁管理端
+.lhgmana-header {
+  background: #EDEDED;
+  padding: 8px 0;
+  margin-top: 92px;
+  @media(max-width: 1024px) {
+    margin-top: 83px;
+  }
+  @media(max-width: 768px) {
+    margin-top: 95px;
+  }
+  @media(max-width: 576px) {
+    margin-top: 83px;
+  }
+}
+.lhgmana-title {
+  color: #555555;
+  @media(max-width: 576px) {
+    font-size: $font-size-sm;
+  }
+}
+.lhgmana-sec-title {
+  color:#C6565A;
+  padding-left: $block-sm - 5px;
+}
+.lhgmana-wanna-post {
+  button {
+    font-weight: 500;
+    font-size: $font-size-md;
+    line-height: 23px;
+    color: #FFFFFF;
+    @media(max-width: 576px) {
+      font-size: $font-size-sm;
+    }
+  }
+  a {
+    @media(max-width: 576px) {
+      font-size: $font-size-sm;
+    }
+    img {
+      filter: invert(99%) sepia(0%) saturate(5627%) hue-rotate(206deg) brightness(900%) contrast(100%);
+    }
+  }
+}
+
+.lhg-mgmt-banner-block {
+  h2 {
+    @media(max-width: 768px) {
+      font-size: $font-size-lg * 1.2;
+    }
+  }
+}
+
+.mustpay_header {
+  background-image: url('./assets/image/huntground_lk/must_header.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 430px;
+  .row {
+    padding: $block-md 0 $block-md 0;
+    .lhgmana-setting {
+      a {
+        padding: 0 $block-md;
+      }
+    }
+  }
+}
+.lhgmana-header-secblock {
+  background-image: url('./assets/image/huntground_lk/lhgmana_banner.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 512px;
+  @media(max-width: 768px) {
+    padding: $block-sm 0;
+    min-height: 350px;
+  }
+  .row {
+    min-height: 512px;
+    padding: $block-md 0 $block-md 0;
+    .lhgmana-setting {
+      a {
+        padding: 0 $block-md;
+      }
+    }
+    @media(max-width: 768px) {
+      padding-bottom: 0;
+      min-height: 350px;
+    }
+  }
+}
+.rules-mgmt {
+  .btn-rulesBtn {
+    margin-right: $block-sm;
+  }
+  .btn-mbmgmtBtn {
+    color: white;
+  }
+}
+//格線
+.lhgmgmt-hr {
+  position: relative;
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    background: #aaa;
+    width: 30%;
+    height: 1px;
+    z-index: 3;
+    @media(max-width: 1024px) {
+      width: 25%;
+    }
+    @media(max-width: 768px) {
+      width: 15%;
+    }
+    @media(max-width: 576px) {
+      width: 0;
+    }
+  }
+  &:before {
+    left: 70%;
+    @media(max-width: 1024px) {
+      left: 73%;
+    }
+    @media(max-width: 768px) {
+      left: 82%;
+    }
+  }
+  &:after {
+    right: 70%;
+    @media(max-width: 1024px) {
+      right: 73%;
+    }
+    @media(max-width: 768px) {
+      right: 82%;
+    }
+  }
+}
+//同好獵場搜尋文章
+.mgmt-search {
+  background: #FFFFFF;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: 21.5px;
+  padding: 5px 10px;
+  max-height: 40px;
+  position: relative;
+  input {
+    border: none;
+    &:focus {
+      outline:none;
+    }
+  }
+}
+.mgmt-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  filter: invert(35%) sepia(6%) saturate(0%) hue-rotate(142deg) brightness(88%) contrast(89%);
+  cursor: pointer;
+}
+.lhg-form-title {
+  border-right: 1px solid #FFFFFF;
+}
+//文章標題分類區塊
+.mgmt-title-block {
+  background: #DC131A;
+  @media (max-width: 576px) {
+    display: none;
+  }
+}
+.mgmt-art-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-right: 1px solid white;
+  padding: 20px 40px;
+  h5 {
+    margin-bottom: 0;
+  }
+}
+//分類圖片
+.categories-icon {
+  width: 20px;
+  height: 20px;
+}
+.categories-block {
+  @media(max-width: 576px) {
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: start !important;
+  }
+}
+.announcement_margin {
+  @media(max-width: 576px) {
+    margin-bottom: $font-size-md !important;
+    padding: $block-sm * 2 0 0 0;
+  }
+}
+//文章圖片
+.mgmt-table-block {
+  padding: $block-sm $block-sm $block-sm $block-sm;
+  @media (max-width: 1024px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+.mgmt-table-img {
+  border-radius: $block-sm;
+}
+.mgmt-table-text {
+  width: 280px;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; //行數
+  -webkit-box-orient: vertical;
+  white-space: normal;
+  overflow: hidden;
+  @media(max-width: 375px) {
+    width: 230px;
+  }
+  @media(max-width: 1024px) {
+    width: 230px;
+  }
+  span {
+    background: $brilliantRed;
+    color: #fff;
+    padding: 3px;
+    border-radius: 5px;
+    width: 80px;
+    text-align: center;
+    display: none;
+    @media(max-width: 576px) {
+      display: block;
+      margin-right: auto;
+    }
+    @media(max-width: 320px) {
+      margin-right: 120px;
+    }
+  }
+  h6 {
+    font-weight: 500;
+    font-size: $font-size-md;
+    line-height: 26px;
+    letter-spacing: 0.6px;
+    color: #000000;
+  }
+  p {
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    letter-spacing: 0.4px;
+    color: #3E3E3E;
+  }
+  a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+.mgmt-sec-table {
+  .fa-ellipsis-v {
+    @media(max-width: 576) {
+      display: block;
+    }
+    @media screen and (max-width: 2560px) and (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+//po文時間、po文者 區塊
+.mgmt-poster-block {
+  div {
+    @media(max-width: 576px) {
+      font-size: $font-size-lg;
+    }
+  }
+}
+.mgmt-active {
+  background: linear-gradient(0deg, #FFF7EC, #FFF7EC), #FFFFFF;
+}
+//申請加入彈跳視窗
+#signUphgModal {
+  h5 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 35px;
+  }
+  .signmd-sub-title {
+    font-size: $font-size-sm;
+    line-height: 20px;
+    color: #434343;
+    padding-top: $block-sm * 2;
+    margin-bottom: $block-sm * 4;
+  }
+  .modal-body {
+    padding: $block-md 72px;
+    span {
+      color: green;
+    }
+  }
+  .modal-footer {
+    button {
+      padding: $block-sm - 5px $block-md;
+    }
+  }
+}
+//獵場設定頁
+.basic_data {
+  font-weight: 500;
+  font-size: $block-sm * 2;
+  line-height: 29px;
+  margin-bottom: 12px;
+}
+.up-img-title {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 23px;
+  color: #333333;
+  margin-bottom: 7px;
+}
+input[type="file"] {
+  display: none;
+}
+.upImgtext {
+  background:#DC131A;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 22px;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+.hgName {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 23px;
+  color: #333333;
+  span {
+    font-size: $font-size-sm;
+  }
+}
+.hgsetting-form-top { //第一個表單
+  margin-bottom: $block-md * 1.5;
+}
+
+.hgsetting-form-top, .hgsetting-form-bot{
+  background: #FFFFFF;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: $block-md;
+}
+
+.cancelBtn { // 取消按鈕
+  background: #FFFFFF;
+  border: 1px solid #8F8F8F;
+  box-sizing: border-box;
+  border-radius: 5px;
+  &:hover {
+    background:#8F8F8F;
+    color: $white;
+  }
+}
+
+//在地獵場
+.mgmt-info {
+  padding: 0 15px;
+}
+.appguard {
+  filter: invert(98%) sepia(1%) saturate(1496%) hue-rotate(224deg) brightness(113%) contrast(100%);
+}
+//老牙木牌
+.local-laoya {
+  margin-bottom: -40px;
+  display: flex;
+  align-items: flex-end;
+  @media (max-width: 768px) {
+    margin-bottom: 0;
+  }
+  img {
+    max-width: 230px;
+    @media (max-width: 768px) {
+      max-width: 150px;
+    }
+  }
+}
+.ad_block {
+  background-image: url('./assets/image/huntground_lk/local_hg/ad_block.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 150px;
+}
+.local-hr-img {
+  margin: 25px 0;
+}
+//看廣告抽大獎連結
+.watch_ad_win {
+  background: radial-gradient(50% 1473.47% at 50% 50%, #FFE999 0%, #FFFFFF 71.77%, #F7CF3E 100%);
+  border: 1px solid #FED767;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: $block-sm * 2.3;
+  font-weight: 500;
+  font-size: $font-size-lg;
+  line-height: $font-size-lg + 8px;
+  letter-spacing: 0.4px;
+  color: #BB6946;
+  display: flex;
+  align-items: center;
+  padding: 8px 24px;
+  margin: 0 24px;
+  @media(max-width: 1024px) {
+    font-size: $font-size-md;
+    padding: 4px 7px;
+  }
+  @media(max-width: 768px) {
+    margin: 10px 10px 0 0;
+  }
+  &:hover {
+    color:#BB6946;
+    text-decoration: none;
+  }
+  img {
+    width: 35px;
+    height: 35px;
+  }
+}
+.want_to_post {
+  @media(max-width: 768px) {
+    margin: 10px 10px 0 0;
+  }
+}
+//旅行打獵去頁面
+.travel-header {
+  position: relative;
+  background-image: url('./assets/image/travel/travel_banner.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: $block-lg * 3 0 0 0;
+  @media(max-width:576px) {
+    padding-top: $block-lg;
+  }
+  .build-hg-btn {
+    margin-bottom: 30px;
+    padding: 5px 30px;
+  }
+}
+.travel-laoya {
+  margin-bottom: -$block-sm;
+  @media (max-width: 768px) {
+    margin-bottom: -$block-sm;
+  }
+}
+.travel_nav_bar {
+  background: linear-gradient(180deg, #FFD493 0%, #FF9E2D 100%);
+  border-radius: 5px;
+}
+.travel_navoption {
+  font-weight: 500;
+  font-size: $font-size-lg;
+  line-height: $block-md - 4px;
+  text-align: center;
+  letter-spacing: 0.4px;
+  .flex-wrap {
+    > li {
+      cursor: pointer;
+      border-top: 2px solid transparent;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      @media(max-width: 576px) {
+        height: 50%;
+      }
+      @media(max-width: 375px) {
+        height: 30%;
+      }
+    }
+  }
+  .navoption_a {
+    text-shadow: 0px 2px 0px #FF7A00;
+    color: #FFFFFF;
+    border-right: 2px solid #FFFFFF;
+    padding: 0 15px;
+    @media(max-width: 375px) {
+      padding-left: 10px;
+      margin: 5px 0;
+    }
+  }
+}
+.navoption_sub_a {
+  color: #686868;
+}
+.navoption_sub_li {
+  padding: 5px $block-sm;
+}
+.artsort_btn {
+  cursor: pointer;
+  @media(max-width: 1024px) {
+    padding: 15px $block-md;
+  }
+}
+.art_sort_modal_title {
+  font-weight: bold;
+  font-size: $block-md;
+  line-height: $block-lg - $block-sm;
+  letter-spacing: 1px;
+  color: #000000;
+}
+.art_sort_option {
+  font-size: $font-size-lg;
+  line-height: $block-md + 5px;
+  color: #000000;
+}
+.option_block {
+  display: flex;
+  align-items: center;
+}
+.art_categories {
+  @media(max-width: 1024px) {
+    padding: 0 $block-sm;
+  }
+  @media(max-width: 768px) {
+    margin: 0 0 45px $block-sm;
+  }
+  @media(max-width: 375px) {
+    margin-bottom: 0;
+  }
+}
+.travel_art_img {
+  position: relative;
+}
+.travel_art_tags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(223deg, #FFA45B 4.24%, #FFA128 97.99%);
+  border-radius: 10px 0px;
+  color: #FFFFFF;
+  padding: 5px 10px;
+}
+.travel_art_block {
+  @media(max-width: 1024px) {
+    margin-bottom: 1rem;
+  }
+}
+//按讚數(溫度計)
+.temp_like_block {
+  margin-right: auto;
+  @media(max-width: 768px) {
+    margin: 0;
+  }
+}
+.temp_like {
+  width: 30px;
+  height: 30px;
+}
+
+.lhg_temp_like_block {
+  width: $block-sm * 15;
+  flex-wrap: wrap;
+  @media(max-width: 768px) {
+    width: $block-sm * 8 + 5px;
+  }
+  @media(max-width: 576px) {
+    flex-wrap: nowrap !important;
+    width: $block-sm * 10 + 15px;
+  }
+}
+.lhglike-sec-block {
+  @media(max-width: 576px) {
+    display: none !important;
+  }
+}
+.poster_time {
+  font-size: $font-size-sm;
+  line-height: $font-size-lg;
+  letter-spacing: 0.5px;
+  color: #555555;
+  text-align: center;
+  @media(max-width: 320px) {
+    text-align: left;
+  }
+}
+
+.poster_announce_time {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  @media(max-width: 576px) {
+    align-items: flex-start;
+    p {
+      margin: 5px 0;
+    }
+  }
+}
+
+.ann_Avatar {
+  background-image: url('https://images.unsplash.com/photo-1530268729831-4b0b9e170218?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+  background-size: cover;
+  background-position: center;
+  width: $block-lg +8px;
+  height: $block-lg +8px;
+  border-radius: $block-lg +8px;
+  position: relative;
+  img {
+    position: absolute;
+    right: - $block-sm;
+    bottom: 0;
+    width: 35px;
+    height: 35px;
+  }
+}
+//留言數數字樣式
+.comment_count {
+  font-size: $font-size-md;
+  line-height: $block-sm * 2;
+  letter-spacing: 0.4px;
+  color: #555555;
+}
+.lhgmgmt_pagenation {
+  @media(max-width: 576px) {
+    margin: 16px 0 !important;
+  }
+}
+
+//我要大聲說成功發布modal樣式
+.submit_success_block {
+  h5 {
+    font-weight: 500;
+    font-size: $font-size-lg + 6px;
+    line-height: 35px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    color: #000;
+  }
+  p {
+    font-size: $font-size-lg;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.6px;
+    color: #000000;
+  }
+}
+
+.mgmt-table-block {
+  @media(max-width: 576px) {
+    display: none;
+  }
+}
+
+.lhgdrop {
+  color: #000;
+  @media(max-width: 576px) {
+    display: none;
+  }
+}

@@ -1,0 +1,719 @@
+.publish-container-width {
+  max-width: 1200px !important;
+}
+
+.step_count {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #AAAAAA;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 900;
+  font-size: 22px;
+}
+//尚未編輯step
+.step-text {
+  color: #AAAAAA;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+}
+//正在編輯step
+.step_active {
+  background: #B1532B;
+}
+//正在編輯step文字顏色
+.step-text_active {
+  color: #B1532B;
+}
+//已完成編輯step
+.step_finished {
+  background: #604330;
+}
+//已完成編輯step文字顏色
+.step_finished_text {
+  color: #604330;
+}
+
+//步驟一區塊
+.stepOneTitle {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 32px;
+  color: #000000;
+  display: flex;
+  justify-content: center;
+  p {
+    color: #DC131A;
+  }
+}
+
+.stepOne {
+  background: #F2F2F2;
+}
+
+.left-bar {
+  padding: 3px;
+  background: #E2273A;
+  border-radius: 8px;
+}
+
+.choseTemp {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #000;
+}
+
+.choosetemplate {
+  margin-bottom: 70px;
+}
+.price_count-md-bottom {
+  display: none !important;
+  @media(max-width: 576px) {
+    display: flex !important;
+  }
+}
+.price_count-bottom {
+  @media(max-width: 576px) {
+    display: none !important;
+  }
+}
+
+.ad-block-style {
+  padding: 0 300px;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+.choose_b_content {
+  padding: 0 15px;
+}
+.choose_b_inf {
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.02em;
+  color: #B1532B;
+}
+
+//費用小計
+.price_count {
+  font-size: 18px;
+  line-height: 26px;
+  color: #555555;
+  padding: 14px 34px;
+  @media(max-width: 768px) {
+    padding: 10px 0;
+  }
+  span {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    color: #DC131A;
+  }
+}
+
+//方案C
+.chooseC {
+  padding: 0 300px;
+  flex-direction: column;
+  background: #FFFFFF;
+  margin-bottom: 60px;
+  @media(max-width: 1440px) {
+    padding: 0 120px;
+  }
+  @media(max-width: 1024px) {
+    padding: 0 10px;
+  }
+}
+
+.exp_add_money {
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  color: #AA1A29;
+}
+
+.choose_c_footer {
+  padding: 14px 0;
+  border-top: 1px solid #8b8b8b;
+}
+
+.table_content {
+  padding: 14px 34px;
+  @media(max-width: 1024px) {
+    padding: 7px 10px;
+  }
+}
+
+.add_value {
+  margin: 20px 0;
+}
+
+.under_line {
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 1px;
+    background: #8B8B8B;
+    width: 100%;
+    top: calc(50% - 20px);
+  }
+}
+
+.price_count_total {
+  padding: 0 34px;
+  margin-bottom: 20px;
+}
+
+//按扭區塊樣式
+.nextStepBtn {
+  padding: 50px 15px;
+  .row {
+    padding: 0 300px;
+    @media(max-width: 1440px) {
+      padding: 0;
+    }
+  }
+}
+
+//按鈕內距離
+.btn_padding {
+  padding: 5px 30px;
+  @media(max-width: 576px) {
+    padding: 5px 20px;
+  }
+  @media(max-width: 375px) {
+    padding: 5px 8px;
+  }
+}
+
+//客製化按鈕
+.ad_btn_whiteBtn {
+  background: white;
+  color: #8F8F8F;
+  border: 1px solid #8F8F8F;
+}
+
+.btn-greyBtn {
+  background: #F2F2F2;
+  border: 1px solid #8F8F8F;
+  color: #8F8F8F;
+}
+
+//步驟二
+//優惠券數量樣式
+.discount_num {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: 24px;
+  color:$main-red;
+  span {
+    font-size: $font-size-sm;
+    line-height: 20px;
+    color:$main-red;
+  }
+}
+.discount_title {
+  .able {
+    font-size: $font-size-md;
+    line-height: $block-sm * 2;
+    text-align: center;
+    color: #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    padding: $block-sm 0;
+  }
+  .able-setting {
+    font-size: $font-size-md;
+    line-height: $block-sm * 2;
+    text-align: center;
+    color: #FFFFFF;
+    padding: $block-sm 0;
+  }
+}
+//優惠券標題
+.dis_title {
+  margin-right: $block-sm;
+  margin-bottom: 0;
+  display: flex;
+  // align-items: center;
+}
+//優惠券標題input
+#disTitle {
+  width: 80%;
+}
+#disCount {
+  width: 50px;
+  height: 24px;
+}
+//優惠券新增選擇按鈕樣式
+.dis_up_img_btn {
+  background: #FFFFFF;
+  border: 1px solid #E2273A;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #E2273A;
+  &:focus {
+    outline: none;
+  }
+}
+.dis_input_btn {
+  background: #FFFFFF;
+  border: 1px solid #AAAAAA;
+  box-sizing: border-box;
+  border-radius: 5px;
+  color: #AAAAAA;
+  &:focus {
+    outline: none;
+  }
+}
+// 贈送優惠券input
+.sendlottery-input {
+  position: relative;
+  input:first-child {
+    text-align: center;
+  }
+}
+.lottplus, .lottminus {
+  position: absolute;
+  background: none;
+  border: none;
+  top: 25%;
+  &:focus {
+    outline: none;
+  }
+}
+.lottplus {
+  left: 5px;
+}
+.lottminus {
+  right: 5px;
+}
+
+.dis_btn_group {
+  button {
+    background: #FFFFFF;
+    border: 1px solid #AAAAAA;
+    border-radius: 5px;
+    color: #AAAAAA;
+    &:focus {
+      outline: none;
+    }
+  }
+}
+.upBtnActive {
+  background: #FFFFFF;
+  color: #E2273A !important;
+  border: 1px solid #E2273A !important;
+  border-radius: 5px;
+  //filter: invert(30%) sepia(94%) saturate(4434%) hue-rotate(340deg) brightness(90%) contrast(97%);
+}
+.upImgBorder {
+  border: 1px solid #D4D4D4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  p {
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    text-align: center;
+    color: #959595;
+  }
+}
+
+//步驟三
+.stepthir_radio {
+  font-size: $font-size-md;
+  line-height: $block-sm * 2;
+  color: #333333;
+}
+
+.file-size {
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  color: $main-red;
+  display: flex;
+  align-items: center;
+  padding-left: $block-sm;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+}
+.longhand {
+  flex-flow: wrap row;
+}
+.flex-item {
+  color: #C3D0D9;
+  border: 1px solid #E2273A;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  font-size: 1.5em;
+  text-align: center;
+  padding: 5px;
+}
+.radioone, .radiotwo, .radiothree, .radiofour {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#radio1:checked + label, #radio2:checked + label, #radio3:checked + label, #radio4:checked + label, #radio5:checked + label {
+  background: #E2273A;
+  border-radius: 50%;
+}
+
+#radio1, #radio2, #radio3, #radio4, #radio5 {
+  display: none;
+}
+
+.temptext {
+  font-size: 16px;
+  line-height: 23px;
+  color: #333333;
+  margin-left: $block-sm;
+}
+
+#inputGroupSelect01 {
+  max-width: 205px;
+}
+.occ-img-block {
+  width: 100%;
+  position: relative;
+  .occ-fourth-img {
+    @media(max-width: 576px) {
+      min-height: 150px;
+    }
+  }
+  .occ-icon-text {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    p {
+      font-size: $font-size-md;
+      line-height: $block-sm * 2;
+      color: #959595;
+    }
+    .up-size {
+      font-size: 14px;
+      line-height: 17px;
+      color: #E2273A;
+    }
+  }
+}
+
+.project-intro-block {
+  padding: 15px;
+  position: relative;
+  .row {
+    border-bottom: 1px solid #8B8B8B;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+  // &::after {
+  //   content: '';
+  //   max-width: 1370px;
+  //   width: 100%;
+  //   height: 1px;
+  //   background: #8b8b8b;
+  //   position: absolute;
+  //   bottom: 0;
+  // }
+  h2, h5 {
+    font-size: $font-size-md;
+    line-height: 23px;
+    color: #DC131A;
+  }
+  p {
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #333333;
+    margin-bottom: $block-sm;
+  }
+}
+
+.litile-prize-block {
+  p {
+    text-align: right;
+    font-weight: 500;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    color: #555555;
+  }
+  span {
+    font-weight: bold;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    text-align: right;
+    color: #DC131A;
+  }
+}
+
+.stepsubTitle {
+  color: #000;
+}
+
+
+.b-upAdblock {
+  width: 400px;
+  margin: 0 auto;
+  @media(max-width: 375px) {
+    width: 300px;
+  }
+  p {
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    color: #E2273A;
+  }
+}
+
+.b-btnGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cut-img {
+  color: #555555;
+  &:hover {
+    text-decoration: none;
+    color:#555555;
+    cursor: pointer;
+  }
+}
+
+.previewWeb {
+  color:#E2273A;
+  &:hover {
+    text-decoration: none;
+    color:#E2273A;
+    cursor: pointer;
+  }
+}
+
+.step_white_bg {
+  background: #fff;
+}
+//廣告子title
+.countpay {
+  font-weight: 500;
+  font-size: $block-sm * 2;
+  line-height: $block-md;
+  color: #000000;
+}
+//店家位置
+.store-location-block {
+  padding: $block-md 15px;
+  h5 {
+    font-weight: 500;
+    font-size: $font-size-md;
+    line-height: $block-sm * 2 + 3px;
+    color: #333333;
+  }
+}
+
+.store-label {
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  color: #000000;
+}
+
+.question-block {
+  position: relative;
+  transition: 0.3s;
+  &:hover {
+    .store-bubble-text {
+      display: flex;
+      transition: 0.3s;
+      opacity: 1;
+    }
+  }
+}
+
+.store-bubble-text {
+  transition: 0.3s;
+  opacity: 0.6;
+  display: none;
+  background:#E2273A;
+  color: #fff;
+  border-radius: 5px;
+  position: absolute;
+  top: -38px;
+  left: -8px;
+  width: 250px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  padding: $block-sm 0;
+  &:after {
+    transition: 0.3s;
+      opacity: 1;
+    display: block;
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    top: 90%;
+    left: 8px;
+    background-color: #E2273A;
+    z-index: -1;
+    transform: translateY(-50%) rotate(45deg);
+  }
+}
+
+//製作廣告第二步問號size
+.fa-question-circle {
+  font-size: $font-size-lg;
+  color: #E2273A;
+  cursor: pointer;
+}
+
+.lottery-time {
+  span {
+    margin-right: $block-sm;
+  }
+  input {
+    height: 24px;
+  }
+}
+
+.lottery-img {
+  background-image: url('./assets/image/huntground_lk/makelottery.svg');
+  background-position: center;
+  background-size: contain;
+  min-height: 200px;
+  width: 100%;
+  background-repeat: no-repeat;
+  @media(max-width: 576px) {
+    min-height: $block-sm * 10;
+  }
+}
+
+.adlist {
+  font-size: $block-sm * 2;
+  line-height: $font-size-md;
+  color: #000000;
+}
+
+.stpthree-black-text {
+  color: #000;
+  font-weight: 500;
+  font-size: $font-size-lg;
+  line-height: $block-md - 4px;
+}
+
+.stpthree-grey-text {
+  color: #555555;
+  font-size: $font-size-lg;
+  line-height: $block-md - 4px; 
+}
+
+// 步驟三
+// 總計文字style
+.total-count {
+  font-weight: 500;
+  font-size: $font-size-lg + 6px;
+  line-height: $block-md + 5px;
+  color: #000000;
+}
+
+.total-price {
+  font-weight: bold;
+  font-size: $font-size-lg + 6px;
+  line-height: $block-md + 5px;
+  color: #DC131A;
+}
+
+.payment-inf-title {
+  h3 {
+    font-weight: 500;
+    font-size: $block-sm * 2 !important;
+    line-height: $block-md;
+    color: #000000;
+  }
+}
+
+.payment-inf-block {
+  font-weight: 500;
+  font-size: $block-sm * 2;
+  line-height: $block-md;
+  p {
+    color: #000000;
+  }
+  span {
+    font-weight: bold;
+    color: #DC131A;
+  }
+}
+
+.your-payment-inf {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: $block-sm * 2 + 3px;
+}
+
+.pay-way-title {
+  font-size: $font-size-md;
+}
+
+.pay-btn {
+  button {
+    padding: 48px 130px;
+    font-size: $font-size-lg;
+    @media(max-width: 576px) {
+      padding: 24px 65px;
+    }
+  }
+}
+
+//付款成功modal
+.paycom-modal-header {
+  position: relative;
+}
+
+#payComModalLabel {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 5%;
+}
+
+.complete-post-time {
+  font-size: $font-size-lg;
+  line-height: $block-md - 4px;
+  color: #e2273a;
+}
+
+//預覽
+.shop-name-block {
+  border-top: 1px solid #555555;
+  border-bottom: 1px solid #555555;
+  padding: $block-sm * 5 0;
+}

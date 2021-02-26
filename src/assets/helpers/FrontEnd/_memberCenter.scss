@@ -1,0 +1,546 @@
+.mem-padding {
+  padding-top: $block-sm * 9;
+  @media(max-width: 1440px) {
+    padding-top: $block-sm * 8 + 5px;
+  }
+}
+.member_header {
+  background-image: url(./assets/image/member/plain_header.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  @media(max-width: 576px) {
+    min-height: 280px;
+    margin: 0 -15px;
+  }
+}
+
+.member_ph_block {
+  width: 250px;
+  position: relative;
+  margin-bottom: -100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.race {
+  position: absolute;
+  bottom: 85px;
+  right: 40px;
+
+  .race_img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.member_ph {
+  max-width: 150px;
+  min-height: 150px;
+  border-radius: 50%;
+  border: 2px solid #E1273A;
+}
+
+.avastar {
+  height: 100%;
+}
+
+.member_name {
+  font-weight: bold;
+  font-size: 28px;
+  line-height: 41px;
+  text-align: center;
+  letter-spacing: 0.4px;
+  color: #2B79BA;
+}
+
+.member_id {
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  color: #979797;
+}
+
+.member_function {
+  margin-top: 115px;
+  button {
+    border: none;
+    background: #E9E8E8;
+    border-radius: 5px;
+    padding: 7px 17px;
+    margin-right: 12px;
+    @media(max-width: 576px) {
+      margin-bottom: 10px;
+    }
+  }
+}
+.cancel_friends_btn {
+  position: relative;
+  &:hover {
+    .cancel_drop_down_block {
+      display: block;
+    }
+  }
+}
+.cancel_drop_down_block {
+  display: none;
+  position: absolute;
+  left: -50%;
+  top: 120%;
+  img {
+    margin-right: 9px;
+    padding-bottom: 3px;
+  }
+}
+.cancel_drop_down {
+  background: #FFFFFF;
+  position: relative;
+  padding: 5px 10px;
+  width: 115px;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0px 1px 1px 0 rgba(0, 0, 0, 0.4);
+  &:after {
+    content: '';
+    position: absolute;
+    top: 1%;
+    width: 0;
+    height: 0;
+    border: 0.5em solid black;
+    border-color: transparent transparent #ffffff #ffffff;
+    left: 60%;
+    box-sizing: border-box;
+    transform-origin: 0 0;
+    transform: rotate(135deg);
+    box-shadow: -1px 0.5px 0.5px 0 rgba(0, 0, 0, 0.4);
+  }
+}
+.member_category {
+  ul {
+    border-top: 1px solid #D8D7D6;
+    border-bottom: 1px solid #D8D7D6;
+    li {
+      width: 33.3333333%;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      text-align: center;
+      color: #000000;
+      a {
+        padding: 17px 0;
+        display: block;
+        color: #555555;
+      }
+    }
+  }
+}
+.member_category_active {
+  border-bottom: 3px solid #000000;
+  a {
+    color: #000000 !important;
+  }
+}
+//獵人資訊業面
+.hunter_info {
+  border-bottom: 1px solid #D8D7D6;
+  padding-bottom: 14px;
+  margin-bottom: 24px;
+  p {
+    border-left: 5px solid #E2273A;
+    padding-left: $block-sm;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 32px;
+    color: #000000;
+  }
+}
+
+.hunter_content_block {
+  background: #F8F8F8;
+  padding-top: $block-md;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+.hunter_info_card {
+  height: 100%;
+  background: #FFFFFF;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 30px;
+  img {
+    max-width: none;
+  }
+}
+.coin_icon {
+  width: 20px;
+  height: 20px;
+}
+.coin_ticket_block {
+  background: #F7F7F7;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 5px 15px 5px 5px;
+}
+.check_all {
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  color: #B1532B;
+}
+.hornor_icon_size {
+  width: 55px;
+  height: 55px;
+  max-width: none;
+}
+.hobbit_tag {
+  color: #FFA93D;
+  font-size: 16px;
+  line-height: 23px;
+  padding: 5px 15px;
+  border: 1px solid #FFA93D;
+  border-radius: 15px;
+  margin-right: 15px;
+  @media(max-width: 576px) {
+    margin-bottom: $block-sm;
+  }
+}
+
+.friend_ph_block {
+  width: 110px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.freiend_info {
+  width: 350px;
+  background: #FFFFFF;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: 5px;
+  padding: 5px 10px;
+  @media(max-width: 1024px) {
+    width: 280px;
+  }
+  @media(max-width: 768px) {
+    width: 220px;
+  }
+  @media(max-width: 375px) {
+    width: 180px;
+  }
+}
+.friend_ph {
+  max-width: 100px !important;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #E1273A;
+  position: relative;
+}
+.friend_race {
+  position: absolute;
+  bottom: 15px;
+  right: 0px;
+
+  .friend_race_img {
+    width: 30px;
+    height: 30px;
+  }
+}
+.img_ava_block {
+  position: relative;
+  width: 80px;
+}
+.img_ava {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #E1273A;
+}
+.img_badge_block {
+  position: absolute;
+  right: -5px;
+  bottom: 15px;
+  width: 30px;
+  height: 30px;
+  img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.block_one {
+  cursor: pointer;
+  position: relative;
+  &:hover {
+    .block_two {
+      display: block;
+    }
+  }
+}
+.block_two {
+  z-index: 8;
+  display: none;
+  position: absolute;
+  top: -100%;
+  left: -120%;
+  @media(max-width: 1440px) {
+    top: -105%;
+    left: 0;
+  }
+  @media(max-width: 1024px) {
+    left: -20px;
+  }
+  @media(max-width: 768px) {
+    top: -180%;
+    left: -10%;
+  }
+  @media(max-width: 375px) {
+    left: -15%;
+  }
+  @media(max-width: 320px) {
+    left: -20%;
+  }
+}
+.hover_icon {
+  width: 40px;
+  height: 40px;
+  @media(max-width: 1440px) {
+    display: none;
+  }
+}
+.friend_inf_title {
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.4px;
+  font-weight: bold;
+  color: #2B79BA;
+  @media(max-width: 768px) {
+    font-size: $font-size-sm;
+  }
+  @media(max-width: 576px) {
+    font-size: $font-size-lg;
+  }
+  @media(max-width: 320px) {
+    font-size: $font-size-lg - 3px;
+  }
+}
+//同好獵場管理頁面user區塊
+.lhg_mgmt_user {
+  @media(max-width: 576px) {
+    margin-bottom: $font-size-sm;
+    margin-top: $font-size-sm;
+  }
+  @media(max-width: 375px) {
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+}
+.friend_sub_title {
+  font-size: 14px;
+  line-height: 20px;
+  color: #979797;
+}
+.member_inf {
+  font-size: 14px;
+  line-height: 20px;
+  color: #000000;
+  .col {
+    padding-left: 0 !important;
+    @media(max-width: 1024px) {
+      padding-left: 20px !important;
+    }
+  }
+}
+
+//獵人日記
+.member_article_img {
+  width: 800px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  img {
+    position: absolute;
+    width: 90%;
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+}
+.poster_article_name {
+  font-weight: bold;
+  font-size: $block-sm * 2;
+  line-height: 29px;
+  letter-spacing: 0.6px;
+  color: #000000;
+}
+.post_time {
+  font-size: $font-size-md;
+  line-height: 23px;
+  color: #979797;
+}
+.hunter_diray_title {
+  font-weight: 500;
+  font-size: $block-sm * 2;
+  line-height: $block-md;
+  letter-spacing: 0.4px;
+  color: #000000;
+}
+.diray_poster {
+  margin-bottom: $block-md;
+}
+.hunter_diray_content {
+  font-size: $font-size-sm + 4px;
+  line-height: $block-md;
+  letter-spacing: 0.4px;
+  color: #3E3E3E;
+}
+.post_category {
+  background: #FFFFFF;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 30px 50px 30px 30px;
+  ul {
+    li {
+      font-weight: 400;
+      font-size: $font-size-sm + 4px;
+      line-height: $block-md;
+      color: #000000;
+    }
+  }
+}
+.img_ava_art {
+  @media(max-width: 320px) {
+    width: 75px !important;
+  }
+}
+//獵場資訊頁
+.huntground_info {
+  border-bottom: 1px solid #D8D7D6;
+  padding-bottom: $font-size-sm;
+  margin-bottom: $font-size-sm;
+  p {
+    font-weight: bold;
+    font-size: $font-size-sm + 8px;
+    line-height: $block-md;
+    color: #357ECD;
+    border-left: 5px solid #E2273A;
+    padding-left: $block-sm;
+  }
+  span {
+    color: #000000;
+  }
+}
+.right_classify {
+  @media(max-width: 768px) {
+    display: none;
+  }
+}
+
+.ava-block {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 60px;
+  width: 60px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  border: 2px solid #F5B230;
+}
+.ava-cate {
+  position: absolute;
+  right: -5px;
+  bottom: 0;
+}
+
+.collected-text {
+  font-weight: bold;
+  font-size: $block-sm * 2;
+  line-height: $block-md;
+  letter-spacing: 0.6px;
+  color: #000000;
+}
+
+//收藏文章圖片
+.favart-img {
+  img {
+    border-radius: $block-sm;
+  }
+}
+
+//收藏文章區塊
+.favart-block {
+  padding: $block-sm * 2;
+  background: #fff;
+  box-sizing: border-box;
+  border-radius: $block-sm;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  border: 1px solid #D8D7D6;
+  margin-bottom: $block-md;
+}
+
+.favarticle-block {
+  padding-right: $block-sm * 20;
+  padding-left: $block-sm * 20;
+  @media(max-width: 768px) {
+    padding-right: $block-sm * 10;
+    padding-left: $block-sm * 10;
+  }
+  @media(max-width: 576px) {
+    padding-right: $block-sm;
+    padding-left: $block-sm;
+  }
+}
+
+.open .collected-dropdown-menu{
+  display: block;
+}
+
+.collected-block {
+  position: relative;
+}
+
+.collected-dropdown-menu {
+  z-index: 9;
+  position: absolute;
+	min-width: 130px;
+  top: 40px;
+  right: 0;
+  display: none;
+	background-color: #fff;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 1px solid #f4f4f4;
+  a {
+    color: #555555;
+  }
+  li {
+    a {
+      padding: $block-sm;
+      &:hover {
+        background:#D8D7D6;
+      }
+      img {
+        width: 25px;
+        height: 25px;
+        margin-right: $block-sm;
+      }
+    }
+  }
+}
+.fa-ellipsis-h {
+  cursor: pointer;
+}
+
+.collected-text {
+  @media(max-width: 576px) {
+    font-size: $font-size-md;
+  }
+}

@@ -1,0 +1,477 @@
+.memberbadge {
+  color: #555555;
+  font-size: 16px;
+  line-height: 23px;
+  &:hover {
+    color: #C6565A;
+  }
+}
+.membdg-active {
+  color: #C6565A !important;
+}
+//搜尋成員、管理新成員、管理舉報成員
+.mem-mgmt-nav {
+  a {
+    font-size: $font-size-lg;
+    line-height: 26px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #555555;
+  }
+}
+.member-search {
+  background: #FFFFFF;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: 21.5px;
+  padding: 5px 10px;
+  max-height: 40px;
+  position: relative;
+  input {
+    border: none;
+    &:focus {
+      outline:none;
+    }
+  }
+}
+.member-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  filter: invert(35%) sepia(6%) saturate(0%) hue-rotate(142deg) brightness(88%) contrast(89%);
+  cursor: pointer;
+}
+.member-list {
+  padding: 0 15px;
+}
+//成員列表title
+.mgmt-title-block {
+  @media(max-width: 768px) {
+    display: none;
+  }
+}
+.member-list-title {
+  h5 {
+    font-weight: 500;
+    line-height: $block-md;
+    color: #000000;
+  }
+}
+.hg-manager {
+  color: $brilliantRed;
+}
+.member-manager {
+  @media(max-width: 768px) {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+}
+.hg-guard {
+  padding: 5px 20px;
+  border: 2px solid $brilliantRed;
+  border-radius: 5px;
+  color: $brilliantRed;
+}
+//成員頭像
+.hg-land {
+  border: 2px solid #E1273A;
+}
+.hg-ocen {
+  border: 2px solid #2B79BA;
+}
+.hg-mountain {
+  border: 2px solid #F5B230;;
+}
+.member-avatar-block {
+  padding: 15px;
+  width: 100%;
+  @media(max-width: 768px) {
+    padding: 10px;
+  }
+}
+.member-avatar {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  > img {
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+  }
+  .member-tribe {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }  
+}
+.member-title {
+  h6 {
+    font-weight: 500;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    letter-spacing: 0.4px;
+    color: #2B79BA;
+    @media(max-width: 576px) {
+      font-size: $font-size-md;
+    }
+  }
+  span {
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    color: #979797;
+  }
+}
+//成員等級
+.member-lv {
+  font-size: $font-size-sm;
+  line-height: $block-sm;
+  @media(max-width: 768px) {
+    padding-bottom: $block-sm;
+  }
+}
+//加入時間
+.member-join-time {
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  color: #434343;
+}
+//權限
+.member-authority {
+  a {
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    letter-spacing: 0.4px;
+    color: #555555;
+  }
+  li {
+    @media(max-width: 768px) {
+      padding: 0 $block-md 0 0;
+    }
+  }
+}
+//會員表單底線
+.member-border-bottom {
+  border-bottom: 1px solid #F3F3F3;
+  @media(max-width: 768px) {
+    border: none;
+  }
+}
+//踢出會員modal
+#kick-member-Modal {
+  .modal-footer {
+    button {
+      padding: 5px $block-md;
+    }
+  }
+}
+//禁言modal
+#mute-Modal {
+  .form-control {
+    color: #AAAAAA;
+  }
+  button {
+    padding: 5px $block-md;
+  }
+}
+.muteSelect {
+  width: 60%;
+}
+.mute-reason {
+  width: 60%;
+  min-height: 150px;
+}
+
+//查看更多文章樣式
+.article_header {
+  background: #FFF8F4;
+  .article_list {
+    padding: 18px 15px;
+    flex-wrap: wrap;
+    .turn_back_list {
+      border: 0.5px solid #555555;
+      padding: 3px $block-sm;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 24px;
+    }
+    img {
+      padding: 5px;
+    }
+  }
+}
+.poster_name {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.4px;
+  color: #000000;
+}
+.poster_id {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: #979797;
+}
+.article_crown {
+  span {
+    color: #F39318;
+  }
+}
+.article_level {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #000000;
+}
+
+.article_lv {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.author_tags {
+  background: url(./assets/image/huntground_lk/author_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+  padding: 7px 25px;
+  font-size: 14px;
+  img {
+    padding-right: 5px;
+  }
+}
+.article_bg {
+  background-image: url(./assets/image/images/fixedbg-pc.png);
+  background-repeat: repeat-y;
+  background-position: center;
+}
+//右側留言區(像是FB)
+.leave_message {
+  background: #FFFFFF;
+  border: 1px solid #D8D7D6;
+  box-sizing: border-box;
+  border-radius: $block-sm;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 24px;
+  margin-bottom: 40px;
+  @media(max-width: 576px) {
+    padding: 24px 14px;
+  }
+}
+.member-list-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: 0.4px;
+  color: #000000;
+}
+//po文圖片
+.article_img {
+  margin-bottom: 25px;
+  img {
+    width: 100%;
+  }
+}
+//按讚/留言/分享
+.article_press_btn {
+  border-bottom: 1px solid #D8D7D6;
+  border-top: 1px solid #D8D7D6;
+  a {
+    color: #8B8B8B;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 29px;
+  }
+  ul {
+    li {
+      a {
+        @media(max-width: 576px) {
+          font-size: $font-size-md;
+        }
+      }
+    }
+  }
+}
+
+//留言輸入框
+.message_input_block {
+  position: relative;
+}
+.message_input {
+  border: none;
+  background: #D8D8D8;
+  border-radius: 25px;
+  padding: 12px   $block-sm * 2;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+.up_img_btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 7%;
+  @media (max-width: 1024px) {
+    right: 10%;
+  }
+  @media (max-width: 768px) {
+    right: 12%;
+  }
+  @media (max-width: 576px) {
+    right: 20%;
+  }
+  img {
+    height: auto;
+  }
+}
+.submit_btn {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 4%;
+  @media (max-width: 1024px) {
+    right: 5%;
+  }
+  @media (max-width: 768px) {
+    right: 6%;
+  }
+  @media (max-width: 576px) {
+    right: 10%;
+  }
+  img {
+    height: auto;
+  }
+}
+//回覆內文泡泡
+.article_res {
+  background: #D8D8D8;
+  border-radius: 25px;
+  padding: 12px 20px;
+  @media(max-width: 768px) {
+    padding: $block-sm;
+  }
+  h5 {
+    font-weight: 500;
+    font-size: $font-size-lg;
+    line-height: 26px;
+    color: #2B79BA;
+    margin-bottom: 0;
+    @media(max-width: 768px) {
+      font-size: $font-size-sm;
+    }
+    @media(max-width: 576px) {
+      font-size: $font-size-sm - 2px;
+    }
+  }
+  p {
+    font-size: $font-size-md;
+    line-height: 23px;
+    color: #000000;
+    @media(max-width: 768px) {
+      font-size: $font-size-sm;
+    }
+  }
+  .row {
+    padding: 0 15px;
+  }
+}
+//回覆按鈕
+.res_mes_btn {
+  font-size: 16px;
+  line-height: 23px;
+  color: #555555;
+  li {
+    color: #555555;
+    @media(max-width: 576px) {
+      font-size: 12px;
+    }
+    a {
+      color: #555555;
+      img {
+        @media(max-width: 576px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+//回覆圖片
+.res_img {
+  // img {
+  //   min-height: 150px;
+  // }
+}
+
+//載入更多回覆
+.load_more_res_blue {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: #357ECD;
+}
+//載入更多留言
+.load_more_res_red {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  color: $brilliantRed;
+}
+
+.poster_inf {
+  @media(max-width: 768px) {
+    padding: 0 !important;
+  }
+}
+
+//文章title
+.leave_message_title {
+  @media(max-width: 1024px) {
+    font-size: $block-sm * 3;
+  }
+  @media(max-width: 768px) {
+    font-size: $block-sm * 2;
+  }
+}
+
+//子留言區塊間距
+.grand-message {
+  @media(max-width: 768px) {
+    padding-left: $block-sm !important;
+  }
+}
+
+.repoter-block {
+  div {
+    span:first-child {
+      color: #357ECD;
+      font-weight: 500;
+      font-size: $font-size-lg;
+      line-height: $block-md - 4px;
+      @media(max-width: 576px) {
+        font-size: $font-size-md;
+      }
+    }
+  }
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  color: #979797;
+  p {
+    font-size: $font-size-lg;
+    color: #000;
+    margin-right: 13px;
+    @media screen and (max-width: 2560px) and (min-width: 1024px) {
+      display: none;
+    }
+    @media(max-width: 576px) {
+      font-size: $font-size-md;
+      margin-right: 5px;
+      display: block;
+    }
+  }
+}

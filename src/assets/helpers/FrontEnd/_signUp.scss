@@ -1,0 +1,216 @@
+.mr-6 {
+  margin-right: 60px;
+}
+
+.mr-7 {
+  margin-right: 70px;
+}
+
+.mr-8 {
+  margin-right: 80px;
+}
+
+.mr-9 {
+  margin-right: 90px;
+}
+
+.mr-10 {
+  margin-right: 100px;
+}
+
+.mr-11 {
+  margin-right: 110px;
+}
+
+.mr-12 {
+  margin-right: 120px;
+}
+
+.mr-13 {
+  margin-right: 130px;
+}
+
+.mr-14 {
+  margin-right: 140px;
+}
+
+.mr-15 {
+  margin-right: 150px;
+}
+
+.signup-title-bar {
+  background-color: red;
+  padding:3px;
+  margin-right:$block-sm;
+  border-radius:8px;
+}
+.signup-title {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 32px;
+  color: #000000;
+  margin-bottom:24px;
+}
+.fix_margin {
+  margin-top: 80px;
+  padding-top: 35px;
+}
+//上傳頭像btn
+.upload-img {
+  margin-bottom: $font-size-sm;
+  h4 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $font-size-lg;
+    line-height: 26px;
+    color: #000000;
+  }
+  button {
+    background-color: #DC131A;
+    color:white;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    padding: 10px 30px;
+  }
+}
+.upload-avatar {
+  img{
+    width: 156px;
+    height: 156px;
+  }
+}
+.sign-sec-block {
+  align-items: stretch;
+  flex: 1;
+  flex-wrap: nowrap;
+  button {
+    border-radius: $block-sm -5px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+//註冊表單
+.sign-up-form {
+  background: #FFFFFF;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: $block-sm;
+  padding:$block-md $block-md*1.5;
+  margin-bottom: 25px;
+}
+//選擇部落
+.confirm-donot-ch {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font-size-md;
+  line-height: 23px;
+  color:#DC131A;
+  padding-left:$block-sm;
+}
+.choose-tribe {
+  h4 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $font-size-md;
+    line-height: 23px;
+    color:#333333;
+  }
+  small {
+    max-width:250px;
+  }
+  .choose-tribe-img {
+    padding: $block-sm 0;
+    ul {
+      li {
+        padding:$block-sm;
+      }
+    }
+    img {
+      max-width: 70px;
+    }
+  }
+}
+//控制每個input向下margin
+.signup-form-control {
+  margin-bottom:$block-sm * 2;
+}
+//勾選已同意遵守區塊
+.signup-check {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font-size-md;
+  line-height: 23px;
+  color: #333333;
+  &:before {
+    top:0.2rem;
+  }
+  &::after {
+    top:0.2rem !important;
+  }
+}
+//註冊button
+.registered {
+  padding: 17px 150px;
+  border-radius: $block-sm;
+  font-family: 'Noto Sans TC', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font-size-lg;
+}
+.mountaintribe, .landtribe, .ocentribe {
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+}
+.chBorMoun {
+  border:2px solid #F5B230;
+  opacity: 1;
+  border-radius:$block-sm
+}
+.chBorland {
+  border:2px solid #DC131A;
+  opacity: 1;
+  border-radius:$block-sm
+}
+.chBorocen {
+  border:2px solid #2B79BA;
+  opacity: 1;
+  border-radius:$block-sm
+}
+
+//貓貓動畫
+.block {
+  background: #999;
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+}
+
+.fade-enter-active {
+  animation: go 4s;
+}
+
+.fade-leave-active {
+  animation: back 4s;
+}
+
+@keyframes go {
+  from { background: #fff; }
+  to {background: #999;}
+}
+
+@keyframes back {
+  from { background: #999; }
+  to { background: #fff; }
+}

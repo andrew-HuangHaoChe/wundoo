@@ -1,0 +1,174 @@
+.sort-com-block {
+    border-bottom: 3px solid #E2273A;
+}
+.ad-sort-com {
+    font-weight: 500;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    text-align: center;
+    color: #AA1A29;
+}
+.ad-sort-per {
+    font-weight: 500;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    text-align: center;
+    color: #b3b3b3;
+}
+.ad_block_top {
+    position: relative;
+    background-image: url('./assets/image/huntground_lk/ad01.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 300px;
+}
+.area_category {
+    font-weight: bold;
+    font-size: $font-size-md;
+    line-height: 23px;
+    color: #FFFFFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #21D168;
+    opacity: 0.8;
+    border-radius: 0px 5px 5px 0px;
+    padding: 5px 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.file_categoey {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.ad-block-title {
+    color: #39271B;
+    font-weight: bold;
+    font-size: $font-size-lg;
+    line-height: 26px;
+}
+.ad-block-sub-title {
+    font-family: 'Noto Sans TC';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #39271B;
+}
+.ad_content_title {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 26px;
+    color: #39271B;
+    margin: 10px 0 5px 0;
+}
+.ad_ticket_count {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #39271B;
+}
+.ad_remain {
+    padding-bottom: $block-md;
+    margin-bottom: $block-md;
+    border-bottom: 1px solid #D8D7D6;
+}
+.ad-card-top-01 {
+    background-image: url('./assets/image/huntground_lk/ad02.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-02 {
+    background-image: url('./assets/image/huntground_lk/ad03.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-03 {
+    background-image: url('./assets/image/huntground_lk/ad04.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-04 {
+    background-image: url('./assets/image/huntground_lk/ad05.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-05 {
+    background-image: url('./assets/image/huntground_lk/ad06.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-06 {
+    background-image: url('./assets/image/huntground_lk/ad07.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-07 {
+    background-image: url('./assets/image/huntground_lk/ad08.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-08 {
+    background-image: url('./assets/image/huntground_lk/ad09.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.ad-card-top-09 {
+    background-image: url('./assets/image/huntground_lk/ad10.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 300px;
+    position: relative;
+}
+.movie_icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+.wanna-post-ad-block {
+    margin-bottom: $block-md;
+}
+.wanna-post-ad {
+    padding: 10px 25px;
+}
+// 鄉鎮市區moadal
+.all_area {
+    font-weight: 500;
+    font-size: $block-md;
+    line-height: 43px;
+    color: #434343;
+}
+
+//廣告篩選modal
+.ad_filter_title {
+    font-weight: bold;
+    font-size: $block-sm * 3;
+    line-height: $block-sm * 5;
+    letter-spacing: 1px;
+    color: #000000;
+}

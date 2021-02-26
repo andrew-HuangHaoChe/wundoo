@@ -1,0 +1,31 @@
+.il-custom-bar {
+  height: 30px;
+}
+
+.iwl-content {
+  background: #FFFFFF;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding: 40px $block-md;
+}
+.iwl-btn {
+  text-align: center;
+  padding-bottom: 200px;
+  button {
+    padding: 10px 60px;
+  }
+}
+.loudly_modal_p {
+  font-weight: 500;
+  font-size: $font-size-md;
+  line-height: $block-sm * 2;
+}
+.successsubmit {
+  max-width: 150px;
+}
+.post_title {
+  font-weight: 900;
+  font-size: $font-size-lg + 4px;
+  line-height: $block-md;
+  color: #000000;
+}

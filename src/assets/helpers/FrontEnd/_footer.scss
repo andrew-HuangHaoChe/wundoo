@@ -1,0 +1,75 @@
+.footer-content {
+  background-image: url(./assets/image/footer_bg/footer_background.svg);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom: 1px solid $brilliantRed;
+}
+//聯絡資訊
+.contact_inf {
+  padding-top: $block-md;
+  @media(max-width: 768px) {
+    margin-top: $block-sm * 2;
+    justify-content: flex-start !important;
+  }
+}
+.footer-title-first {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 35px;
+  text-align: left;
+  letter-spacing: 0.9px;
+  color: $brilliantRed;
+  .footer-title-sec {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: $block-sm * 2;
+    line-height: 29px;
+    text-align: left;
+    letter-spacing: 0.7px;
+    color: #000000;
+  }
+}
+.footer-a {
+  border-left: 2px solid $brilliantRed;
+  padding-left: 15px;
+  li {
+    text-align: left;
+    a {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 28px;
+      letter-spacing: 0.5px;
+      color: #000000;
+    }
+  }
+}
+footer {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font-size-sm;
+  line-height: $block-sm * 2;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #FFFFFF;
+}
+.footer-contact {
+  padding: 26px 0 26px 0;
+  margin-bottom: 0;
+  color: #DC131A;
+}
+.footer-ft {
+  background-color: #FFFFFF;
+}
+
+@media (max-width:576px) {
+  .footer-card {
+    align-items: start !important;
+  }
+}
