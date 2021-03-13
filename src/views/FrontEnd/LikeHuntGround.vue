@@ -12,43 +12,43 @@
         </div>
       </div>
     </div>
+    <!--橘色選單-->
     <div class="container custom-container-width">
-      <!-- 部落大聲公藥塞這 -->
       <Tribeloudly/>
-      <!--部落大聲公藥塞這-->
-      <!--橘色選單-->
-      <div class="travel-nav">
-        <div class="pb-3">
-          <div class="row travel_nav_bar mx-0">
+    </div>
+    <div class="travel-nav like-category-nav my-3">
+      <div class="container custom-container-width">
+        <div class="">
+          <div class="row mx-0">
             <div class="col-md-12 col-lg-12 col-xl-2 d-flex align-items-center artsort_btn" data-toggle="modal" data-target="#artsortModalCenter">
-              <img class="mr-2" src="../../assets/image/travel/icon/icon_filter.svg" alt="">
-              <p class="mb-0 text-white">文章排序</p>
+              <img class="mr-2" src="../../assets/image/travel/icon/icon_filter_orig.svg" alt="">
+              <p class="mb-0">文章排序</p>
             </div>
             <div class="col-md-12 col-lg-12 col-xl-7 d-flex align-items-center art_categories">
               <ul class="list-unstyled d-flex justify-content-between flex-wrap mb-0 travel_navoption h-100">
                 <div class="d-flex align-items-center flex-wrap">
-                  <li><a class="navoption_a">旅遊</a></li>
-                  <li><a class="navoption_a">美食</a></li>
-                  <li><a class="navoption_a">時尚</a></li>
-                  <li><a class="navoption_a">健康</a></li>
-                  <li><a class="navoption_a">影視</a></li>
-                  <li><a class="navoption_a">運動</a></li>
-                  <li><a class="navoption_a">數位3C</a></li>
+                  <li><a class="lkhg-option_a">旅遊</a></li>
+                  <li><a class="lkhg-option_a">美食</a></li>
+                  <li><a class="lkhg-option_a">時尚</a></li>
+                  <li><a class="lkhg-option_a">健康</a></li>
+                  <li><a class="lkhg-option_a">影視</a></li>
+                  <li><a class="lkhg-option_a">運動</a></li>
+                  <li><a class="lkhg-option_a">數位3C</a></li>
                   <li class="hg-menu-art">
-                    <a class="navoption_a">藝文</a>
+                    <a class="lkhg-option_a">藝文</a>
                     <ul class="list-unstyled">
                       <li class="navoption_sub_li"><a class="navoption_sub_a">圖文創造</a></li>
                       <li class="navoption_sub_li"><a class="navoption_sub_a">散文小說</a></li>
                     </ul>
                   </li>
-                  <li><a class="navoption_a">政經</a></li>
-                  <li><a class="navoption_a">學習</a></li>
-                  <li><a class="navoption_a">其他</a></li>
+                  <li><a class="lkhg-option_a">政經</a></li>
+                  <li><a class="lkhg-option_a">學習</a></li>
+                  <li><a class="lkhg-option_a">其他</a></li>
                 </div>
               </ul>
             </div>
-            <div class="col-md-12 col-lg-12 col-xl-3 d-flex align-items-center justify-content-xl-end">
-              <div class="d-flex hg-nav-search">
+            <div class="col-md-12 col-lg-12 col-xl-3 d-flex align-items-center justify-content-xl-end pr-0">
+              <div class="d-flex like-hg-search pr-0">
                 <input type="text" placeholder="搜尋獵場關鍵字">
                 <img src="../../assets/image/icon/ic_search.svg" alt="" class="hg-search-icon">
               </div>
@@ -56,7 +56,9 @@
           </div>
         </div>
       </div>
-      <!--橘色選單End-->
+    </div>
+    <!--橘色選單End-->
+    <div class="container custom-container-width">
       <!--同好獵場字卡區塊-->
       <div class="discus">
         <div class="row mx-0">

@@ -18,7 +18,7 @@ export default {
 </script>
 <style lang="scss" scoped>
   .checkmore-block {
-    z-index: 9999999;
+    z-index: 1049; // 配合modal 1050 層數
     position: fixed;
     top: 13%;
     right: 13%;

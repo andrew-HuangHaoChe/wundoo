@@ -2,7 +2,7 @@
   <div>
     <div class="container custom-container-width mt-11">
       <div class="my-3">
-          <ul class="d-flex list-unstyled mb-0">
+          <ul class="d-flex flex-wrap list-unstyled mb-0">
             <li class="pr-2">
               <a class="d-flex align-items-center memberbadge" href="#">
                 <img class="pr-2" src="../../assets/image/huntground_lk/hg_icon/lhgmana_icon.png" alt=""/>同好獵場 /
@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="row" v-for="(member, index) in members" :key="member.id" :class="{ 'mgmt-active':index%2 !== 1 }">
-          <div class="col-7 col-md-7 col-lg-4 d-flex align-items-center member-avatar-block member-border-bottom">
+          <div class="col-6 col-md-7 col-lg-4 d-flex justify-content-between justify-content-md-start align-items-center member-avatar-block member-border-bottom">
             <div class="member-image member-avatar">
               <img :src="member.memberImg" alt="成員頭像" :class="{
               'hg-manager': member.categories ==='獵場管理人員',
@@ -59,18 +59,18 @@
                 <img :src="member.categoryImg" alt="部落分類">
               </div>
             </div>
-            <div class="member-title pl-4 d-flex flex-column">
+            <div class="member-title d-flex flex-column">
               <h6 class="mb-0">{{ member.name }}</h6>
               <span>{{ member.poster }}</span>
               <span>Lv: {{ member.lv }}</span>
             </div>
           </div>
-          <div class="col-5 col-md-5 col-lg-3 d-flex justify-content-start justify-content-md-start justify-content-lg-center align-items-center member-join-time member-border-bottom">
+          <div class="col-6 col-md-5 col-lg-3 d-flex justify-content-center justify-content-md-end justify-content-lg-center align-items-center member-join-time member-border-bottom">
             <span>
               {{ member.joinTime }}
             </span>
           </div>
-          <div class="col-6 col-md-6 col-lg-3 d-flex justify-content-center justify-content-md-start justify-content-lg-center align-items-center member-join-time member-border-bottom repoter-block">
+          <div class="col-6 col-md-7 col-lg-3 d-flex justify-content-between justify-content-md-start justify-content-lg-center align-items-center member-join-time member-border-bottom repoter-block">
             <p class="mb-0">舉報者:</p>
             <div class="d-flex flex-column">
               <span>
@@ -81,7 +81,7 @@
               </span>
             </div>
           </div>
-          <div class="col-6 col-md-5 col-lg-2 member-authority member-border-bottom">
+          <div class="col-6 col-md-5 col-lg-2 d-flex justify-content-center justify-content-md-end justify-content-lg-center member-authority member-border-bottom">
             <ul class="d-flex justify-content-center align-items-center h-100 list-unstyled" v-if="member.categories !=='獵場管理人員'">
               <li>
                 <a class="d-flex align-items-center" href="#" data-toggle="modal" data-target="#check-Modal">查看原因</a>

@@ -2,9 +2,9 @@
   <div>
     <div class="wanna-post-bg">
       <div class="container custom-container-width wanna-post-content">
-        <div class="d-flex align-items-end mb-3 pt-5">
+        <div class="d-flex flex-wrap align-items-end mb-3 pt-5">
           <span class="signup-title-bar il-custom-bar"></span>
-          <p class="signup-title mb-0 pt-0 mr-2">我要發文</p>
+          <p class="signup-title pt-0 mr-2 mb-0">我要發文</p>
           <div class="post_position">
             <p class="mb-0">發文位置: 同好獵場 / <span>(獵場主題名稱)</span></p>
           </div>

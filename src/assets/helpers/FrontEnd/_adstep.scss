@@ -68,6 +68,24 @@
   color: #000;
 }
 
+.al_project {
+  width: 40%;
+  select {
+    width: 50%;
+  }
+  label {
+    font-weight: 500;
+    font-size: $font-size-lg;
+    line-height: $block-md - 4px;
+  }
+  p {
+    color: $brilliantRed;
+    font-size: $font-size-sm;
+    line-height: $block-sm * 2;
+    margin-right: $block-sm;
+  }
+}
+
 .choosetemplate {
   margin-bottom: 70px;
 }
@@ -245,6 +263,34 @@
   display: flex;
   // align-items: center;
 }
+// 優惠券日期選擇按鈕
+.ad-date-btn {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  background-color: #fff;
+  &:focus {
+    outline: none;
+  }
+  background-image: url(./assets/image/icon/date.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  border-left: 0;
+  border-right: 1px solid #ced4da;
+  border-top: 1px solid #ced4da;
+  border-bottom: 1px solid #ced4da;
+}
+
+// 優惠券製作input
+.ad-date-input {
+  &:focus {
+    outline: none;
+  }
+}
+
 //優惠券標題input
 #disTitle {
   width: 80%;
@@ -365,26 +411,77 @@
   color: #C3D0D9;
   border: 1px solid #E2273A;
   width: 25px;
-  height: 25px;
+  height: 25px !important;
   border-radius: 50%;
   font-size: 1.5em;
   text-align: center;
   padding: 5px;
 }
-.radioone, .radiotwo, .radiothree, .radiofour {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+// .radioone, .radiotwo, .radiothree, .radiofour {
+//   height: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+// #radio1:checked + label, #radio2:checked + label, #radio3:checked + label, #radio4:checked + label, #radio5:checked + label {
+//   background: #E2273A;
+//   border-radius: 50%;
+// }
+
+// #radio1, #radio2, #radio3, #radio4, #radio5 {
+//   display: none;
+// }
+
+// #radiosixforsix:checked, #radiothreefortwo:checked, #radiotwoforone:checked, #radiofirst:checked + label, #radiosecond:checked + label, #radiothird:checked + label, #radiofourth:checked + label, #radiosixforsix:checked + label, #radiothreefortwo:checked + label, #radiotwoforone:checked + label {
+//   background: #E2273A;
+//   border-radius: 50%;
+// }
+
+// #radiofirst, #radiosecond, #radiothird, #radiofourth {
+//   display: none;
+// }
+
+.onetype , .twotype, .threetype, .fourtype {
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+.onetype {
+  width: 200px;
+  height: 300px;
+  background: #AAAAAA;
+  @media(max-width: 576px) {
+    width: 100%;
+  }
 }
 
-#radio1:checked + label, #radio2:checked + label, #radio3:checked + label, #radio4:checked + label, #radio5:checked + label {
-  background: #E2273A;
-  border-radius: 50%;
+.twotype {
+  width: 420px;
+  height: 300px;
+  background: #AAAAAA;
+  @media(max-width: 576px) {
+    width: 100%;
+  }
 }
 
-#radio1, #radio2, #radio3, #radio4, #radio5 {
-  display: none;
+.threetype {
+  width: 640px;
+  height: 300px;
+  background: #AAAAAA;
+  @media(max-width: 768px) {
+    width: 100%;
+  }
+}
+
+.fourtype {
+  width: 1300px;
+  height: 300px;
+  background: #AAAAAA;
+  @media(max-width: 1024px) {
+    width: 100%;
+  }
 }
 
 .temptext {
@@ -431,20 +528,22 @@
 .project-intro-block {
   padding: 15px;
   position: relative;
+  p:first-child {
+    color: #434343;
+  }
+  .d-flex {
+    span {
+      font-weight: 500;
+      font-size: $font-size-sm;
+      line-height: $block-sm * 2;
+      color: $brilliantRed;
+    }
+  }
   .row {
     border-bottom: 1px solid #8B8B8B;
     padding-bottom: 25px;
     margin-bottom: 25px;
   }
-  // &::after {
-  //   content: '';
-  //   max-width: 1370px;
-  //   width: 100%;
-  //   height: 1px;
-  //   background: #8b8b8b;
-  //   position: absolute;
-  //   bottom: 0;
-  // }
   h2, h5 {
     font-size: $font-size-md;
     line-height: 23px;
@@ -481,6 +580,88 @@
 }
 
 
+// 廣告背景顏色選擇器
+.color-picker {
+  .orange, .pink, .blue, .purpink, .green, .purple {
+    width: 30px;
+    height: 30px;
+    margin: 0 $block-sm 0 0;
+    cursor: pointer;
+  }
+}
+
+.orange {
+  background-color: #FFA843;
+}
+
+.pink {
+  background-color: #FF8080;
+}
+
+.blue {
+  background: linear-gradient(180deg, #66E6FF 0%, #0080FF 100%);
+}
+
+.purpink {
+  background: linear-gradient(180deg, #D580FF 0%, #FF4D6A 100%);
+}
+
+.green {
+  background: linear-gradient(180deg, #65FFFF 0%, #009966 100%);
+}
+
+.purple {
+  background: #7E6CD9;
+}
+
+//廣告文字內容輸入
+.adcolor-textarea {
+  vertical-align: middle;
+  display: table-cell;
+  text-align: center;
+  background: transparent;
+  resize:none;
+  border: none;
+  color:#fff;
+  font-weight: bold;
+  font-size: $block-md;
+  width: 80%;
+  height: 80%;
+  transition: all .3s;
+  border: 1px solid transparent;
+  padding: 20px 0;
+  &:focus {
+    outline: none;
+    border: 1px solid #fff;
+  }
+  &::-webkit-input-placeholder { /* Edge */
+    color: #fff;
+  }
+  
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+  }
+  
+  &::placeholder {
+    color: #fff;
+  }
+}
+
+.textarea-size-sec {
+  width: 55%;
+  height: 90%;
+}
+
+.textarea-size-thir {
+  width: 60%;
+  height: 90%;
+}
+
+.textarea-size-four {
+  width: 70%;
+  height: 90%;
+}
+
 .b-upAdblock {
   width: 400px;
   margin: 0 auto;
@@ -498,6 +679,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media(max-width: 768px) {
+    width:300px;
+  }
+  @media(max-width: 576px) {
+    width:200px;
+  }
 }
 
 .cut-img {
@@ -596,6 +783,7 @@
 }
 
 .lottery-time {
+  position: relative;
   span {
     margin-right: $block-sm;
   }
@@ -716,4 +904,9 @@
   border-top: 1px solid #555555;
   border-bottom: 1px solid #555555;
   padding: $block-sm * 5 0;
+}
+
+// 製作廣告區塊間格
+.makingad-block {
+  padding: 0 250px;
 }

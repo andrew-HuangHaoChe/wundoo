@@ -68,12 +68,12 @@
             </ul>
             <div class="article_press_btn mb-3">
               <ul class="d-flex list-unstyled row mb-0 py-3">
-                <li class="col-4 d-flex align-items-center justify-content-center"><a @click.prevent="filterBtn" :class="{'active': isActive}" class="d-flex" href="#"><img class="pr-2" src="../../assets/image/icon/unlike.svg" alt="">讚</a></li>
+                <li class="col-4 d-flex align-items-center justify-content-center"><a @click.prevent="filterBtn" :class="{'active': isActive}" class="d-flex" href="#"><img class="pr-2" src="../../assets/image/icon/unlike.svg" alt="">給溫度</a></li>
                 <li class="col-4 d-flex align-items-center justify-content-center"><a class="d-flex" href="#"><img class="pr-2" src="../../assets/image/icon/message_count.svg" alt="">留言</a></li>
                 <li class="col-4 d-flex align-items-center justify-content-center"><a class="d-flex" href="#"><img class="pr-2" src="../../assets/image/icon/share.svg" alt="">分享</a></li>
               </ul>
             </div>
-            <div class="article_message d-flex row mx-0 mb-4">
+            <div class="article_message row mx-0 mb-4">
               <div class="poster_inf d-flex justify-content-center col-3 col-md-2 col-lg-1">
                 <userava/>
               </div>
@@ -83,14 +83,11 @@
                 <a href="#" class="submit_btn"><img src="../../assets/image/icon/submit_btn.png" alt=""></a>
               </div>
             </div>
-            <!--留言區塊Start-->
-            <div class="article_response mx-0 row">
-              <!--留言人頭像-->
+            <div class="row mx-0">
               <div class="poster_inf d-flex justify-content-center col-3 col-md-2 col-lg-1">
                 <userava/>
               </div>
-              <!--留言+圖片-->
-              <div class="poster_inf message_input_block col-9 col-md-10 col-lg-11 d-flex flex-column justify-content-center mb-2">
+              <div class="poster_inf message_input_block col-9 col-md-10 col-lg-11 mb-2">
                 <div class="article_res mb-2">
                   <h5>無言薯條貓貓</h5>
                   <p>中和這帶的小吃美食很多 這間【中和廟口碳烤】雖然附近沒有較近的捷運 但附近都有機車停車格 騎機車過來買是最方便的 中和廟口碳烤｜中和廣福路廟</p>
@@ -110,7 +107,7 @@
                   <userava/>
                 </div>
                 <!--留言+圖片-->
-                <div class="poster_inf message_input_block col-9 col-md-10 col-lg-11 d-flex flex-column justify-content-center mb-2">
+                <div class="poster_inf message_input_block col-9 col-md-10 col-lg-11 justify-content-center mb-2">
                   <div class="article_res mb-2">
                     <h5>無言薯條貓貓</h5>
                     <p>中和這帶的小吃美食很多 這間【中和廟口碳烤】雖然附近沒有較近的捷運 但附近都有機車停車格 騎機車過來買是最方便的 中和廟口碳烤｜中和廣福路廟</p>
@@ -135,7 +132,7 @@
                       <userava/>
                     </div>
                     <!--留言+圖片-->
-                    <div class="grand-message poster_inf message_input_block col-9 col-md-10 col-lg-11 d-flex flex-column justify-content-center mb-2">
+                    <div class="grand-message poster_inf message_input_block col-9 col-md-10 col-lg-11 justify-content-center mb-2">
                       <div class="article_res mb-2">
                         <h5>無言薯條貓貓</h5>
                         <p>中和這帶的小吃美食很多 這間【中和廟口碳烤】雖然附近沒有較近的捷運 但附近都有機車停車格 騎機車過來買是最方便的 中和廟口碳烤｜中和廣福路廟</p>
@@ -154,7 +151,6 @@
               </div>
               <!--子留言區塊End-->
             </div>
-            <!--留言區塊End-->
           </div>
         </div>
       </div>

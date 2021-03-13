@@ -9,21 +9,21 @@
         </div>
         <div class="discus mb-5">
           <div class="row mx-0">
-            <div class="col-sm-4 col-md-4 col-lg-2 hg-card" v-for="item in cardDataPc" :key="item.id">
+            <div class="col-sm-4 col-md-4 col-lg-3 col-xl-2 hg-card" v-for="item in cardDataPc" :key="item.id">
               <router-link to="/lhgManagement" class="text-decoration-none">
                 <div class="d-flex align-items-start flex-column hg-card-content" :style="{ backgroundImage: 'url(' + item.imageUrl + ')' }">
                   <div class="mb-auto">
                     <span class="hg-card-tag">{{ item.category }}</span>
                   </div>
                   <div class="d-flex flex-column w-100 hg-card-text-content">
-                    <div class="hg-card-title">
+                    <div class="hg-card-title pl-2">
                       <h3>{{ item.title }}</h3>
                     </div>
                     <div class="d-flex w-100">
                       <div class="d-flex w-100 justify-content-between pb-2">
                         <div class="row w-100 mx-0">
                           <div
-                            class="col-6 col-md-12 col-lg-12 col-xl-6 d-flex justify-content-start align-items-center"
+                            class="col-6 col-md-12 col-lg-12 col-xl-7 d-flex justify-content-start align-items-center px-1 hg-num-of-people"
                           >
                             <img
                               class="hg-card-icon"
@@ -35,11 +35,11 @@
                             >
                           </div>
                           <div
-                            class="col-6 col-md-12 col-lg-12 col-xl-6 d-flex justify-content-end justify-content-md-start justify-content-lg-start justify-content-xl-end pr-2"
+                            class="col-6 col-md-12 col-lg-12 col-xl-5 d-flex justify-content-end justify-content-md-start justify-content-lg-start justify-content-xl-end px-1"
                           >
                             <router-link
                               to="/lhgManagement"
-                              class="btn btn-brilliantRed"
+                              class="btn btn-brilliantRed p-1"
                               >進入獵場</router-link
                             >
                           </div>
@@ -51,7 +51,7 @@
               </router-link>
             </div>
           </div>
-          <Pagenation/>
+          <Pagenation class="my-5"/>
         </div>
       </div>
     </div>

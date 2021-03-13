@@ -16,15 +16,15 @@
             </li>
           </ul>
       </div>
-      <div class="mem-mgmt-nav mb-3">
+      <div class="mem-mgmt-nav mb-2">
         <div class="row d-flex align-items-center">
-          <div class="col-12 col-md-4 col-lg-2 d-flex justify-content-center">
+          <div class="col-12 col-md-4 col-lg-2 d-flex justify-content-center mgmt-md-margin">
             <div class="member-search w-100">
               <input class="w-100" type="text" placeholder="搜尋成員">
               <a href="#"><img src="../../assets/image/icon/ic_search.svg" alt="" class="member-search-icon"></a>
             </div>
           </div>
-          <div class="col-12 col-md-4 col-lg-2 d-flex justify-content-sm-start justify-content-md-center">
+          <div class="col-12 col-md-4 col-lg-2 d-flex justify-content-sm-start justify-content-md-center mgmt-md-margin">
             <router-link to="/reviewNewMember" class="d-flex">
               <img class="pr-1" src="../../assets/image/huntground_lk/hg_icon/review.png" alt="審核新成員">
               <p class="mb-0">審核新成員</p>
@@ -35,8 +35,8 @@
           </div>
         </div>
       </div>
-      <div class="member-list-title mb-3">
-        <h5>成員列表</h5>
+      <div class="member-list-title mb-2">
+        <h5 class="mb-0">成員列表</h5>
       </div>
       <div class="member-list">
         <div class="row mgmt-title-block">
@@ -57,7 +57,7 @@
           </div>
         </div>
         <div class="row" v-for="(member, index) in members" :key="member.id" :class="{ 'mgmt-active':index%2 !== 1 }">
-          <div class="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center align-items-md-start justify-content-center align-items-lg-center p-3 member-border-bottom member-manager">
+          <div class="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center align-items-md-start justify-content-center align-items-lg-center p-2 member-border-bottom member-manager">
             <img v-if="member.managerImg !== ''" :src="member.managerImg" alt="" style="height: 30px; width: 30px;">
             <p class="mb-0"
               :class="{ 'hg-guard': member.categories ==='獵場守衛',
@@ -76,7 +76,7 @@
                 <img :src="member.categoryImg" alt="部落分類">
               </div>
             </div>
-            <div class="member-title pl-4">
+            <div class="member-title d-flex flex-column justify-content-center">
               <h6 class="mb-0">{{ member.name }}</h6>
               <span>{{ member.poster }}</span>
             </div>

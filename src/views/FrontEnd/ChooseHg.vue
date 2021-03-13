@@ -20,22 +20,19 @@
               <p class="tribe_option_text"><span>*</span>在地獵場 (最多選兩個)</p>
             </div>
             <div class="input-group d-flex flex-column choosehg-select">
-              <select class="w-100 custom-select mb-3" id="inputGroupSelect04" aria-label="Example select with button addon">
-                <option value="" selected>所在地</option>
-                <option value="taipei">台北</option>
-                <option value="taichung">台中</option>
-                <option value="kaoshuang">高雄</option>
+              <select class="w-100 custom-select mb-3" id="inputGroupSelect04" v-model="chosenHg" @change="storageMainHg(chosenHg)">
+                <option value="">所在地</option>
+                <option v-for="items in hgData" :key="items.id" :value="items.id">{{ items.name }}</option>
               </select>
-              <select class="w-100 custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                <option value="" selected>選擇獵場</option>
-                <option value="1">台北獵場</option>
-                <option value="2">台中獵場</option>
-                <option value="3">高雄獵場</option>
+              <select class="w-100 custom-select" id="inputGroupSelect04" v-model="hbyHg" @change="HbyHg(hbyHg)">
+                <option value="">選擇獵場</option>
+                <option v-for="items in hgData" :key="items.id" :value="items.id">{{ items.name }}</option>
               </select>
             </div>
             <div class="sec_step_block">
               <router-link to="/signUp" class="btn ad_btn_whiteBtn next_step_btn mr-auto">上一步</router-link>
-              <router-link to="/signUpinfo" class="btn btn-mainRed next_step_btn">下一步</router-link>
+              <a class="btn btn-mainRed next_step_btn" @click="hgnextStep">下一步</a>
+              <!-- <router-link to="/signUpinfo" class="btn btn-mainRed next_step_btn">下一步</router-link> -->
             </div>
           </div>
         </div>
@@ -47,31 +44,33 @@
 export default {
   data () {
     return {
-      isMountain: false,
-      isLand: false,
-      isocen: false,
-      showCat: false
+      cityData: [],
+      hgData: [],
+      chosenHg: '',
+      hbyHg: ''
     }
   },
   methods: {
-    Mountain () {
-      const vm = this
-      vm.isMountain = true
-      vm.isLand = false
-      vm.isocen = false
+    storageMainHg (chosenHg) {
+      localStorage.setItem('clube_main', chosenHg)
     },
-    land () {
-      const vm = this
-      vm.isMountain = false
-      vm.isLand = true
-      vm.isocen = false
+    HbyHg (hbyHg) {
+      localStorage.setItem('clue_hobby', hbyHg)
     },
-    ocen () {
-      const vm = this
-      vm.isMountain = false
-      vm.isLand = false
-      vm.isocen = true
+    hgnextStep () {
+      if (this.chosenHg === '') {
+        alert('所在地獵場不得為空!')
+        return false
+      } else {
+        this.$router.push('/signUpinfo')
+      }
     }
+  },
+  created () {
+    const vm = this
+    vm.$http.get('/apipath/api/club/local').then((response) => {
+      vm.hgData = response.data.data
+    })
   }
 }
 </script>

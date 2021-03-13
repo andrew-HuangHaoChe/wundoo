@@ -139,8 +139,8 @@
       </div>
     </div>
     <!--每日簽到modal-->
-    <div class="modal fade" id="everydaySignModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-xl">
+    <div class="modal fade" id="everydaySignModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" :class="modal">
+      <div class="modal-dialog modal-xl modal-dialog-centered">
         <div class="modal-content pb-2">
           <div class="modal-header everyday-modal-title">
             <h5 class="modal-title" id="everydaySignModalLabel"></h5>
@@ -148,37 +148,27 @@
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body row d-flex justify-content-center">
-            <div class="col-1 pr-0" v-for="item in everyDaysign" :key="item.id">
-              <div class="sign-box">
-                <h5>{{ item.title }}</h5>
-                <img :src="item.img_url" alt="">
-              </div>
-              <div class="signbox-footer">
+          <div class="modal-body row mx-0 justify-content-center">
+            <div class="col-4 col-md-3 col-lg-2 col-xl-1 evdsign-block" v-for="item in everyDaysign" :key="item.id">
+              <div class="sign-block">
+                <div class="sign-box">
+                  <h5>{{ item.title }}</h5>
+                  <img :src="item.img_url" alt="">
+                </div>
+                <div class="signbox-footer">
                   <span>{{ item.day }}</span>
                 </div>
+              </div>
             </div>
           </div>
-          <div class="modal-body row d-flex justify-content-center">
-            <div class="col-1 pr-0" v-for="item in everyDaysign" :key="item.id">
-              <div class="sign-box">
-                <h5>{{ item.title }}</h5>
-                <img :src="item.img_url" alt="">
-              </div>
-              <div class="signbox-footer">
-                  <span>{{ item.day }}</span>
-                </div>
+          <div class="d-flex flex-wrap align-items-center justify-content-center evd-seven-title mx-auto p-2">
+            <div class="mr-2 evd-seven pb-2">
+              <h4>連續7天登入額外贈送</h4>
+              <p class="mb-0">還有5天</p>
             </div>
-          </div>
-          <div class="modal-body row d-flex justify-content-center">
-            <div class="col-1 pr-0" v-for="item in everyDaysign" :key="item.id">
-              <div class="sign-box">
-                <h5>{{ item.title }}</h5>
-                <img :src="item.img_url" alt="">
-              </div>
-              <div class="signbox-footer">
-                  <span>{{ item.day }}</span>
-                </div>
+            <div class="lottery-prize">
+              <h5>大獵券</h5>
+              <img src="../../assets/image/images/bighuntticket.svg" alt="">
             </div>
           </div>
         </div>
@@ -596,6 +586,7 @@ export default {
   },
   data () {
     return {
+      modal: false,
       swiperOptions: {
         initialSlide: 1,
         effect: 'coverflow',
@@ -735,24 +726,6 @@ export default {
           title: '抽獎券',
           img_url: require('@/assets/image/icon/lotteryticket.svg'),
           id: 10
-        },
-        {
-          day: '第八天',
-          title: '抽獎券',
-          img_url: require('@/assets/image/icon/lotteryticket.svg'),
-          id: 11
-        },
-        {
-          day: '第九天',
-          title: '抽獎券',
-          img_url: require('@/assets/image/icon/lotteryticket.svg'),
-          id: 12
-        },
-        {
-          day: '第十天',
-          title: '抽獎券',
-          img_url: require('@/assets/image/icon/lotteryticket.svg'),
-          id: 13
         }
       ]
     }
@@ -782,6 +755,9 @@ export default {
     next () {
       this.$refs.mySwiper.swiper.slideNext()
     }
+  },
+  mounted: function () {
+    $('#everydaySignModal').modal('show')
   }
 }
 </script>

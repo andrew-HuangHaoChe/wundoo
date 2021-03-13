@@ -18,7 +18,7 @@
     }
 }
 .wanna-post-content {
-    margin-top: 80px;
+    margin-top: 85px;
 }
 //發文位置文字樣式
 .post_position {
@@ -240,7 +240,7 @@
 .sec_step_block {
     display: flex;
     justify-content: space-between;
-    max-width: 530px;
+    max-width: 700px;
     flex-direction: row;
     width: 100%;
     padding-top: $block-md;
@@ -270,28 +270,44 @@
     &:hover {
         color: #fff;
     }
+    @media(max-width: 1024px) {
+        width: 15%;
+    }
+    @media(max-width: 768px) {
+        width: 20%;
+    }
+    @media(max-width: 576px) {
+        width: 40%;
+    }
+    @media(max-width: 320px) {
+        width: 50%;
+    }
 }
 
 .next_step_btn {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
     @media(max-width: 576px) {
         display: flex;
         justify-content: center;
-        padding-left: 20px;
-        padding-right: 20px; 
+        padding-left: $block-md;
+        padding-right: $block-md;
+    }
+    @media(max-width: 320px) {
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }
 
 .choosehg-select {
-    padding: 0 $block-md;
+    padding: 0 $block-md * 5;
     @media(max-width:576px) {
         padding: 0;
     }
 }
 
 .choose_hg_block {
-    width: 600px;
+    width: 700px;
     @media(max-width: 576px) {
         width: 350px;
     }

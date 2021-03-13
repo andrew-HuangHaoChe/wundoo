@@ -4,6 +4,15 @@
   line-height: 32px;
   display: flex;
   align-items: flex-end;
+  img {
+    width: 200px;
+    @media(max-width: 320px) {
+      width: 150px;
+    }
+  }
+  @media(max-width: 576px) {
+    font-size: $font-size-lg + 2px;
+  }
   @media(max-width: 320px) {
     font-size: $font-size-lg;
   }
@@ -323,12 +332,31 @@ img {
   background-size: cover;
   padding: $block-sm * 10;
   position: relative;
+  @media(max-width: 576px) {
+    background-image: url('./assets/image/images/everyday_sign_mobile.png');
+    padding: 0;
+    min-height: 110px;
+    background-position: center;
+    background-size: 100% 100%;
+  }
 }
 
 .close-every-sign {
   position: absolute;
   top: $block-sm * 2;
   right: $block-sm * 2;
+}
+
+.sign-block {
+  width: 80px;
+  height: 75px;
+}
+
+.evdsign-block {
+  margin-bottom: $block-md * 1.5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 // 右側每日溫度字卡
@@ -592,19 +620,6 @@ img {
     }
   }
 
-  .hunting-ground-title {
-    padding: $block-sm;
-
-    h3 {
-      font-family: 'Noto Sans TC', sans-serif;
-      font-weight: 500;
-      font-size: $block-md -6px;
-      line-height: $block-md +5px;
-      letter-spacing: 0.6px;
-      color: #FFFFFF;
-    }
-  }
-
   .hunt-people-block {
     padding: $block-sm;
     border-radius: $block-sm - 5px;
@@ -639,6 +654,18 @@ img {
         padding: 6px 12px 6px 12px;
       }
     }
+  }
+}
+
+.hunting-ground-title {
+  padding: $block-sm;
+  h3 {
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 500;
+    font-size: $block-md -6px;
+    line-height: $block-md +5px;
+    letter-spacing: 0.6px;
+    color: #FFFFFF;
   }
 }
 

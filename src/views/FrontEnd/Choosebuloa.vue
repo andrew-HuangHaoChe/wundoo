@@ -30,7 +30,8 @@
               </div>
             </div>
             <div class="step_block">
-              <router-link to="/signUpsteptwo" class="btn btn-mainRed next_step_btn px-5">下一步</router-link>
+              <a @click.prevent="tribecheck" class="btn btn-mainRed next_step_btn px-5">下一步</a>
+              <!-- <router-link to="/signUpsteptwo" class="btn btn-mainRed next_step_btn px-5">下一步</router-link> -->
             </div>
           </div>
         </div>
@@ -45,7 +46,7 @@ export default {
       isMountain: false,
       isLand: false,
       isocen: false,
-      showCat: false
+      tribe: ''
     }
   },
   methods: {
@@ -54,18 +55,37 @@ export default {
       vm.isMountain = true
       vm.isLand = false
       vm.isocen = false
+      vm.tribe = '高山'
     },
     land () {
       const vm = this
       vm.isMountain = false
       vm.isLand = true
       vm.isocen = false
+      vm.tribe = '平原'
     },
     ocen () {
       const vm = this
       vm.isMountain = false
       vm.isLand = false
       vm.isocen = true
+      vm.tribe = '海洋'
+    },
+    tribecheck () { // 確定有選擇部落才能跳頁
+      const vm = this
+      localStorage.setItem('tribe', vm.tribe)
+      // const formData = new FormData()
+      // const config = {
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   }
+      // }
+      if (vm.isMountain === false && vm.isLand === false && vm.isocen === false) {
+        alert('請選擇任一部落!')
+        return false
+      } else {
+        this.$router.push('/signUpsteptwo')
+      }
     }
   }
 }

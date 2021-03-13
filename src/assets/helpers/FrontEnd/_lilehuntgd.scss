@@ -98,10 +98,10 @@
     width: 300px;
   }
   @media(max-width: 375px) {
-    width: 280px;
+    width: 200px;
   }
   @media(max-width: 320px) {
-    width: 200px;
+    width: 180px;
   }
   line-height: $font-size-lg + 6px;
   &:hover {
@@ -138,20 +138,26 @@
   color: $main-brown-light;
 }
 .hg-announcement {
-  border-bottom: 1px solid #D7C9C3;
   height: 40px;
   line-height: 10px;
   overflow: hidden;
+  width: 93%;
   @media (max-width: 1024px) {
     height: 40px;
     line-height: 20px;
+    width: 90%;
   }
   @media (max-width: 768px) {
     height: 42px;
+    width: 88%;
   }
   @media (max-width: 576px) {
     height: 40px;
     line-height: 16px;
+    width: 75%;
+  }
+  @media (max-width: 320px) {
+    width: 65%;
   }
   .flip-time {
     padding-right: 0;
@@ -174,8 +180,8 @@
   position: relative;
 }
 @keyframes animate {
-  0% { top: -5px; }
-  20% { top: -5px; }
+  0% { top: -1px; }
+  20% { top: -1px; }
   25% { top: -40px; }
   45% { top: -40px; }
   50% { top: -80px; }
@@ -199,12 +205,13 @@
   @media (max-width: 576px) {
     height: 83px;
     line-height: 25px;
+    padding: 19px 0 30px 0;
     div {
       padding: 8px 0 2px 0;
     }
   }
   @media (max-width: 375px) {
-    height: 100px;
+    height: 85px;
     div {
       padding: 10px 0 2px 0;
     }
@@ -214,6 +221,17 @@
     }
   }
 }
+
+.annpadding {
+  padding-top: 16px;
+  @media(max-width: 576px) {
+    padding-right: 0;
+  }
+  @media(max-width: 375px) {
+    padding-top: 0;
+  }
+}
+
 //公告頁面每個user發的公告樣式
 .ann_content {
   padding: 20px;
@@ -234,7 +252,10 @@
   white-space: normal;
   overflow: hidden;
   @media(max-width: 576px) {
-    width: 200px;
+    width: 292px;
+  }
+  @media(max-width: 375px) {
+    width: 240px;
   }
   @media(max-width: 320px) {
     width: 190px;
@@ -281,6 +302,13 @@
     padding-top: 10px;
   }
 }
+
+.tr-check-group {
+  padding-right: 0 !important;
+  @media(max-width: 576px) {
+    padding-left: 0 !important;
+  }
+}
 //橘色nav
 .hg-nav {
   ul {
@@ -324,6 +352,22 @@
     }
   }
 }
+
+.like-hg-search {
+  position: relative;
+  padding: $block-sm;
+  input {
+    position: relative;
+    border-radius: $block-sm * 2;
+    border: none;
+    padding: $block-sm $block-sm +5px;
+    background: #F2F2F2;
+    border-radius: 5px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
 //搜尋icon
 .hg-search-icon {
   position: absolute;
@@ -353,6 +397,9 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
   &:hover {
+    > a {
+      color: #fff;
+    }
     background-color: #FF7A00;
     border-top: 2px solid #E4581D;
     ul {
@@ -395,6 +442,7 @@
   .hg-card-title {
     padding-left: 15px;
     color:white;
+    text-shadow: 1.6px 1.6px 3.2px #000000;
     h3 {
       font-size: $font-size-lg * 1.2;
     }
@@ -408,10 +456,11 @@
 .hg-card-people{
   font-size: $font-size-sm;
   color: white;
+  text-shadow: 1.6px 1.6px 3.2px #000000;
 }
 .hg-card-text-content {
   border-radius: $block-sm - 5px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  // background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
 }
 // 獵場首頁管理端
 .lhgmana-header {
@@ -422,10 +471,13 @@
     margin-top: 83px;
   }
   @media(max-width: 768px) {
-    margin-top: 95px;
+    margin-top: 86px;
   }
   @media(max-width: 576px) {
     margin-top: 83px;
+  }
+  @media(max-width: 320px) {
+    margin-top: 74px;
   }
 }
 .lhgmana-title {
@@ -880,15 +932,23 @@ input[type="file"] {
   line-height: $block-md - 4px;
   text-align: center;
   letter-spacing: 0.4px;
-  .flex-wrap {
+  width: 100%;
+  @media(max-width: 768px) {
+    overflow-x: scroll;
+    overflow-y: auto;
+  }
+  .d-flex {
     > li {
+      width: 90px;
       cursor: pointer;
       border-top: 2px solid transparent;
       height: 100%;
       display: flex;
       align-items: center;
+      justify-content: center;
       @media(max-width: 576px) {
         height: 50%;
+        width: 90px;
       }
       @media(max-width: 375px) {
         height: 30%;
@@ -896,9 +956,28 @@ input[type="file"] {
     }
   }
   .navoption_a {
-    text-shadow: 0px 2px 0px #FF7A00;
-    color: #FFFFFF;
-    border-right: 2px solid #FFFFFF;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.4px;
+    color: #fff;
+    padding: 0 15px;
+    @media(max-width: 576px) {
+      padding: 15px 0;
+    }
+    @media(max-width: 375px) {
+      padding-left: 10px;
+      margin: 5px 0;
+    }
+  }
+  .lkhg-option_a {
+    color: #745B4A;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.4px;
     padding: 0 15px;
     @media(max-width: 375px) {
       padding-left: 10px;
@@ -907,15 +986,27 @@ input[type="file"] {
   }
 }
 .navoption_sub_a {
-  color: #686868;
+  color: #745B4A;
 }
 .navoption_sub_li {
   padding: 5px $block-sm;
 }
+
+.like-category-nav {
+  border-top: 1px solid #FFE6CC;
+  border-bottom: 1px solid #FFE6CC;
+}
+
 .artsort_btn {
   cursor: pointer;
   @media(max-width: 1024px) {
     padding: 15px $block-md;
+  }
+  p {
+    font-size: 12px;
+    @media(max-width: 1024px) {
+      font-size: $font-size-md !important;  
+    }
   }
 }
 .art_sort_modal_title {
@@ -939,10 +1030,10 @@ input[type="file"] {
     padding: 0 $block-sm;
   }
   @media(max-width: 768px) {
-    margin: 0 0 45px $block-sm;
+    margin: 0 0 5px $block-sm;
   }
-  @media(max-width: 375px) {
-    margin-bottom: 0;
+  @media(max-width: 576px) {
+    margin: 0;
   }
 }
 .travel_art_img {
@@ -1072,5 +1163,14 @@ input[type="file"] {
   color: #000;
   @media(max-width: 576px) {
     display: none;
+  }
+}
+
+.hg-num-of-people {
+  @media(max-width: 1024px) {
+    margin-bottom: $block-sm;
+  }
+  @media(max-width: 576px) {
+    margin-bottom: 0;
   }
 }

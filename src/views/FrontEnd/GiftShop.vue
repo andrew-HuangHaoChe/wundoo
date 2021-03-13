@@ -1,8 +1,11 @@
 <template>
   <div>
-    <div class="container custom-container-width wanna-post-content">
-      <div class="d-flex justify-content-center" style="padding-top: 30px; padding-bottom: 30px;">
-        <img src="../../assets/image/shop/gift_shop_title_img.png" alt="">
+    <div class="container custom-container-width wanna-post-content pt-5">
+      <div class="d-flex justify-content-center mb-3">
+        <div class="arena-title-block">
+          <img src="../../assets/image/arena/arena04.png" alt="">
+          <h2 class="arena-title">部落商店</h2>
+        </div>
       </div>
       <div class="d-flex justify-content-center" style="margin-bottom: 20px;">
         <div class="row mx-0">

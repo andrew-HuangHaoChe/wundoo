@@ -99,14 +99,34 @@
     width: 60px;
     height: 60px;
     border-radius: 60px;
+    @media(max-width: 375px) {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+    }
   }
   .member-tribe {
     position: absolute;
+    @media(max-width: 576px) {
+      bottom: 0;
+      right: 0;
+    }
+    @media(max-width: 375px) {
+      bottom: 5px;
+      right: 5px;
+    }
     bottom: 0;
     right: 0;
-  }  
+  }
 }
 .member-title {
+  padding-left: 1.5rem;
+  @media(max-width: 576px) {
+    padding-left: 0.5rem;
+  }
+  @media(max-width: 320px) {
+    padding-left: 0;
+  }
   h6 {
     font-weight: 500;
     font-size: $block-sm * 2;
@@ -115,12 +135,20 @@
     color: #2B79BA;
     @media(max-width: 576px) {
       font-size: $font-size-md;
+      line-height: $block-sm;
+    }
+    @media(max-width: 320px) {
+      font-size: $font-size-sm - 2px;
     }
   }
   span {
     font-size: $font-size-sm;
     line-height: $block-sm * 2;
     color: #979797;
+    @media(max-width: 320px) {
+      line-height: $block-sm * 1.5;
+      font-size: $font-size-sm - 2px;
+    }
   }
 }
 //成員等級
@@ -130,12 +158,18 @@
   @media(max-width: 768px) {
     padding-bottom: $block-sm;
   }
+  @media(max-width: 576px) {
+    font-size: $font-size-sm - 2px;
+  }
 }
 //加入時間
 .member-join-time {
   font-size: $font-size-sm;
   line-height: $block-sm * 2;
   color: #434343;
+  @media(max-width: 576px) {
+    font-size: $font-size-sm - 2px;
+  }
 }
 //權限
 .member-authority {
@@ -148,6 +182,9 @@
   li {
     @media(max-width: 768px) {
       padding: 0 $block-md 0 0;
+    }
+    @media(max-width: 576px) {
+      padding: 0;
     }
   }
 }
@@ -300,7 +337,7 @@
 
 //留言輸入框
 .message_input_block {
-  position: relative;
+  // position: relative;
 }
 .message_input {
   border: none;
@@ -455,6 +492,15 @@
       line-height: $block-md - 4px;
       @media(max-width: 576px) {
         font-size: $font-size-md;
+        line-height: $block-sm;
+      }
+      @media(max-width: 320px) {
+        font-size: $font-size-sm - 2px;
+      }
+    }
+    span {
+      @media(max-width: 320px) {
+        font-size: $font-size-sm - 2px;
       }
     }
   }
@@ -464,7 +510,7 @@
   p {
     font-size: $font-size-lg;
     color: #000;
-    margin-right: 13px;
+    margin-right: 1.5rem;
     @media screen and (max-width: 2560px) and (min-width: 1024px) {
       display: none;
     }
@@ -473,5 +519,14 @@
       margin-right: 5px;
       display: block;
     }
+    @media(max-width: 320px) {
+      font-size: $font-size-sm - 2px;
+    }
+  }
+}
+
+.mgmt-md-margin {
+  @media(max-width: 576px) {
+    margin-bottom: $block-sm;
   }
 }

@@ -8,7 +8,7 @@
       <img class="mark_right" src="../../assets/image/wundoo_lottery/mark_right.svg" alt="">
       <div class="row mx-0">
         <div class="col-xl-12">
-          <div class="rich_prize_count_block d-flex justify-content-center mb-4">
+          <div class="rich_prize_count_block d-flex flex-wrap justify-content-center mb-4">
             <p class="mb-0">累積參加抽獎次數</p>
             <span class="prize_count_num">32124</span>
           </div>
@@ -141,15 +141,15 @@
                 </div>
               </div>
               <div class="row w-100 mx-0">
-                <div class="col-lg-6 pl-0">
-                  <div class="d-flex flex-column align-items-md-center align-items-lg-end">
+                <div class="col-lg-6 px-0">
+                  <div class="d-flex flex-column align-items-md-center align-items-lg-start">
                     <div class="d-flex partic_text_content">
                       <p class="my-2">參與次數<span>283590</span></p>
                     </div>
                     <button class="bighunt_btn hg-award-btn" data-toggle="modal" data-target="#bigHuntModal">使用 1張 大獵券參與</button>
                   </div>
                 </div>
-                <div class="col-lg-6 pr-0">
+                <div class="col-lg-6 px-0">
                   <div class="d-flex flex-column align-items-md-center align-items-lg-end">
                     <div class="d-flex partic_text_content">
                       <p class="my-2">我已參與:<span>10</span>次</p>
@@ -297,7 +297,7 @@
               </div>
               <div class="row w-100 lottery_card_margin mb-3">
                 <div class="col-lg-6">
-                  <div class="d-flex flex-column align-items-md-center align-items-lg-end">
+                  <div class="d-flex flex-column align-items-md-center align-items-lg-start">
                     <div class="d-flex partic_text_content">
                       <p class="my-2">參與次數<span>283590</span></p>
                     </div>
@@ -374,7 +374,7 @@
               </div>
               <div class="row w-100 lottery_card_margin mb-3">
                 <div class="col-lg-6">
-                  <div class="d-flex flex-column align-items-md-center align-items-lg-end">
+                  <div class="d-flex flex-column align-items-md-center align-items-lg-start">
                     <div class="d-flex partic_text_content">
                       <p class="my-2">參與次數<span>283590</span></p>
                     </div>
@@ -526,7 +526,7 @@
               </div>
               <div class="row w-100 lottery_card_margin mb-3">
                 <div class="col-lg-6">
-                  <div class="d-flex flex-column align-items-md-center align-items-lg-end">
+                  <div class="d-flex flex-column align-items-md-center align-items-lg-start">
                     <div class="d-flex partic_text_content">
                       <p class="my-2">參與次數<span>283590</span></p>
                     </div>

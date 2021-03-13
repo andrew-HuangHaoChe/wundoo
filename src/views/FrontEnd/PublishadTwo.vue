@@ -152,10 +152,48 @@
                       <p class="dis_title">使用期限:</p>
                       <div>
                         <div class="d-flex align-items-center lottery-time mb-2">
-                          <span>從</span><input type="text" class="form-control" placeholder="開始日期">
+                          <span>從</span>
+                          <DatePicker class="d-flex w-100" v-model="start_date">
+                            <template v-slot="{ inputValue, togglePopover }">
+                              <div class="d-flex items-center w-100">
+                                <input
+                                  :value="inputValue"
+                                  class="ad-date-input dateinput bg-white text-gray-700 py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
+                                  readonly
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                />
+                                <button
+                                  class="p-2 ad-date-btn"
+                                  ref="dateshow"
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                >
+                                <i class="fas fa-calendar-week"></i>
+                                </button>
+                              </div>
+                            </template>
+                          </DatePicker>
                         </div>
                         <div class="d-flex align-items-center lottery-time">
-                          <span>到</span><input type="text" class="form-control" placeholder="結束日期">
+                          <span>到</span>
+                          <DatePicker class="d-flex w-100" v-model="end_date">
+                            <template v-slot="{ inputValue, togglePopover }">
+                              <div class="d-flex items-center w-100">
+                                <input
+                                  :value="inputValue"
+                                  class="ad-date-input dateinput bg-white text-gray-700 py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
+                                  readonly
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                />
+                                <button
+                                  class="p-2 ad-date-btn"
+                                  ref="dateshow"
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                >
+                                <i class="fas fa-calendar-week"></i>
+                                </button>
+                              </div>
+                            </template>
+                          </DatePicker>
                         </div>
                       </div>
                     </div>
@@ -225,10 +263,48 @@
                       <p class="dis_title">使用期限:</p>
                       <div>
                         <div class="d-flex align-items-center lottery-time mb-2">
-                          <span>從</span><input type="text" class="form-control" placeholder="開始日期">
+                          <span>從</span>
+                          <DatePicker class="d-flex w-100" v-model="sec_start_date">
+                            <template v-slot="{ inputValue, togglePopover }">
+                              <div class="d-flex items-center w-100">
+                                <input
+                                  :value="inputValue"
+                                  class="ad-date-input dateinput bg-white text-gray-700 py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
+                                  readonly
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                />
+                                <button
+                                  class="p-2 ad-date-btn"
+                                  ref="dateshow"
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                >
+                                <i class="fas fa-calendar-week"></i>
+                                </button>
+                              </div>
+                            </template>
+                          </DatePicker>
                         </div>
                         <div class="d-flex align-items-center lottery-time">
-                          <span>到</span><input type="text" class="form-control" placeholder="結束日期">
+                          <span>到</span>
+                          <DatePicker class="d-flex w-100" v-model="sec_end_date">
+                            <template v-slot="{ inputValue, togglePopover }">
+                              <div class="d-flex items-center w-100">
+                                <input
+                                  :value="inputValue"
+                                  class="ad-date-input dateinput bg-white text-gray-700 py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
+                                  readonly
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                />
+                                <button
+                                  class="p-2 ad-date-btn"
+                                  ref="dateshow"
+                                  @click.prevent="togglePopover({ placement: 'auto-start' })"
+                                >
+                                <i class="fas fa-calendar-week"></i>
+                                </button>
+                              </div>
+                            </template>
+                          </DatePicker>
                         </div>
                       </div>
                     </div>
@@ -265,13 +341,19 @@
 <script>
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
 import CKEditor from '@ckeditor/ckeditor5-vue'
+import DatePicker from 'v-calendar/lib/components/date-picker.umd'
 export default {
   components: {
     // Use the <ckeditor> component in this view.
-    ckeditor: CKEditor.component
+    ckeditor: CKEditor.component,
+    DatePicker
   },
   data () {
     return {
+      start_date: new Date(),
+      end_date: new Date(),
+      sec_start_date: new Date(),
+      sec_end_date: new Date(),
       editor: ClassicEditor,
       editorData: '',
       editorConfig: {
@@ -286,6 +368,9 @@ export default {
     }
   },
   methods: {
+    togglePopover () {
+      this.$refs.dateshow.click()
+    },
     toggleAdvance (data) {
       if (data === 'upimage') {
         this.notactive = false

@@ -3,11 +3,15 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 export default new VueRouter({
-  scrollBehavior (to, from, savedPosition) {
-    return { x: 0, y: 0 }
-  },
   // mode:'history', 用來搭配後端的路由模式
   base: process.env.NODE_ENV === 'production' ? '/temperature/' : '/',
+  scrollBehavior (to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0,
+      behavior: 'smooth'
+    }
+  },
   routes: [
     {
       path: '*',
@@ -81,19 +85,7 @@ export default new VueRouter({
         {
           path: '/adstep',
           name: '刊登廣告方案',
-          component: () => import('../views/FrontEnd/Publishad.vue'),
-          children: [
-            {
-              path: '',
-              name: '刊登廣告方案',
-              component: () => import('../views/FrontEnd/AdstepOne.vue')
-            },
-            {
-              path: 'adstep_two',
-              name: '刊登廣告方案',
-              component: () => import('../views/FrontEnd/AdstepTwo.vue')
-            }
-          ]
+          component: () => import('../views/FrontEnd/Publishad.vue')
         },
         {
           path: '/adstepTwo',
@@ -333,6 +325,11 @@ export default new VueRouter({
               component: () => import('../views/FrontEnd/participatedGroup/Particmission.vue')
             }
           ]
+        },
+        {
+          path: '/personalSetting',
+          name: '個人資料',
+          component: () => import('../views/FrontEnd/PersonalSetting.vue')
         }
       ]
     }

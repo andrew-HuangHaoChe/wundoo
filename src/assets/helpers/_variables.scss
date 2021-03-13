@@ -61,6 +61,7 @@ $yellowBtn: #FF8730;
 $greyBtn: #AAAAAA;
 $whiteBtn: #FFFFFF;
 $lottery-num-brown: #8C4B2A; 
+$binding: #C4C4C4;
 
 
 $colors: () !default;
@@ -111,7 +112,8 @@ $theme-colors: map-merge(
     "mbmgmtBtn": $mbmgmt,
     "yellowBtn": $yellowBtn,
     "greyBtn": $greyBtn,
-    "lottNumbrown": $lottery-num-brown
+    "lottNumbrown": $lottery-num-brown,
+    "binding": $binding
   ),
   $theme-colors
 );

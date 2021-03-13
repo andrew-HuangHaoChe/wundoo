@@ -1,18 +1,22 @@
 <template>
-  <div class="page">
-    <div class="gridcard">
+   <div class="page">
+    <div class="d-flex flex-column align-items-center my-5" v-if="modalshown == false">
+      <h5 class="text-center pb-2">點擊下方按鈕開始抽獎!</h5>
+      <i class="fas fa-arrow-down fa-5x"></i>
+    </div>
+    <div class="gridcard" v-if="modalshown == true">
       <div v-for = "(item, idx) in card" :key="idx"  class="gridcard_item" :class="{back:item.isBack,move:item.isMove}" :data-idx="idx"  @click = "onClick" >
         <div>
           <div class="gridcard_front">
-            <img src="../assets/image/images/animation/treasure.svg">
+            <img src = "../assets/image/images/animation/treasure.svg"/>
           </div>
           <div class="gridcard_back">
-            <div class="award">{{item.award}}</div>
+            <div :class='{ "sutexture": item.award == "大獵券", "succtexture": item.award == "小米券" }' class="award">{{item.award}}</div>
           </div>
         </div>
       </div>
     </div>
-    <button @click="onStart" class="on-start">點此開始抽獎!</button>
+    <button @click="onStart" class="on-start">開始抽獎</button>
   </div>
 </template>
 <script>
@@ -25,24 +29,60 @@ function runAsync (time) {
   })
 }
 export default {
+  runAsync,
   data () {
     return {
-      count: 0,
+      modalshown: false,
+      count: 0, // 代表他點擊開始抽獎按鈕幾次
+      status: 0, // 點擊寶箱計算次數
+      max: 3, // 點擊次數上限
       isFlip: false,
       card: [
-        { inlineStyle: '', isBack: false, isMove: false, award: '部落見面禮' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎!' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎!' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '部落見面禮' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎!' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎!' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '部落見面禮' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎!' },
-        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎!' }
-      ]
+        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎', number: 1, chunchang: false, id: 0 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '大獵券', number: 2, chunchang: true, id: 1 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎', number: 3, chunchang: false, id: 2 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎', number: 4, chunchang: false, id: 3 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎', number: 5, chunchang: false, id: 4 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '小米券', number: 6, chunchang: true, id: 5 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎', number: 7, chunchang: false, id: 6 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '沒中獎', number: 8, chunchang: false, id: 7 },
+        { inlineStyle: '', isBack: false, isMove: false, award: '小米券', number: 9, chunchang: true, id: 8 }
+      ],
+      aa: []
     }
   },
+  onLoad () {
+  },
+  onShow () {
+
+  },
+  mounted: function () {
+  },
   methods: {
+    compulsory () { // 第三次必中
+      for (let i = 0; i < this.card.length; i++) {
+        for (let j = 0; j < this.aa.length; j++) {
+          if (i !== parseInt(this.aa[j].idx)) {
+            if (j === this.aa.length - 1) {
+              if (this.card[i].award === '大獵券') {
+                this.card[i].award = '大獵券'
+              } else {
+                this.card[i].award = '小米券'
+              }
+            }
+            continue
+          } else {
+            break
+          }
+          // 換獎品圖與獎品名稱  --->   將剩餘的沒中獎
+        }
+      }
+    },
+    /**
+     * 洗牌过程
+     * @author 小小仙
+     * @date 2019/3/6
+     */
     start () {
       runAsync(100).then(() => {
         // 1-3张牌翻转至奖品面
@@ -79,15 +119,22 @@ export default {
       }).then(() => {
         // 所有牌合在一摞
         this.card.forEach((res, index) => {
-          if (index < 9) {
-            res.number = Math.random() // 给牌生成一个随机数，用于牌的排序
+          if (index <= 9) {
+            res.number = Math.random()// 给牌生成一个随机数，用于牌的排序
             res.isMove = true
           }
         })
         // 依据牌的随机数进行排序
         this.card.sort(function (arr1, arr2) {
-          return arr1.number > arr2.number
+          var test = 0
+          if (arr1.number > arr2.number) {
+            test = 1
+          } else {
+            test = -1
+          }
+          return test
         })
+        console.log(this.card)
         return runAsync(500)
       }).then(() => {
         // 分发随机排序后的牌
@@ -99,44 +146,67 @@ export default {
         this.isFlip = true
       })
     },
-    // 重置
+    /**
+     * 重置
+     * @author 小小仙
+     * @date 2019/3/6
+     */
     reset () {
       this.isFlip = false
       runAsync(800).then(() => {
         this.start()
       })
     },
-    // 點擊觸發函數
+    /**
+     * 点击开始按钮触发函数
+     * @author 小小仙
+     * @date 2019/3/6
+     */
     onStart () {
       this.count++
+      this.modalshown = !this.modalshown
       if (this.count !== 0) {
         this.reset()
       } else {
         this.start()
       }
     },
-    // 點擊翻牌
+    /**
+     * 点击翻牌
+     * @author 小小仙
+     * @date 2019/3/6
+     * @param event 所点击牌的信息
+     */
     onClick (event) {
+      this.aa.push(event.currentTarget.dataset)
+      this.status++
+      if (this.status < this.max) {
+        console.log(111)
+      }
+      if (this.status === 2) { // 使用者抽到第二詞還沒中獎時就跑compulsory這個函式讓剩下的選項都強制轉換成小米券
+        this.compulsory()
+      }
       const that = this
       if (!this.isFlip) return
       const idx = event.currentTarget.dataset.idx
       this.card[idx].isBack = !this.card[idx].isBack
       runAsync(1000).then(() => {
-        idx.showModal({
-          title: '恭喜中' + that.card[idx].award, // 提示文字
-          duration: 1000, // 显示时长
-          mask: true, // 是否显示透明蒙层，防止触摸穿透，默认：false
-          icon: 'success', // 图标，支持"success"、"loading"
-          success: function () {
-            that.reset()
-          }, // 接口调用成功
-          fail: function () {
-            that.reset()
-          }, // 接口调用失败的回调函数,
-          complete: function () {
-            that.reset()
-          } // 接口调用结束的回调函数，
-        })
+        console.log(that.card[idx].chunchang)
+        // idx.showModal({
+        //   title: '恭喜中' + that.card[idx].award, // 提示文字
+        //   duration: 1000, // 显示时长
+        //   mask: true, // 是否显示透明蒙层，防止触摸穿透，默认：false
+        //   icon: 'success', // 图标，支持"success"、"loading"
+        //   success: function () {
+        //     that.reset()
+        //   }, // 接口调用成功
+        //   fail: function () {
+        //     that.reset()
+        //   }, // 接口调用失败的回调函数,
+        //   complete: function () {
+        //     that.reset()
+        //   } // 接口调用结束的回调函数，
+        // })
       })
     }
   }
@@ -176,7 +246,7 @@ export default {
   right: 0;
   bottom: 0;
   font-size: 20px;
-  color: #fff;
+  color: #000;
   text-align: center;
   line-height: 115px;
   -webkit-backface-visibility: hidden;
@@ -186,7 +256,7 @@ export default {
 .gridcard .gridcard_item .gridcard_back{
   -webkit-transform: rotateY(180deg) translateZ(0);
   transform: rotateY(180deg) translateZ(0);
-  background: #1E9FD9;
+  background: transparent;
 }
 .award {
   display: flex;
@@ -344,5 +414,44 @@ export default {
 .gridcard .gridcard_item:nth-child(9).move{
   -webkit-transform: translate3d(-120px,-120px,0);
   transform: translate3d(-120px,-120px,0);
+}
+
+.succtexture {
+  background-image: url(../assets/image/images/animation/treasure_light.svg);
+  background-position: center;
+  background-size: cover;
+  min-height: 60px;
+  background-repeat: no-repeat;
+}
+
+.sutexture {
+  background-image: url(../assets/image/images/animation/treasure_light.svg);
+  background-position: center;
+  background-size: cover;
+  min-height: 60px;
+  background-repeat: no-repeat;
+}
+
+.fa-arrow-down {
+  -webkit-animation: bounce 3.5s linear 0s infinite alternate;
+  animation: bounce 3.5s linear 0s infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  50% {
+    -webkit-transform: translateY(-15px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+  }
+}
+/* For firefox and others than webkit based browsers */
+@keyframes bounce {
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 </style>

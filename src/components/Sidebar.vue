@@ -70,13 +70,19 @@
                     </router-link>
                   </li>
                   <li class="py-2">
-                    <router-link to="/localhuntground" class="d-flex align-items-center"
+                    <a data-toggle="collapse" aria-expanded="false" aria-controls="huntgroundPage" href="#huntgroundPage" class="d-flex align-items-center"
                       ><img
                         src="../assets/image/navbar/ic_hunt_ground.svg"
                         alt=""
                         class="pr-1 cust-aside-img"
                       /><span>獵場</span>
-                      </router-link>
+                    </a>
+                    <div class="huntgroundPage-block collapse" id="huntgroundPage">
+                      <div class="d-flex flex-column align-items-center">
+                        <router-link to="/localhuntground">在地獵場</router-link>
+                        <router-link to="/huntground">同好獵場</router-link>
+                      </div>
+                    </div>
                   </li>
                   <li class="py-2">
                     <router-link to="/notice" class="d-flex align-items-center">
@@ -169,7 +175,7 @@
                 </div>
               </li>
               <li class="py-2">
-                <router-link to="/" class="d-flex align-items-center">
+                <router-link to="/personalSetting" class="d-flex align-items-center">
                   <img src="../assets/image/navbar/mb/ic_setting.svg" alt="" class="pr-1"/>
                   <span>個人設定</span>
                 </router-link>
@@ -204,6 +210,11 @@ export default {
     }
     &-enter-active, &-leave-active {
       transition: all 500ms;
+    }
+  }
+  .huntgroundPage-block {
+    div {
+      width: 50%;
     }
   }
 </style>

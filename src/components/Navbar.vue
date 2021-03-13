@@ -147,7 +147,7 @@
               >
                 <div class="d-flex align-items-center">
                   <button
-                    class="btn homemenu sidemenu burgerbtn px-0"
+                    class="btn homemenu sidemenu burgerbtn px-0 pb-0"
                     @click="sideBaropen"
                   >
                     <i class="fas fa-bars fa-2x"></i>
@@ -196,7 +196,7 @@
                       <span aria-hidden="true">&times;</span>
                     </button>
                   </div>
-                  <form class="p-3">
+                  <form class="p-3" method="post" enctype=multipart/form-data>
                     <div class="login-title mb-2">
                       <span class="left-sm-bar"></span> 登入
                     </div>
@@ -212,6 +212,8 @@
                           class="form-control"
                           id="modalEmail"
                           aria-describedby="emailHelp"
+                          v-model="data.email"
+                          max-length="40"
                         />
                       </label>
                     </div>
@@ -227,6 +229,8 @@
                           class="form-control"
                           id="modalPassword"
                           aria-describedby="emailHelp"
+                          v-model="data.password"
+                          max-length="40"
                         />
                       </label>
                     </div>
@@ -252,6 +256,7 @@
                     <button
                       type="submit"
                       class="btn btn-mainRed login-btn w-100"
+                      @click.prevent="userlogin"
                     >
                       登入
                     </button>
@@ -265,25 +270,13 @@
                     <div class="d-flex justify-content-center">
                       <ul class="list-unstyled d-flex mt-3">
                         <li class="px-2">
-                          <a href="#"
-                            ><img
-                              src="../assets/image/icon/signin/ic_google.svg"
-                              alt=""
-                          /></a>
+                          <GoogleLogin/>
                         </li>
                         <li class="px-2">
-                          <a href="#"
-                            ><img
-                              src="../assets/image/icon/signin/ic_fb.svg"
-                              alt=""
-                          /></a>
+                          <FacebookLogin/>
                         </li>
                         <li class="px-2">
-                          <a href="#"
-                            ><img
-                              src="../assets/image/icon/signin/ic_line.svg"
-                              alt=""
-                          /></a>
+                          <LineLogin  @click="loginEvent()"/>
                         </li>
                       </ul>
                     </div>
@@ -300,13 +293,31 @@
 <script>
 import $ from 'jquery'
 import Sidebar from '../components/Sidebar.vue'
+import GoogleLogin from '../components/GoogleLogin.vue'
+import FacebookLogin from '../components/FaceBookLogin.vue'
+import LineLogin from '../components/LineLogin.vue'
+import Qs from 'qs'
+import jwtDecode from 'jwt-decode'
 export default {
   components: {
-    Sidebar
+    Sidebar,
+    GoogleLogin,
+    FacebookLogin,
+    LineLogin
   },
   data () {
     return {
-      showSideBar: false
+      data: {
+        email: '',
+        password: '',
+        login_type: '',
+        social_id: ''
+      },
+      login_status: false,
+      showSideBar: false,
+      query: {},
+      tokenResult: {},
+      idTokenDecode: {}
     }
   },
   methods: {
@@ -322,11 +333,71 @@ export default {
       $('#loginModal').modal('hide')
       $('.modal-backdrop').remove()
       this.$router.push('/repassWord')
+    },
+    loginEvent () { // 當你按下按鈕發生的事件
+      let URL = 'https://access.line.me/oauth2/v2.1/authorize?'
+      // 必填
+      URL += 'response_type=code' // 希望LINE回應什麼  但是目前只有code能選
+      URL += `&client_id=${process.env.VUE_APP_LINE_CHANELL_ID}` // 你的頻道ID
+      URL += `&redirect_uri=${process.env.VUE_APP_LINE_REDIRECT_URL}` // 要接收回傳訊息的網址
+      URL += '&state=123456789' // 用來防止跨站請求的 之後回傳會傳回來給你驗證 通常設亂數 這邊就先放123456789
+      URL += '&scope=openid%20profile' // 跟使用者要求的權限 目前就三個能選 openid profile email
+      // 選填
+      URL += '&nonce=helloWorld' // 順便將機器人也加好友
+      URL += '&prompt=consent'
+      URL += '&max_age=3600'
+      URL += '&ui_locales=zh-TW'
+      URL += '&bot_prompt=normal'
+      window.open(URL, '_self') // 轉跳到該網址
+    },
+    loginRes () {
+      const vm = this
+      const formData = new FormData()
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      formData.append('email', this.data.email)
+      formData.append('password', this.data.password)
+      formData.append('login_type', this.data.login_type)
+      formData.append('social_id', this.data.social_id)
+      vm.$http.post('/apipath/api/login', formData, config).then((response) => {
+        vm.login_status = true
+        if (response.data.status) {
+          alert(response.data.msg)
+          $('#loginModal').modal('hide')
+        }
+      })
+    },
+    userlogin () {
+      const vm = this
+      // const api = `${process.env.VUE_APP_APIPATH}api/login`
+      if (vm.data.email === '') {
+        alert('帳號欄位不得為空')
+        return
+      } else if (vm.data.password === '') {
+        alert('密碼欄位不得為空')
+        return
+      }
+      if (vm.data.email !== '' && vm.data.password !== '') {
+        vm.loginRes()
+      }
     }
-    // btnfn () {
-    //   this.$refs.toggle.option = !this.$refs.toggle.option
-    //   console.log(this.$refs.toggle.option)
-    // }
+  },
+  mounted () {
+    this.query = this.$route.query // 接網址的參數
+    const options = Qs.stringify({ // POST的參數  用Qs是要轉成form-urlencoded 因為LINE不吃JSON格式
+      grant_type: 'authorization_code',
+      code: this.query.code,
+      redirect_uri: process.env.VUE_APP_LINE_REDIRECT_URL,
+      client_id: process.env.VUE_APP_LINE_CHANELL_ID,
+      client_secret: process.env.VUE_APP_LINE_CHANELL_SECRET
+    })
+    this.$http.post('https://api.line.me/oauth2/v2.1/token', options, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(res => {
+      this.tokenResult = res.data // 回傳的結果
+      this.idTokenDecode = jwtDecode(res.data.id_token) // 把結果的id_token做解析
+    })
   }
 }
 </script>

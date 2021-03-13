@@ -7,3 +7,43 @@
 .signbox-footer {
     text-align: center;
 }
+
+.evd-seven-title {
+    .evd-seven {
+        h4 {
+            font-family: TaipeiSansTCBeta-Bold;
+            color: #fff;
+            font-size: 24px;
+            line-height: 35px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(-86deg, #ff7d6c 5%, #ff594d 53%, #ff2925 91%);
+            -webkit-background-clip: text;
+            -webkit-text-stroke: 6px transparent;
+            color: #fff;
+            @media(max-width: 320px) {
+                font-size: 22px;
+            }
+        }
+        p {
+            background: linear-gradient(90deg, rgba(255, 125, 61, 0) 0%, #FF6D3D 49.24%, rgba(255, 125, 61, 0) 100%);
+            text-align: center;
+            color: #fff;
+            font-size: $block-md + 6px;
+            line-height: $block-sm * 5;
+        }
+    }
+    .lottery-prize {
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25), inset 0px 0px 6px 4px #FCA845;
+        border-radius: $block-sm;
+        padding: $block-sm * 2;
+        h5 {
+            font-weight: 500;
+            font-size: $font-size-sm;
+            line-height: $block-sm * 2;
+            text-align: center;
+            letter-spacing: 0.5px;
+            color: #745B4A;
+        }
+    }
+}

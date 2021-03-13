@@ -10,6 +10,9 @@ $font-size-lg: 18px;
 .main-logo {
   width: 250px;
   max-width: none;
+  @media(max-width: 320px) {
+    width: 150px;
+  }
 }
 @media (max-width:991px) {
   .navbar-collapse  {

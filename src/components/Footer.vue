@@ -5,8 +5,9 @@
         <div class="container custom-container-width">
           <div class="footer-title mb-5">
             <div class="row">
-              <div class="col-md-6 col-lg-3 d-flex">
-                <img src="../assets/image/navbar/logo.png" alt="" style="height: 50px;">
+              <div class="col-md-6 col-lg-3 d-flex align-items-end">
+                <img class="mr-2 footer-logo" src="../assets/image/navbar/logo(2).svg" alt="" style="height: 50px;">
+                <h2 class="footer-logo-text mb-0">溫度部落</h2>
               </div>
               <div class="col-md-6 col-lg-3 d-flex align-items-center justify-content-center contact_inf">
                 <img src="../assets/image/footer_bg/footer_mail.svg" alt="">
@@ -23,7 +24,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-3 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
+            <div class="col-6 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
               <div><h3 class="footer-title-first">有<span class="footer-title-sec">溫度</span></h3>
                 <ul class="list-unstyled footer-a">
                   <li><a href="#">關於我們</a></li>
@@ -31,7 +32,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-3 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
+            <div class="col-6 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
               <div>
                 <h3 class="footer-title-first">看<span class="footer-title-sec">溫度</span></h3>
                 <ul class="list-unstyled footer-a">
@@ -42,7 +43,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-3 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
+            <div class="col-6 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
               <div>
                 <h3 class="footer-title-first">找<span class="footer-title-sec">溫度</span></h3>
                 <ul class="list-unstyled footer-a">
@@ -53,7 +54,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-3 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
+            <div class="col-6 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
               <div><h3 class="footer-title-first">給<span class="footer-title-sec">溫度</span></h3>
                 <ul class="list-unstyled footer-a">
                   <li><a href="#">會員等級說明</a></li>
@@ -63,7 +64,7 @@
                 </ul>
               </div>
             </div>
-            <div class="col-3 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
+            <div class="col-6 col-sm-3 col-md-4 col-lg d-flex flex-column justify-content-start align-items-center footer-card">
               <div><h3 class="footer-title-first">送<span class="footer-title-sec">溫度</span></h3>
                 <ul class="list-unstyled footer-a">
                   <li><a href="#">會員等級說明</a></li>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="wanna-post-bg">
+    <div class="wanna-post-bg pb-8">
       <div class="container custom-container-width wanna-post-content">
         <div class="d-flex align-items-end mb-3 pt-5 sign_step_one">
           <span class="signup-title-bar il-custom-bar"></span>
@@ -15,12 +15,9 @@
         </div>
         <div class="upload-img d-flex align-items-center">
           <div class="row sign-sec-block">
-            <div class="col-md-3 col-sm-3 col-lg-2">
-              <h4 class="d-block p-2">上傳頭像</h4>
-              <button class="d-block btn btn-brilliantRed">選擇檔案</button>
-            </div>
-            <div class="col-md-9 col-sm-9 col-lg-10 upload-avatar d-flex justify-content-start">
-              <img src="../../assets/image/images/default-pic.png" alt="">
+            <div class="col-lg-12 upload-avatar d-flex justify-content-start">
+              <ImageCropper v-on:imgUrl="cropurl"/>
+              <!-- <img src="../../assets/image/images/default-pic.png" alt=""> -->
             </div>
           </div>
         </div>
@@ -30,51 +27,73 @@
             <div class="row">
               <div class="col-12 col-sm-12 col-md-6">
                 <label for="name1"><span class="have_to"><span>*</span></span>真實姓名</label>
-                <input type="text" class="form-control signup-form-control" id="name1" placeholder="請填寫全名">
+                <input type="text" class="form-control signup-form-control" id="name1" placeholder="請填寫全名" maxlength="10" v-model="name">
                 <label for="smName"><span class="have_to"><span>*</span></span>顯示的暱稱</label>
-                <input type="text" class="form-control signup-form-control" id="smName" placeholder="神箭闖江湖乃第一貓" maxlength="10">
+                <input type="text" class="form-control signup-form-control" id="smName" placeholder="神箭闖江湖乃第一貓" maxlength="10" v-model="nickname">
                 <label for="upphone"><span class="have_to"><span>*</span></span>手機號碼</label>
-                <input type="tel" class="form-control signup-form-control" id="upphone" placeholder="0912-123-123">
-                <label for="upbirth"><span class="have_to"><span>*</span></span>生日</label>
-                <input type="date" class="form-control signup-form-control" id="upbirth">
-                <label for="upId">身分證字號</label>
-                <input type="mail" class="form-control signup-form-control" id="upId" placeholder="A123456789">
+                <input type="tel" class="form-control signup-form-control" id="upphone" placeholder="0912-123-123" maxlength="10" v-model="phone">
+                <div class="d-flex flex-column mb-3 birth-block">
+                  <label for="upbirth"><span class="have_to"><span>*</span></span>生日</label>
+                  <DatePicker class="d-flex w-100" v-model="date" :model-config="modelConfig">
+                    <template v-slot="{ inputValue, togglePopover }">
+                      <div class="d-flex items-center w-100">
+                        <button
+                          class="choosedate-btn p-2"
+                          @click.prevent="togglePopover({ placement: 'auto-start' })"
+                          ref="pickdate"
+                        >
+                        <i class="fas fa-calendar-week"></i>
+                        </button>
+                        <input
+                          :value="inputValue"
+                          class="dateinput bg-white text-gray-700 py-1 px-2 appearance-none border rounded-r focus:outline-none focus:border-blue-500"
+                          readonly
+                          @click="datepick"
+                        />
+                      </div>
+                    </template>
+                  </DatePicker>
+                </div>
+                <div>
+                  <label for="upId">身分證字號</label>
+                  <input type="text" class="form-control signup-form-control" id="upId" placeholder="A123456789" v-model="id">
+                </div>
               </div>
               <div class="col-12 col-sm-12 col-md-6">
                 <div class="form-controll">
                   <label for="local-hunt-option"><span class="have_to"><span>*</span></span>所在地</label>
                   <div class="row">
                     <div class="col-6">
-                      <select id="local-hunt-option" class="form-control signup-form-control">
-                        <option selected>縣市</option>
-                        <option>...</option>
+                      <select id="local-hunt-option" class="form-control signup-form-control" @change="countiesChange" v-model="selectedCounties">
+                        <option value="">縣市</option>
+                        <option v-for="items in hgData" :key="items.index" :value="items">{{ items }}</option>
                       </select>
                     </div>
                     <div class="col-6">
-                      <select id="local-hunt-option" class="form-control signup-form-control">
-                        <option selected>鄉鎮市區</option>
-                        <option>...</option>
+                      <select id="local-hunt-option" class="form-control signup-form-control" v-model="selectedtown">
+                        <option value="">鄉鎮市區</option>
+                        <option v-for="items in townlist" :key="items.index" :value="items.name">{{ items.name }}</option>
                       </select>
                     </div>
                   </div>
                 </div>
                 <label for="inputUpEmail"><span class="have_to"><span>*</span></span>Email(將此做為Email帳號)</label>
-                <input type="mail" class="form-control signup-form-control" id="inputUpEmail" placeholder="Hello@gmail.com">
+                <input type="mail" class="form-control signup-form-control" id="inputUpEmail" placeholder="Hello@gmail.com" maxlength="30" v-model="email">
                 <label for="upPassword"><span class="have_to"><span>*</span></span>密碼</label>
-                <input type="password" class="form-control signup-form-control" id="upPassword" placeholder="請輸入6-8位數英文與數字" maxlength="8">
+                <input type="password" class="form-control signup-form-control" id="upPassword" placeholder="請輸入6-8位數英文與數字" maxlength="8" v-model="password">
                 <label for="checkpassWord"><span class="have_to"><span>*</span></span>確認密碼</label>
-                <input type="password" class="form-control signup-form-control" id="checkpassWord" placeholder="請輸入6-8位數英文與數字" maxlength="8">
+                <input type="password" class="form-control signup-form-control" id="checkpassWord" placeholder="請輸入6-8位數英文與數字" maxlength="8" v-model="confirmpass">
               </div>
             </div>
             <div class="accept-check d-flex justify-content-center">
-              <div class="d-flex align-items-center form-control-lg custom-checkbox">
-                <input type="checkbox" class="d-flex align-items-center mr-2" id="customCheck2">
+              <div class="d-flex align-items-center pb-3 custom-checkbox">
+                <input type="checkbox" class="agreechecked d-flex align-items-center mr-2" id="customCheck2" v-model="agree">
                 <label class="signup-check mb-0" for="customCheck2">我已閱讀並同意遵守wundoo的<a href="#">服務條款</a></label>
               </div>
             </div>
             <div class="thr_step_block">
-              <router-link to="/signUpsteptwo" class="btn ad_btn_whiteBtn next_step_btn px-5">上一步</router-link>
-              <button class="btn btn-mainRed next_step_btn px-5" @click.prevent="showCatFun()">註冊</button>
+              <router-link to="/signUpsteptwo" class="btn ad_btn_whiteBtn next_step_btn">上一步</router-link>
+              <button class="btn btn-mainRed next_step_btn" @click.prevent="showCatFun()">註冊</button>
             </div>
           </form>
         </div>
@@ -95,7 +114,7 @@
             <h5 class="modal-title" id="lotteryModalLabel">註冊成功</h5>
             <p class="mb-0">歡迎加入溫度部落！試試手氣送您<strong>見面禮</strong></p>
             <div class="lottery-nine-block">
-              <FlipLucky/>
+              <NewLottery/>
             </div>
           </div>
         </div>
@@ -105,46 +124,160 @@
 </template>
 <script>
 import $ from 'jquery'
-import FlipLucky from '../../components/Lottery.vue'
+import NewLottery from '../../components/NewLott.vue'
+// import Calendar from 'v-calendar/lib/components/calendar.umd'
+import DatePicker from 'v-calendar/lib/components/date-picker.umd'
+import ImageCropper from '../../components/ImageCropper.vue'
 export default {
   components: {
-    FlipLucky
+    NewLottery,
+    // Calendar,
+    DatePicker,
+    ImageCropper
   },
   data () {
     return {
-      isMountain: false,
-      isLand: false,
-      isocen: false,
-      showCat: false
+      upImg: '',
+      date: new Date(),
+      agree: false,
+      showCat: false,
+      name: '',
+      nickname: '',
+      phone: '',
+      id: '',
+      counties: '',
+      township: '',
+      email: '',
+      password: '',
+      confirmpass: '',
+      hgData: [],
+      cityData: [],
+      townlist: {},
+      selectedCounties: '',
+      selectedtown: '',
+      modelConfig: {
+        type: 'string',
+        mask: 'YYYY-MM-DD' // Uses 'iso' if missing
+      }
     }
   },
   methods: {
-    Mountain () {
-      const vm = this
-      vm.isMountain = true
-      vm.isLand = false
-      vm.isocen = false
-    },
-    land () {
-      const vm = this
-      vm.isMountain = false
-      vm.isLand = true
-      vm.isocen = false
-    },
-    ocen () {
-      const vm = this
-      vm.isMountain = false
-      vm.isLand = false
-      vm.isocen = true
-    },
     showCatFun () {
       const vm = this
-      vm.showCat = true
-      setTimeout(function () {
-        vm.showCat = false
-        $('#lotteryModal').modal('show')
-      }, 3000)
+      const formData = new FormData()
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      const tribe = localStorage.getItem('tribe') // 部落
+      const clubeMain = localStorage.getItem('clube_main') // 所在地獵場
+      const clueHobby = localStorage.getItem('clue_hobby') // 感興趣獵場
+      formData.append('tribe', tribe)
+      formData.append('email', this.email)
+      formData.append('password', this.password)
+      formData.append('password_confirm', this.confirmpass)
+      formData.append('login_type', '')
+      formData.append('username', this.name)
+      formData.append('nickname', this.nickname)
+      formData.append('gender', '')
+      formData.append('city', this.selectedCounties)
+      formData.append('dist', this.selectedtown)
+      formData.append('mobile', this.phone)
+      formData.append('birthday', this.date)
+      formData.append('club_main', clubeMain)
+      formData.append('clue_hobby', clueHobby)
+      formData.append('avatar', this.upImg)
+      if (vm.date === '') {
+        alert('請填寫生日!')
+        return false
+      }
+      if (vm.agree === false) {
+        alert('請勾選已閱讀服務條款!')
+        return false
+      }
+      if (vm.name === '') {
+        alert('姓名尚未填寫!')
+        return false
+      }
+      if (vm.nickname === '') {
+        alert('暱稱尚未填寫!')
+        return false
+      }
+      if (vm.phone === '') {
+        alert('手機尚未填寫!')
+        return false
+      }
+      if (vm.selectedCounties === '' || vm.selectedtown === '') {
+        alert('請選擇居住地!')
+        return false
+      }
+      if (vm.email === '') {
+        alert('email尚未填寫!')
+        return false
+      }
+      if (vm.password === '') {
+        alert('密碼尚未填寫!')
+        return false
+      }
+      if (vm.confirmpass === '') {
+        alert('確認密碼尚未填寫!')
+        return false
+      }
+      if (vm.password !== vm.confirmpass) {
+        alert('請檢查密碼與確認密碼是否相符!')
+        return false
+      }
+      vm.$http.post('/apipath/api/register', formData, config).then((response) => {
+        console.log(response)
+        if (response.data.status === false) {
+          alert(response.data.msg + '!')
+          return false
+        } else {
+          vm.showCat = true
+          setTimeout(function () {
+            vm.showCat = false
+            $('#lotteryModal').modal('show')
+          }, 3000)
+        }
+      })
+    },
+    datepick () {
+      this.$refs.pickdate.click()
+    },
+    countiesChange () {
+      const vm = this
+      const arrone = this.cityData
+      vm.selectedtown = ''
+      for (let i = 0; i < arrone.length; i++) {
+        if (vm.selectedCounties === arrone[i].name) {
+          vm.townlist = arrone[i].dist
+        }
+      }
+    },
+    imgupload (e) {
+      var file = e.target.files[0]
+      var reader = new FileReader()
+      var vm = this
+      reader.readAsDataURL(file)
+      reader.onload = function (e) {
+        vm.upImg = this.result
+      }
+      $('#cropModal').modal('show')
+    },
+    cropurl (data) {
+      this.upImg = data
     }
+  },
+  created () {
+    const vm = this
+    vm.$http.get('/apipath/api/get_citydata').then((response) => {
+      const hgData = response.data.data
+      vm.cityData = hgData
+      for (let i = 0; i < hgData.length; i++) {
+        vm.hgData.push(hgData[i].name)
+      }
+    })
   }
 }
 </script>
@@ -188,7 +321,7 @@ export default {
   }
 }
 
-input[type="checkbox"]{
+.agreechecked[type="checkbox"]{
   cursor: pointer;
   -webkit-appearance: none;
   appearance: none;
@@ -207,12 +340,12 @@ input[type="checkbox"]{
     height: 20px;
   }
 }
-input[type="checkbox"]:checked{
+.agreechecked[type="checkbox"]:checked{
   background-color: #E2273A;
   content: "\2713";
   border: 1px solid #E2273A;
 }
-input[type="checkbox"]:checked:after{
+.agreechecked[type="checkbox"]:checked:after{
   color: #fff;
   font-size: 22px;
   content: "\2713";
@@ -223,10 +356,12 @@ input[type="checkbox"]:checked:after{
   @media(max-width: 1024px) {
     font-size: 14px;
     padding-left: 4px;
+    top: 0;
   }
 }
-input[type="checkbox"]:focus{
+.agreechecked[type="checkbox"]:focus{
   outline: 0 none;
   box-shadow: none;
 }
+
 </style>

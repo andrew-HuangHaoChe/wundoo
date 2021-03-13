@@ -6,11 +6,12 @@
           <img src="../assets/image/huntground_lk/lhg_loudly.png" alt="">
         </div>
         <div class="col-lg-10">
+          <div class="d-flex align-items-center" style="border-bottom: 1px solid #D7C9C3;">
+            <span class="pigeon_mail">飛鴿傳書:</span>
           <div class="hg-announcement">
             <div class="d-flex justify-content-between align-items-center p-2 pl-0 flip" v-for="anct in Announcement" :key="anct.id">
               <div class="d-flex">
                 <a data-toggle="modal" data-target="#pigeon_modal" class="mb-0 pigeon_link">
-                  <span class="pigeon_mail">飛鴿傳書:</span>
                   {{ anct.title }}
                 </a>
               </div>
@@ -21,7 +22,8 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-12 pt-3 pl-0">
+          </div>
+          <div class="col-lg-12 pl-0 annpadding">
             <div class="row flip-content">
               <div class="col-lg-7 col-md-12 pb-3 lhg-avatar">
                 <div class="d-flex justify-content-start align-items-center avatar-flip" v-for="avatar in avatars" :key="avatar.id">
@@ -36,7 +38,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-lg-5 col-md-12 flex-column d-flex align-items-lg-end align-items-md-start justify-content-center pr-0">
+              <div class="col-lg-5 col-md-12 flex-sm-row flex-md-column d-flex align-items-lg-end align-items-md-start justify-content-between justify-content-md-center tr-check-group">
                 <span class="d-block">昨天11:02</span>
                 <div>
                   <button class="hg-want" data-toggle="modal" data-target="#iwanttoloudlyCenter">我要大聲說</button>

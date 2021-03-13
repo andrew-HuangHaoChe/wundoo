@@ -1,0 +1,74 @@
+.per-block {
+    padding: $block-sm $block-sm * 2;
+    border-radius: 5px;
+    h2 {
+        font-weight: 500;
+        font-size: $block-sm * 2;
+        line-height: $block-md;
+        color: #000000;
+    }
+    h4 {
+        font-size: $font-size-sm;
+        line-height: $block-sm * 2;
+        color: #333333;
+    }
+}
+
+.per-about-me {
+    font-weight: 500;
+    font-size: $block-sm * 2;
+    line-height: $block-md;
+    color: #000000;
+}
+
+.per-about-edit {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: $font-size-lg;
+    line-height: $block-md - 4px;
+    color: #E2273A;
+    transition: all .3s;
+    &:hover {
+        color: #bd1728;
+    }
+}
+
+.soical-width {
+    width: 50%;
+    @media(max-width: 768px) {
+        width: 70%;
+    }
+    @media(max-width: 576px) {
+        width: 100%;
+    }
+    img {
+        @media(max-width: 576px) {
+            width: 50px;
+            height: 50px;
+            margin-bottom: $block-sm !important;
+        }
+    }
+    p {
+        width: 15%;
+        @media(max-width: 576px) {
+            width: 25%;
+            margin-bottom: $block-sm !important;
+        }
+    }
+    span {
+        width: 25%;
+        @media(max-width: 576px) {
+            width: 20%;
+            margin-bottom: $block-sm !important;
+        }
+        @media(max-width: 320px) {
+            width: 100%;
+        }
+    }
+    button {
+        width: 20%;
+        @media(max-width: 576px) {
+            width: 35%;
+        }
+    }
+}

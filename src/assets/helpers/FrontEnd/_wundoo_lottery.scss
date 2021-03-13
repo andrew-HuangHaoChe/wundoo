@@ -100,6 +100,12 @@
     color: #FFFFFF;
     text-shadow: 0px 2px 2px #FF0D0D;
     -webkit-text-stroke: 1px #FF0D0D;
+    @media(max-width: 576px) {
+        font-size: $font-size-lg;
+    }
+    @media(max-width: 320px) {
+        font-size: $font-size-md;
+    }
 }
 
 .maybe_is_you {
@@ -119,6 +125,9 @@
     text-align: center;
     letter-spacing: 1px;
     color: #664433;
+    @media(max-width: 576px) {
+        font-size: $font-size-md;
+    }
 }
 
 .all_in_getmore_sub {
@@ -166,6 +175,12 @@
     color: rgb(255, 221, 155);
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0 3px 1px #000);
+    @media(max-width: 1024px) {
+        font-size: 60px;
+    }
+    @media(max-width: 320px) {
+        font-size: 50px;
+    }
 }
 
 .lottery_ticket_block {
@@ -309,6 +324,12 @@
     letter-spacing: 1px;
     color: #FFFFFF;
     margin-bottom: 0;
+    @media(max-width: 768px) {
+        font-size: $block-md - 3px;  
+    }
+    @media(max-width: 375px) {
+        font-size: $block-sm * 2;  
+    }
 }
 
 .des_bottom_block {
@@ -322,6 +343,14 @@
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        @media(max-width: 576px) {
+            font-size: $font-size-lg;
+        }
+    }
+    @media(max-width: 576px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -338,6 +367,10 @@
         padding: 12px 24px;
         cursor: pointer;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        @media(max-width: 1024px) {
+            font-size: $font-size-lg;
+            padding: 8px 14px;
+        }
         @media(max-width: 768px) {
             padding: 6px 12px;
         }
@@ -354,6 +387,10 @@
         color: #00734D;
         cursor: pointer;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+        @media(max-width: 1024px) {
+            font-size: $font-size-lg;
+            padding: 8px 14px;
+        }
         @media(max-width: 768px) {
             padding: 6px 12px;
             letter-spacing: 0;
@@ -459,6 +496,7 @@
     flex-direction: column;
     margin-left: -48px;
     @media(max-width: 768px) {
+        width: 100%;
         margin-left: 0;
         margin-bottom: $block-sm;
     }
@@ -476,6 +514,7 @@
     display: flex;
     flex-direction: column;
     @media(max-width: 768px) {
+        width: 100%;
         margin-bottom: $block-sm * 2;
     }
 }
@@ -525,7 +564,18 @@
 
 .hg-award-btn {
     width: 60%;
+    @media(max-width: 1024px) {
+        width: 90%;
+    }
     @media(max-width: 768px) {
         font-size: $font-size-md;
+    }
+    @media(max-width: 576px) {
+        font-size: $font-size-sm;
+        width: 70%;
+    }
+    @media(max-width: 320px) {
+        font-size: $font-size-sm;
+        width: 80%;
     }
 }

@@ -73,3 +73,23 @@ footer {
     align-items: start !important;
   }
 }
+
+.footer-logo-text {
+  font-weight: bold;
+  font-size: $block-sm * 2;
+  line-height: $block-md;
+  letter-spacing: 0.5px;
+  color: #2B2B2B;
+}
+
+.footer-logo {
+  width: 200px;
+  @media(max-width: 1024px) {
+    width: 100px;
+    height: 40px;
+  }
+  @media(max-width: 768px) {
+    width: 200px;
+    height: 50px;
+  }
+}

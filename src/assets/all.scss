@@ -23,7 +23,12 @@
 @import "./helpers/FrontEnd/tempeveryday.scss";
 @import "./helpers/FrontEnd/wundoo_lottery.scss";
 @import "./helpers/FrontEnd/participated.scss";
+@import "./helpers/FrontEnd/_personalSetting.scss";
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+@font-face {
+    font-family: TaipeiSansTCBeta-Bold;
+    src: url(./assets/font/TaipeiSansTCBeta-Bold.ttf);
+}
 body {
     font-family: 'Noto Sans TC', sans-serif;
 }

@@ -2,7 +2,7 @@
   <div>
     <div class="container custom-container-width mt-11">
       <div class="my-3">
-          <ul class="d-flex list-unstyled mb-0">
+          <ul class="d-flex flex-wrap list-unstyled mb-0">
             <li class="pr-2">
               <router-link to="/huntground" class="d-flex align-items-center memberbadge">
                 <img src="../../assets/image/huntground_lk/hg_icon/lhgmana_icon.png" alt=""/>同好獵場 /
@@ -21,7 +21,7 @@
       </div>
       <div class="mem-mgmt-nav mb-3">
         <div class="row d-flex align-items-center">
-          <div class="col-6 col-md-4 d-flex justify-content-center">
+          <div class="col-12 col-md-5 col-lg-4 d-flex justify-content-center">
             <div class="member-search w-100">
               <input class="w-100" type="text" placeholder="搜尋成員">
               <a href="#"><img src="../../assets/image/icon/ic_search.svg" alt="" class="member-search-icon"></a>
@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="row" v-for="(member, index) in members" :key="member.id" :class="{ 'mgmt-active':index%2 !== 1 }">
-          <div class="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center align-items-md-start justify-content-center align-items-lg-center p-3 member-border-bottom member-manager">
+          <div class="col-12 col-md-12 col-lg-2 d-flex flex-column align-items-center align-items-md-start justify-content-center align-items-lg-center p-2 member-border-bottom member-manager">
             <img v-if="member.managerImg !== ''" :src="member.managerImg" alt="" style="height: 30px; width: 30px;">
             <p class="mb-0 review-categories"
               :class="{ 'hg-guard': member.categories ==='獵場守衛',
@@ -70,7 +70,7 @@
                 <img :src="member.categoryImg" alt="部落分類">
               </div>
             </div>
-            <div class="member-title pl-4">
+            <div class="member-title d-flex flex-column justify-content-center">
               <h6 class="mb-0">{{ member.name }}</h6>
               <span>{{ member.poster }}</span>
             </div>
@@ -85,8 +85,8 @@
           </div>
           <div class="col-12 col-md-12 col-lg-3 member-authority member-border-bottom re-new-member">
             <ul class="d-flex justify-content-between justify-content-md-start justify-content-lg-center justify-content-xl-between align-items-center h-100 list-unstyled row px-2" v-if="member.categories !=='獵場管理人員'">
-              <li class="pass-review "><a class="d-flex align-items-center" href="#"><img class="pr-2" src="../../assets/image/huntground_lk/hg_icon/pass.png" alt="">通過</a></li>
-              <li class="not-pass-review "><a class="d-flex align-items-center" href="#"><img class="pr-2" src="../../assets/image/huntground_lk/hg_icon/notpass.png" alt="">不通過</a></li>
+              <li class="pass-review"><a class="d-flex align-items-center" href="#"><img class="pr-2" src="../../assets/image/huntground_lk/hg_icon/pass.png" alt="">通過</a></li>
+              <li class="not-pass-review"><a class="d-flex align-items-center" href="#"><img class="pr-2" src="../../assets/image/huntground_lk/hg_icon/notpass.png" alt="">不通過</a></li>
               <li class=""><a href="#" data-toggle="modal" data-target="#application-Modal">申請原因</a></li>
             </ul>
           </div>

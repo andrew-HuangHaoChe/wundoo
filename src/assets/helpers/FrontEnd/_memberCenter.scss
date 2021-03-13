@@ -1,7 +1,10 @@
 .mem-padding {
   padding-top: $block-sm * 9;
   @media(max-width: 1440px) {
-    padding-top: $block-sm * 8 + 5px;
+    padding-top: $block-sm * 8;
+  }
+  @media(max-width: 320px) {
+    padding-top: $block-sm * 7 + 3px;
   }
 }
 .member_header {
