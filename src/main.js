@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import axios from 'axios' // 主要AJAX套件
 import VueAxios from 'vue-axios' // 將它轉為Vue套件
 import App from './App.vue'
@@ -30,6 +31,7 @@ Vue.use(VuejsClipper)
 Vue.use(GoogleAuth, gauthOption)
 Vue.use(VueAxios, axios)
 Vue.prototype.$axios = axios
+Vue.use(Vuex)
 axios.defaults.withCredentials = true
 Vue.config.productionTip = false
 new Vue({

@@ -210,11 +210,11 @@ export default {
     showCatFun () {
       const vm = this
       const formData = new FormData()
-      // const config = {
-      //   headers: {
-      //     'Content-Type': 'multipart/form-data'
-      //   }
-      // }
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
       const tribe = localStorage.getItem('tribe') // 部落
       const clubeMain = localStorage.getItem('clube_main') // 所在地獵場
       const clueHobby = localStorage.getItem('clue_hobby') // 感興趣獵場
@@ -233,59 +233,59 @@ export default {
       formData.append('club_main', clubeMain)
       formData.append('clue_hobby', clueHobby)
       formData.append('avatar', this.upImg)
-      // if (vm.date === '') {
-      //   alert('請填寫生日!')
-      //   return false
-      // }
-      // if (vm.agree === false) {
-      //   alert('請勾選已閱讀服務條款!')
-      //   return false
-      // }
-      // if (vm.name === '') {
-      //   alert('姓名尚未填寫!')
-      //   return false
-      // }
-      // if (vm.nickname === '') {
-      //   alert('暱稱尚未填寫!')
-      //   return false
-      // }
-      // if (vm.phone === '') {
-      //   alert('手機尚未填寫!')
-      //   return false
-      // }
-      // if (vm.selectedCounties === '' || vm.selectedtown === '') {
-      //   alert('請選擇居住地!')
-      //   return false
-      // }
-      // if (vm.email === '') {
-      //   alert('email尚未填寫!')
-      //   return false
-      // }
-      // if (vm.password === '') {
-      //   alert('密碼尚未填寫!')
-      //   return false
-      // }
-      // if (vm.confirmpass === '') {
-      //   alert('確認密碼尚未填寫!')
-      //   return false
-      // }
-      // if (vm.password !== vm.confirmpass) {
-      //   alert('請檢查密碼與確認密碼是否相符!')
-      //   return false
-      // }
-      // vm.$http.post('/apipath/api/register', formData, config).then((response) => {
-      //   console.log(response)
-      //   if (response.data.status === false) {
-      //     alert(response.data.msg + '!')
-      //     return false
-      //   } else {
-      vm.showCat = true
-      setTimeout(function () {
-        vm.showCat = false
-        $('#lotteryModal').modal('show')
-      }, 3000)
-      // }
-      // })
+      if (vm.date === '') {
+        alert('請填寫生日!')
+        return false
+      }
+      if (vm.agree === false) {
+        alert('請勾選已閱讀服務條款!')
+        return false
+      }
+      if (vm.name === '') {
+        alert('姓名尚未填寫!')
+        return false
+      }
+      if (vm.nickname === '') {
+        alert('暱稱尚未填寫!')
+        return false
+      }
+      if (vm.phone === '') {
+        alert('手機尚未填寫!')
+        return false
+      }
+      if (vm.selectedCounties === '' || vm.selectedtown === '') {
+        alert('請選擇居住地!')
+        return false
+      }
+      if (vm.email === '') {
+        alert('email尚未填寫!')
+        return false
+      }
+      if (vm.password === '') {
+        alert('密碼尚未填寫!')
+        return false
+      }
+      if (vm.confirmpass === '') {
+        alert('確認密碼尚未填寫!')
+        return false
+      }
+      if (vm.password !== vm.confirmpass) {
+        alert('請檢查密碼與確認密碼是否相符!')
+        return false
+      }
+      vm.$http.post('/apipath/api/register', formData, config).then((response) => {
+        console.log(response)
+        if (response.data.status === false) {
+          alert(response.data.msg + '!')
+          return false
+        } else {
+          vm.showCat = true
+          setTimeout(function () {
+            vm.showCat = false
+            $('#lotteryModal').modal('show')
+          }, 3000)
+        }
+      })
     },
     datepick () {
       this.$refs.pickdate.click()
