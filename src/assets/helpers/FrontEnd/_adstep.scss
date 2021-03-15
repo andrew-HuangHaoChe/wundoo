@@ -441,13 +441,6 @@
 // #radiofirst, #radiosecond, #radiothird, #radiofourth {
 //   display: none;
 // }
-
-.onetype , .twotype, .threetype, .fourtype {
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
 .onetype {
   width: 200px;
   height: 300px;
@@ -481,6 +474,16 @@
   background: #AAAAAA;
   @media(max-width: 1024px) {
     width: 100%;
+  }
+}
+
+.onetype , .twotype, .threetype, .fourtype {
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  img {
+    width: 100%;
+    height: 100%;
   }
 }
 

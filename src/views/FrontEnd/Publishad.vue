@@ -40,7 +40,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board1" name="radio-group" @click="edittype='one'">
+                  <input type="radio" id="board1" name="radio-group" @click="edittype='one', adcropSize = 1">
                   <label for="board1">版型1</label>
                 </p>
               </div>
@@ -64,7 +64,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board2" name="radio-group" @click="edittype='two'">
+                  <input type="radio" id="board2" name="radio-group" @click="edittype='two', adcropSize = 4 / 3">
                   <label for="board2">版型2</label>
                 </p>
               </div>
@@ -88,7 +88,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board3" name="radio-group" @click="edittype='three'">
+                  <input type="radio" id="board3" name="radio-group" @click="edittype='three', adcropSize = 16 / 9">
                   <label for="board3">版型3</label>
                 </p>
               </div>
@@ -112,7 +112,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board4" name="radio-group" @click="edittype='four'">
+                  <input type="radio" id="board4" name="radio-group" @click="edittype='four', adcropSize = 21 / 9">
                   <label for="board4">版型4</label>
                 </p>
               </div>
@@ -243,20 +243,15 @@
       </ul>
       <div class="chooseC makingad-block">
         <div class="py-4 uploadImgBlock" v-if="makeadOption == 'uploadImgMode'">
-          <div class="onetype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'one'"></div>
-          <div class="twotype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'two'"></div>
-          <div class="threetype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'three'"></div>
-          <div class="fourtype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'four'"></div>
+          <div class="onetype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'one'" :style="'backgroundImage:url('+upImg+')'"></div>
+          <div class="twotype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'two'" :style="'backgroundImage:url('+upImg+')'"></div>
+          <div class="threetype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'three'" :style="'backgroundImage:url('+upImg+')'"></div>
+          <div class="fourtype d-flex justify-content-center align-items-center mb-3" v-if="edittype === 'four'" :style="'backgroundImage:url('+upImg+')'"></div>
           <form class="b-btnGroup">
             <div class="d-flex mb-3">
-              <button class="btn ad_btn_whiteBtn mr-auto">選擇檔案</button>
-              <button class="btn btn-brilliantRed">刪除圖片</button>
-              <!-- <ImageCropper src="/S__37322806.jpg"/> -->
+              <LocalADCropper v-on:imgUrl="cropurl" :inputName="adcropSize"/>
             </div>
             <div class="d-flex">
-              <a class="mr-auto d-flex align-items-center cut-img">
-                <img class="mr-1" src="../../assets/image/huntground_lk/cut-img.svg" alt="">裁切圖片
-              </a>
               <a class="previewWeb">
                 <img class="mr-1" src="../../assets/image/huntground_lk/icon_view.svg" alt="">
                 預覽網頁
@@ -384,18 +379,20 @@
   </div>
 </template>
 <script>
-// import ImageCropper from '../../components/ImageCropper.vue'
+import LocalADCropper from '../../components/LocalADCropper.vue'
 export default {
-  // components: {
-  //   ImageCropper
-  // },
+  components: {
+    LocalADCropper
+  },
   data () {
     return {
       purchasePlan: 'buyad',
       makeadOption: 'uploadImgMode',
       edittype: 'one',
       avatar: '', // require('@/assets/image/icon/uploadimg.svg')
-      adcolor: ''
+      adcolor: '',
+      upImg: '',
+      adcropSize: '4 / 3'
     }
   },
   methods: {
@@ -411,6 +408,9 @@ export default {
     changeColor (color) {
       this.adcolor = color
       console.log(color)
+    },
+    cropurl (data) {
+      this.upImg = data
     }
   }
 }

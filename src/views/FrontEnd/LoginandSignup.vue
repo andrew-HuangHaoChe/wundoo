@@ -114,7 +114,50 @@
             <h5 class="modal-title" id="lotteryModalLabel">註冊成功</h5>
             <p class="mb-0">歡迎加入溫度部落！試試手氣送您<strong>見面禮</strong></p>
             <div class="lottery-nine-block">
-              <NewLottery/>
+              <NewLottery @winthelott="updatelotteryStatus" @lottCount="updateCount"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="z-index: 999;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body d-flex flex-column align-items-center" style="padding-top: 0; margin-top: -30px;">
+            <div class="lottery-nine-block d-flex flex-column align-items-center">
+              <div>
+                <h5>恭喜獲得部落見面禮</h5>
+                <p>獲得部落見面禮: <span></span></p>
+                <p>快去「會員中心」查看</p>
+                <p>分享您的喜氣，讓您再抽一次</p>
+              </div>
+              <img src="../../assets/image/images/signup/bighunt.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="failModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="z-index: 999;">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body d-flex flex-column align-items-center" style="padding-top: 0; margin-top: -30px;">
+            <div class="lottery-nine-block d-flex flex-column align-items-center">
+              <h5>哎呀不是這個寶箱</h5>
+              <p>有沒有洗手啊...到底！！</p>
+              <p>開運提示：肥皂洗手60秒比較容易中獎</p>
+              <img src="../../assets/image/images/signup/sad.png" alt="">
             </div>
           </div>
         </div>
@@ -137,6 +180,8 @@ export default {
   },
   data () {
     return {
+      lotteryStatus: false,
+      lotteryCount: 0,
       upImg: '',
       date: new Date(),
       agree: false,
@@ -165,11 +210,11 @@ export default {
     showCatFun () {
       const vm = this
       const formData = new FormData()
-      const config = {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }
+      // const config = {
+      //   headers: {
+      //     'Content-Type': 'multipart/form-data'
+      //   }
+      // }
       const tribe = localStorage.getItem('tribe') // 部落
       const clubeMain = localStorage.getItem('clube_main') // 所在地獵場
       const clueHobby = localStorage.getItem('clue_hobby') // 感興趣獵場
@@ -188,59 +233,59 @@ export default {
       formData.append('club_main', clubeMain)
       formData.append('clue_hobby', clueHobby)
       formData.append('avatar', this.upImg)
-      if (vm.date === '') {
-        alert('請填寫生日!')
-        return false
-      }
-      if (vm.agree === false) {
-        alert('請勾選已閱讀服務條款!')
-        return false
-      }
-      if (vm.name === '') {
-        alert('姓名尚未填寫!')
-        return false
-      }
-      if (vm.nickname === '') {
-        alert('暱稱尚未填寫!')
-        return false
-      }
-      if (vm.phone === '') {
-        alert('手機尚未填寫!')
-        return false
-      }
-      if (vm.selectedCounties === '' || vm.selectedtown === '') {
-        alert('請選擇居住地!')
-        return false
-      }
-      if (vm.email === '') {
-        alert('email尚未填寫!')
-        return false
-      }
-      if (vm.password === '') {
-        alert('密碼尚未填寫!')
-        return false
-      }
-      if (vm.confirmpass === '') {
-        alert('確認密碼尚未填寫!')
-        return false
-      }
-      if (vm.password !== vm.confirmpass) {
-        alert('請檢查密碼與確認密碼是否相符!')
-        return false
-      }
-      vm.$http.post('/apipath/api/register', formData, config).then((response) => {
-        console.log(response)
-        if (response.data.status === false) {
-          alert(response.data.msg + '!')
-          return false
-        } else {
-          vm.showCat = true
-          setTimeout(function () {
-            vm.showCat = false
-            $('#lotteryModal').modal('show')
-          }, 3000)
-        }
-      })
+      // if (vm.date === '') {
+      //   alert('請填寫生日!')
+      //   return false
+      // }
+      // if (vm.agree === false) {
+      //   alert('請勾選已閱讀服務條款!')
+      //   return false
+      // }
+      // if (vm.name === '') {
+      //   alert('姓名尚未填寫!')
+      //   return false
+      // }
+      // if (vm.nickname === '') {
+      //   alert('暱稱尚未填寫!')
+      //   return false
+      // }
+      // if (vm.phone === '') {
+      //   alert('手機尚未填寫!')
+      //   return false
+      // }
+      // if (vm.selectedCounties === '' || vm.selectedtown === '') {
+      //   alert('請選擇居住地!')
+      //   return false
+      // }
+      // if (vm.email === '') {
+      //   alert('email尚未填寫!')
+      //   return false
+      // }
+      // if (vm.password === '') {
+      //   alert('密碼尚未填寫!')
+      //   return false
+      // }
+      // if (vm.confirmpass === '') {
+      //   alert('確認密碼尚未填寫!')
+      //   return false
+      // }
+      // if (vm.password !== vm.confirmpass) {
+      //   alert('請檢查密碼與確認密碼是否相符!')
+      //   return false
+      // }
+      // vm.$http.post('/apipath/api/register', formData, config).then((response) => {
+      //   console.log(response)
+      //   if (response.data.status === false) {
+      //     alert(response.data.msg + '!')
+      //     return false
+      //   } else {
+      vm.showCat = true
+      setTimeout(function () {
+        vm.showCat = false
+        $('#lotteryModal').modal('show')
+      }, 3000)
+      // }
+      // })
     },
     datepick () {
       this.$refs.pickdate.click()
@@ -267,6 +312,12 @@ export default {
     },
     cropurl (data) {
       this.upImg = data
+    },
+    updatelotteryStatus (val) {
+      this.lotteryStatus = val
+    },
+    updateCount (count) {
+      this.lotteryCount = count
     }
   },
   created () {
@@ -278,6 +329,27 @@ export default {
         vm.hgData.push(hgData[i].name)
       }
     })
+  },
+  watch: {
+    lotteryStatus: function () {
+      const vm = this
+      console.log(vm.lotteryStatus)
+      if (vm.lotteryCount === 1 && vm.lotteryStatus === true) {
+        $('#successModal').modal('show')
+      } else if (vm.lotteryCount === 2 && vm.lotteryStatus === true) {
+        $('#successModal').modal('show')
+      } else if (vm.lotteryCount === 3) {
+        $('#successModal').modal('show')
+      }
+    },
+    lotteryCount: function () {
+      const vm = this
+      if (vm.lotteryCount === 1 && vm.lotteryStatus === false) {
+        $('#failModal').modal('show')
+      } else if (vm.lotteryCount === 2 && vm.lotteryStatus === false) {
+        $('#failModal').modal('show')
+      }
+    }
   }
 }
 </script>
@@ -318,6 +390,14 @@ export default {
   margin: 0 auto;
   @media(max-width: 576px) {
     width: 280px;
+  }
+  div {
+    h5 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+    }
   }
 }
 

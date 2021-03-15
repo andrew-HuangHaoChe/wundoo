@@ -6,10 +6,10 @@
           <div class="col-12 d-flex justify-content-center">
             <h2>請選擇廣告刊登功能</h2>
           </div>
-          <div class="col-6 d-flex justify-content-end">
+          <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end mb-2">
             <router-link to="/adstep" class="ad_btn_bus">營業廣告</router-link>
           </div>
-          <div class="col-6 d-flex justify-content-start">
+          <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start mb-2">
             <router-link to="/adstep" class="ad_btn_peo">人事廣告</router-link>
           </div>
         </div>
@@ -26,6 +26,9 @@
 }
 .local-block {
   padding-bottom: 170px;
+  @media(max-width: 768px) {
+    padding-bottom: 30px;
+  }
 }
 h2 {
   margin: 170px 0 70px 0;
@@ -35,6 +38,9 @@ h2 {
   text-align: center;
   letter-spacing: 0.02em;
   color: #000000;
+  @media(max-width: 768px) {
+    margin: 100px 0 30px 0;
+  }
 }
 .ad_btn_bus, .ad_btn_peo {
   padding: 100px;

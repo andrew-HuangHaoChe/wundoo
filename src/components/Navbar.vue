@@ -296,6 +296,7 @@ import Sidebar from '../components/Sidebar.vue'
 import GoogleLogin from '../components/GoogleLogin.vue'
 import FacebookLogin from '../components/FaceBookLogin.vue'
 import LineLogin from '../components/LineLogin.vue'
+import axios from 'axios'
 import Qs from 'qs'
 import jwtDecode from 'jwt-decode'
 export default {
@@ -340,7 +341,7 @@ export default {
       URL += 'response_type=code' // 希望LINE回應什麼  但是目前只有code能選
       URL += `&client_id=${process.env.VUE_APP_LINE_CHANELL_ID}` // 你的頻道ID
       URL += `&redirect_uri=${process.env.VUE_APP_LINE_REDIRECT_URL}` // 要接收回傳訊息的網址
-      URL += '&state=123456789' // 用來防止跨站請求的 之後回傳會傳回來給你驗證 通常設亂數 這邊就先放123456789
+      URL += '&state=987654321' // 用來防止跨站請求的 之後回傳會傳回來給你驗證 通常設亂數 這邊就先放123456789
       URL += '&scope=openid%20profile' // 跟使用者要求的權限 目前就三個能選 openid profile email
       // 選填
       URL += '&nonce=helloWorld' // 順便將機器人也加好友
@@ -394,7 +395,8 @@ export default {
       client_id: process.env.VUE_APP_LINE_CHANELL_ID,
       client_secret: process.env.VUE_APP_LINE_CHANELL_SECRET
     })
-    this.$http.post('https://api.line.me/oauth2/v2.1/token', options, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(res => {
+    axios.post('https://api.line.me/oauth2/v2.1/token', options, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(res => {
+      console.log(res)
       this.tokenResult = res.data // 回傳的結果
       this.idTokenDecode = jwtDecode(res.data.id_token) // 把結果的id_token做解析
     })

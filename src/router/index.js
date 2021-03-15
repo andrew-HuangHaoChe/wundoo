@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 export default new VueRouter({
-  // mode:'history', 用來搭配後端的路由模式
+  // mode:'history', // 用來搭配後端的路由模式
   base: process.env.NODE_ENV === 'production' ? '/temperature/' : '/',
   scrollBehavior (to, from, savedPosition) {
     return {

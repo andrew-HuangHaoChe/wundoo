@@ -28,13 +28,12 @@
         <div class="mr-3">
           <input ref="clickupload" type="file" id="change" accept="image" @change="change" style="display: none;">
           <label for="change"></label>
-          <button class="btn btn-brilliantRed" @click="$refs.clickupload.click()">選擇檔案</button>
+          <button class="btn ad_btn_whiteBtn" @click.prevent="$refs.clickupload.click()">選擇檔案</button>
         </div>
-        <div v-if="headerImage === ''" class="defaultpic"><img src="../assets/image/images/default-pic.png" alt=""></div>
-        <div v-if="headerImage !== ''" class="show">
+        <!-- <div v-if="headerImage !== ''" class="show">
           <div class="picture" :style="'backgroundImage:url('+headerImage+')'">
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -43,6 +42,9 @@
 import Cropper from 'cropperjs'
 import $ from 'jquery'
 export default {
+  props: {
+    inputName: Number
+  },
   components: {
   },
   data () {
@@ -52,7 +54,8 @@ export default {
       cropper: '',
       croppable: false,
       panel: false,
-      url: ''
+      url: '',
+      adSize: ''
     }
   },
   mounted () {
@@ -60,7 +63,7 @@ export default {
     var self = this
     var image = document.getElementById('image')
     this.cropper = new Cropper(image, {
-      aspectRatio: 1,
+      aspectRatio: NaN,
       viewMode: 1,
       background: false,
       zoomable: true,
@@ -128,12 +131,16 @@ export default {
       context.drawImage(sourceCanvas, 0, 0, width, height)
       context.globalCompositeOperation = 'destination-in'
       context.beginPath()
-      context.arc(width / 2, height / 2, Math.min(width, height) / 2, 0, 2 * Math.PI, true) // 將圖片裁切成圓形，詳見arc用法於MDN
       context.fill()
       return canvas
     },
     postImg () {
       // 这边写图片的上传
+    }
+  },
+  watch: {
+    inputName: function (val) { // 监听props中的属性
+      this.adSize = val
     }
   }
 }
@@ -154,7 +161,6 @@ export default {
     height: 150px;
     overflow: hidden;
     position: relative;
-    border-radius: 50%;
     border: 3px solid #e8c57c;
   }
 
@@ -169,7 +175,6 @@ export default {
   .defaultpic {
     width: 150px;
     height: 150px;
-    border-radius: 50%;
     img {
       width: 150px;
       height: 150px;
