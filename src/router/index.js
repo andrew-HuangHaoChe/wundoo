@@ -3,15 +3,11 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 export default new VueRouter({
-  // mode:'history', // 用來搭配後端的路由模式
-  base: process.env.NODE_ENV === 'production' ? '/temperature/' : '/',
   scrollBehavior (to, from, savedPosition) {
-    return {
-      x: 0,
-      y: 0,
-      behavior: 'smooth'
-    }
+    return { x: 0, y: 0 }
   },
+  // mode:'history', 用來搭配後端的路由模式
+  base: process.env.NODE_ENV === 'production' ? '/temperature/' : '/',
   routes: [
     {
       path: '*',
@@ -105,7 +101,8 @@ export default new VueRouter({
             {
               path: 'adOnlinemade',
               name: '步驟三線上製作',
-              component: () => import('../views/FrontEnd/PublishadThreeTwo.vue'),
+              component: () =>
+                import('../views/FrontEnd/PublishadThreeTwo.vue'),
               children: [
                 {
                   path: '',
@@ -117,11 +114,13 @@ export default new VueRouter({
                 },
                 {
                   path: 'adBimg',
-                  component: () => import('../views/FrontEnd/makeAd_b/Adimg_b.vue')
+                  component: () =>
+                    import('../views/FrontEnd/makeAd_b/Adimg_b.vue')
                 },
                 {
                   path: 'adBtext',
-                  component: () => import('../views/FrontEnd/makeAd_b/AdText_b.vue')
+                  component: () =>
+                    import('../views/FrontEnd/makeAd_b/AdText_b.vue')
                 }
               ]
             }
@@ -215,22 +214,26 @@ export default new VueRouter({
         {
           path: '/membercenter',
           name: '會員中心',
-          component: () => import('../views/FrontEnd/MemberCenter/MemberHp.vue'),
+          component: () =>
+            import('../views/FrontEnd/MemberCenter/MemberHp.vue'),
           children: [
             {
               path: '/',
               name: '獵人資訊頁',
-              component: () => import('../views/FrontEnd/MemberCenter/MemberInf.vue')
+              component: () =>
+                import('../views/FrontEnd/MemberCenter/MemberInf.vue')
             },
             {
               path: '/memberdiary',
               name: '獵人日記',
-              component: () => import('../views/FrontEnd/MemberCenter/MemberArticle.vue')
+              component: () =>
+                import('../views/FrontEnd/MemberCenter/MemberArticle.vue')
             },
             {
               path: '/ptphuntground',
               name: '獵場資訊頁',
-              component: () => import('../views/FrontEnd/MemberCenter/MemberHgInfo.vue')
+              component: () =>
+                import('../views/FrontEnd/MemberCenter/MemberHgInfo.vue')
             }
           ]
         },
@@ -307,29 +310,100 @@ export default new VueRouter({
         {
           path: '/participated',
           name: '曾參與的活動頁面',
-          component: () => import('../views/FrontEnd/participatedGroup/Participated.vue'),
+          component: () =>
+            import('../views/FrontEnd/participatedGroup/Participated.vue'),
           children: [
             {
               path: '/',
               name: '曾參與的抽獎頁面',
-              component: () => import('../views/FrontEnd/participatedGroup/Particlottery.vue')
+              component: () =>
+                import('../views/FrontEnd/participatedGroup/Particlottery.vue')
             },
             {
               path: '/particRace',
               name: '競賽頁面',
-              component: () => import('../views/FrontEnd/participatedGroup/ParticRace.vue')
+              component: () =>
+                import('../views/FrontEnd/participatedGroup/ParticRace.vue')
             },
             {
               path: '/particMission',
               name: '任務頁面',
-              component: () => import('../views/FrontEnd/participatedGroup/Particmission.vue')
+              component: () =>
+                import('../views/FrontEnd/participatedGroup/Particmission.vue')
             }
           ]
         },
         {
-          path: '/personalSetting',
-          name: '個人資料',
-          component: () => import('../views/FrontEnd/PersonalSetting.vue')
+          path: '/footerLevel',
+          name: '會員等級',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtLevel.vue')
+        },
+        {
+          path: '/footerFaq',
+          name: '常見問題',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtFaq.vue')
+        },
+        {
+          path: '/footerService',
+          name: '服務條款',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtService.vue')
+        },
+        {
+          path: '/footerPrivacy',
+          name: '隱私權條款',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtPrivacy.vue')
+        },
+        {
+          path: '/footerPrivacy',
+          name: '隱私權條款',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtPrivacy.vue')
+        },
+        {
+          path: '/footerEquity',
+          name: '會員權益',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtEquity.vue')
+        },
+        {
+          path: '/footerAdStand',
+          name: '會員權益',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtAdStand.vue')
+        },
+        {
+          path: '/footerFeedBack',
+          name: '意見回饋',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtFeedBack.vue')
+        },
+        {
+          path: '/footerProposal',
+          name: '合作提案',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtProposal.vue')
+        },
+        {
+          path: '/footerAdDesign',
+          name: '廣告圖片設計',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtAdDesign.vue')
+        },
+        {
+          path: '/footerAdProject',
+          name: '五個專案廣告',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtAdProject.vue')
+        },
+        {
+          path: '/footerWeb',
+          name: '網站平台建置',
+          component: () =>
+            import('../views/FrontEnd/footerComponent/FtWeb.vue')
         }
       ]
     }
