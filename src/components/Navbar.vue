@@ -406,6 +406,7 @@ export default {
   },
   mounted () {
     this.query = this.$route.query // 接網址的參數
+    console.log(this.query.code)
     const options = Qs.stringify({ // POST的參數  用Qs是要轉成form-urlencoded 因為LINE不吃JSON格式
       grant_type: 'authorization_code',
       code: this.query.code,

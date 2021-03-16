@@ -6,7 +6,7 @@ export default new VueRouter({
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   },
-  // mode:'history', 用來搭配後端的路由模式
+  mode: 'history', // 用來搭配後端的路由模式
   base: process.env.NODE_ENV === 'production' ? '/temperature/' : '/',
   routes: [
     {
@@ -112,40 +112,7 @@ export default new VueRouter({
           path: '/adstepThree',
           name: '刊登廣告方案步驟三',
           component: () => import('../views/FrontEnd/PublishadThree.vue'),
-          meta: { requiresAuth: true },
-          children: [
-            {
-              path: '',
-              name: '步驟三直接上傳圖片',
-              component: () => import('../views/FrontEnd/PublishadThreeOne.vue')
-            },
-            {
-              path: 'adOnlinemade',
-              name: '步驟三線上製作',
-              component: () =>
-                import('../views/FrontEnd/PublishadThreeTwo.vue'),
-              children: [
-                {
-                  path: '',
-                  component: () => import('../views/FrontEnd/AdStepthirOne.vue')
-                },
-                {
-                  path: 'thirStepTwo',
-                  component: () => import('../views/FrontEnd/AdStepthirTwo.vue')
-                },
-                {
-                  path: 'adBimg',
-                  component: () =>
-                    import('../views/FrontEnd/makeAd_b/Adimg_b.vue')
-                },
-                {
-                  path: 'adBtext',
-                  component: () =>
-                    import('../views/FrontEnd/makeAd_b/AdText_b.vue')
-                }
-              ]
-            }
-          ]
+          meta: { requiresAuth: true }
         },
         {
           path: '/adstepFour',

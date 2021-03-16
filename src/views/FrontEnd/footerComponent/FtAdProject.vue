@@ -34,9 +34,7 @@
           </div>
         </div>
         <div class="row mt-4">
-          <a class="ad-design-btn mb-4" href="FtProposal.vue" target="_blank">
-            <button type="button" class="btn btn-danger">我要刊登</button>
-          </a>
+          <router-link to="/footerProposal" class="ad-design-btn mb-4 btn btn-danger" target="_blank">我要刊登</router-link>
         </div>
         <!-- for section 2 -->
         <div class="row">
