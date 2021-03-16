@@ -112,9 +112,7 @@ export default new VueRouter({
           path: '/adstepThree',
           name: '刊登廣告方案步驟三',
           component: () => import('../views/FrontEnd/PublishadThree.vue'),
-<<<<<<< HEAD
-          meta: { requiresAuth: true }
-=======
+          meta: { requiresAuth: true },
           children: [
             {
               path: '',
@@ -148,7 +146,6 @@ export default new VueRouter({
               ]
             }
           ]
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
         },
         {
           path: '/adstepFour',
@@ -255,86 +252,26 @@ export default new VueRouter({
         {
           path: '/membercenter',
           name: '會員中心',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           component: () => import('../views/FrontEnd/MemberCenter/MemberHp.vue'),
           meta: { requiresAuth: true },
-=======
-          component: () =>
-            import('../views/FrontEnd/MemberCenter/MemberHp.vue'),
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-          component: () =>
-            import('../views/FrontEnd/MemberCenter/MemberHp.vue'),
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-          component: () =>
-            import('../views/FrontEnd/MemberCenter/MemberHp.vue'),
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
           children: [
             {
               path: '/',
               name: '獵人資訊頁',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
               component: () => import('../views/FrontEnd/MemberCenter/MemberInf.vue'),
               meta: { requiresAuth: true }
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberInf.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberInf.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberInf.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
             },
             {
               path: '/memberdiary',
               name: '獵人日記',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
               component: () => import('../views/FrontEnd/MemberCenter/MemberArticle.vue'),
               meta: { requiresAuth: true }
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberArticle.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberArticle.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberArticle.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
             },
             {
               path: '/ptphuntground',
               name: '獵場資訊頁',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
               component: () => import('../views/FrontEnd/MemberCenter/MemberHgInfo.vue'),
               meta: { requiresAuth: true }
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberHgInfo.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberHgInfo.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/MemberCenter/MemberHgInfo.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
             }
           ]
         },
@@ -425,179 +362,94 @@ export default new VueRouter({
         {
           path: '/participated',
           name: '曾參與的活動頁面',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           component: () => import('../views/FrontEnd/participatedGroup/Participated.vue'),
           meta: { requiresAuth: true },
-=======
-          component: () =>
-            import('../views/FrontEnd/participatedGroup/Participated.vue'),
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-          component: () =>
-            import('../views/FrontEnd/participatedGroup/Participated.vue'),
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-          component: () =>
-            import('../views/FrontEnd/participatedGroup/Participated.vue'),
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
           children: [
             {
               path: '/',
               name: '曾參與的抽獎頁面',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
               component: () => import('../views/FrontEnd/participatedGroup/Particlottery.vue'),
               meta: { requiresAuth: true }
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/Particlottery.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/Particlottery.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/Particlottery.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
             },
             {
               path: '/particRace',
               name: '競賽頁面',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
               component: () => import('../views/FrontEnd/participatedGroup/ParticRace.vue'),
               meta: { requiresAuth: true }
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/ParticRace.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/ParticRace.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/ParticRace.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
             },
             {
               path: '/particMission',
               name: '任務頁面',
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
               component: () => import('../views/FrontEnd/participatedGroup/Particmission.vue'),
               meta: { requiresAuth: true }
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/Particmission.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/Particmission.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
-              component: () =>
-                import('../views/FrontEnd/participatedGroup/Particmission.vue')
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
             }
           ]
         },
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
           path: '/personalSetting',
           name: '個人資料',
           component: () => import('../views/FrontEnd/PersonalSetting.vue'),
           meta: { requiresAuth: true }
-=======
-=======
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
+        },
+        {
           path: '/footerLevel',
           name: '會員等級',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtLevel.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtLevel.vue')
         },
         {
           path: '/footerFaq',
           name: '常見問題',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtFaq.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtFaq.vue')
         },
         {
           path: '/footerService',
           name: '服務條款',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtService.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtService.vue')
         },
         {
           path: '/footerPrivacy',
           name: '隱私權條款',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtPrivacy.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtPrivacy.vue')
         },
         {
           path: '/footerPrivacy',
           name: '隱私權條款',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtPrivacy.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtPrivacy.vue')
         },
         {
           path: '/footerEquity',
           name: '會員權益',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtEquity.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtEquity.vue')
         },
         {
           path: '/footerAdStand',
           name: '會員權益',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtAdStand.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtAdStand.vue')
         },
         {
           path: '/footerFeedBack',
           name: '意見回饋',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtFeedBack.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtFeedBack.vue')
         },
         {
           path: '/footerProposal',
           name: '合作提案',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtProposal.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtProposal.vue')
         },
         {
           path: '/footerAdDesign',
           name: '廣告圖片設計',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtAdDesign.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtAdDesign.vue')
         },
         {
           path: '/footerAdProject',
           name: '五個專案廣告',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtAdProject.vue')
+          component: () => import('../views/FrontEnd/footerComponent/FtAdProject.vue')
         },
         {
           path: '/footerWeb',
           name: '網站平台建置',
-          component: () =>
-            import('../views/FrontEnd/footerComponent/FtWeb.vue')
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
-=======
->>>>>>> 34bf6e9630423e1935fb9c94740f46d7707378d6
+          component: () => import('../views/FrontEnd/footerComponent/FtWeb.vue')
         }
       ]
     }
