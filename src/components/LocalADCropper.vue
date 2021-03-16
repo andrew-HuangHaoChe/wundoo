@@ -43,7 +43,7 @@ import Cropper from 'cropperjs'
 import $ from 'jquery'
 export default {
   props: {
-    inputName: Number
+    inputName: String
   },
   components: {
   },

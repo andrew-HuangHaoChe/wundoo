@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="travel-header mb-5">
+    <div class="travel-header d-flex align-items-end">
       <div class="container custom-container-width">
         <div class="row mx-0">
           <div class="col-6 col-lg-3 travel-laoya">
@@ -91,7 +91,7 @@
         </div>
       </div>
       <!--同好獵場字卡區塊End-->
-      <Pagenation/>
+      <Pagenation class="my-5"/>
     </div>
   </div>
 </template>

@@ -41,8 +41,21 @@ new Vue({
 }).$mount('#app')
 
 router.beforeEach((to, from, next) => {
+  console.log(to.fullPath)
+  const formData = new FormData()
+  formData.append('uri', to.fullPath)
+  formData.append('token', localStorage.getItem('token'))
   if (to.meta.requiresAuth) {
-    console.log('這裡需要驗證') // 到時後端要製作登入驗證的api寫在這(Vue出一個...驗證登入及...)
+    axios.post('/apipath/api/flow', formData).then((res) => {
+      console.log(res)
+      if (res.data.status) {
+        next()
+      } else {
+        next({
+          path: '/redirectLogin'
+        })
+      }
+    })
   } else {
     next()
   }

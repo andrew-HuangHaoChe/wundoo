@@ -2,11 +2,11 @@
   <div>
     <div class="d-flex justify-content-center flex-column">
       <div class="w-100 every_banner">
-        <img class="w-100" src="../../assets/image/tempeveryday/nav_banner.png" alt="" style="padding-top: 50px;">
-        <img class="everytemp" src="../../assets/image/tempeveryday/title.png" alt="" style="height: 150px;">
+        <img class="w-100" src="../../assets/image/tempeveryday/nav_banner.png" alt="">
+        <img class="everytemp" src="../../assets/image/tempeveryday/title.png" alt="">
       </div>
     </div>
-    <div style="background: #FFF8F4; padding-bottom: 40px; padding-top: 80px;">
+    <div style="background: #FFF8F4; padding-bottom: 40px; padding-top: 30px;">
       <div class="container custom-container-width">
         <div class="d-flex align-items-center flex-column mb-5">
           <h5 class="d-flex align-items-center"><img class="pr-2" src="../../assets/image/tempeveryday/x_icon.png" alt="">任務說明<img class="pl-2" src="../../assets/image/tempeveryday/x_icon.png" alt=""></h5>
@@ -107,7 +107,7 @@
               </div>
             </div>
           </div>
-          <Pagenation/>
+          <Pagenation class="mt-3 mb-4"/>
         </div>
       </div>
     </div>

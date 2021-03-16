@@ -1,0 +1,727 @@
+// 新增間距共用樣式
+.mt-2 {
+    margin-top: 20px;
+}
+.mt-4 {
+    margin-top: 40px;
+}
+.mb-1 {
+    margin-bottom: 10px;
+}
+.mb-2 {
+    margin-bottom: 20px;
+}
+.mb-3 {
+    margin-bottom: 30px;
+}
+.mb-4 {
+    margin-bottom: 40px;
+}
+.px-3 {
+    padding-right: 30px;
+    padding-left: 30px;
+}
+.px-20 {
+    padding-right: 200px;
+    padding-left: 200px;
+}
+.px-30 {
+    padding-right: 300px;
+    padding-left: 300px;
+}
+.ft-red-title{
+  color:  $brilliantRed;
+}
+// for a href red link
+.ft-red-link{
+  color: $brilliantRed;
+}
+.ft-red-link:hover{
+  color: $brilliantRed;
+  text-decoration: none;
+}
+// for ft-faq-page
+.faq {
+  p{
+    letter-spacing: 0.05rem;
+  }
+}
+// for ft-service-page
+.terms-service {
+  p{
+    letter-spacing: 0.05rem;
+  }
+}
+// for ft-privacy-page
+.terms-privacy {
+  p{
+    letter-spacing: 0.05rem;
+  }
+}
+// for ft-equity-page
+.member-equity {
+  p{
+    letter-spacing: 0.05rem;
+  }
+}
+// for ft-ad-design-page
+.ad-design {
+  p{
+    letter-spacing: 0.05rem;
+    font-size: 18px;
+  }
+}
+.member-stop-text{
+  .member-stop-info{
+    color: #f00;
+    text-decoration: underline;
+  }
+}
+// for ft-ad-stand-page
+.ad-stand {
+  p{
+    letter-spacing: 0.05rem;
+  }
+}
+.ad-stand .ad-stand-end{
+    text-align: center;
+}
+// for ft-feed-back-page
+.cus-feed-back-top{
+  // outline: 1px solid #888;
+  font-size: 50px;
+}
+.feed-back-file{
+  padding-right: 30px;
+}
+.feed-back-article{
+  font-size: 18px;
+}
+.feed-back-form input{
+  width: 100%;
+}
+// feed-back-form
+// 這段讓input=file 可以出現,
+//我把 _lilehuntgd.scss的input[type="file"]設定改寫
+input[type="file"] {
+  display: block;
+}
+.custom-file-upload {
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+.file-txt{
+  border: 1px solid #888;
+  padding: 0px 10px;
+  background-color: #eee;
+}
+.cus-upload{
+  padding-right: 10px;
+}
+// for .feed-back-formform rwd
+@media (max-width:1040px){
+  .cus-member-view{
+    .member-view{
+      width: 100%;
+    }
+  }
+}
+@media (max-width: 768px){
+  .feed-back{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .cus-768-fbform{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 414px){
+  .cus-feed-back-top{
+    font-size: 36px;
+  }
+  .feed-back{
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 16px;
+  }
+  .cus-768-fbform{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+// for footer-proposal-page
+// proposal-item for 共用邊框樣式
+.proposal-item{
+  // border: 3px solid $brilliantRed;
+  border-radius: 8px;
+}
+.proposal-red{
+  background-color: rgba(255, 0, 0, 0.05);
+}
+.proposal-blue{
+  background-color: rgba(0, 180, 249, 0.15);
+}
+.proposal-orange{
+  background-color: rgba(249, 202, 0, 0.15);
+}
+.cus-proposal-item{
+  justify-content: center;
+  align-items: center;
+  padding: 20px 80px;
+  flex-wrap: wrap;
+}
+.proposal-item-title{
+  font-size: 40px;
+  font-weight: 600;
+}
+.proposal-item-title-right{
+  font-size: 36px;
+  font-weight: 600;
+  padding-left: 200px;
+}
+.proposal-item-txt{
+  .game{
+    font-size: 36px;
+    font-weight: 600;
+    padding-left: 0px;
+  }
+} 
+.proposal-txt-info{
+  font-size: 18px;
+  color: rgb(117, 117, 117);
+}
+// for footer-proposal-page (section-feel)
+.feel-note{
+  text-decoration: underline;
+}
+@media (max-width:1500px){
+  .proposal-item{
+    margin: 0 100px;
+  }
+}
+@media (max-width:1210px){
+  .proposal-item-title{
+  font-size: 36px;
+  font-weight: 600;
+  }
+  .proposal-item-title-right {
+    font-size: 36px;
+    font-weight: 600;
+    padding-left: 150px;
+  }
+}
+@media (max-width:1199px){
+  .proposal-item-title{
+    font-size: 28px;
+  }
+  .proposal-item-title-right{
+    font-size: 28px;
+    padding-left: 0px;
+  }
+  .proposal-item-txt{
+  .game{
+    font-size: 28px;
+    font-weight: 600;
+    padding-left: 0px;
+    }
+  }
+}
+@media (max-width:719px){
+  .cus-proposal-item {
+    justify-content: center;
+    align-items: center;
+    padding: 20px 40px;
+    flex-wrap: wrap;
+  }
+  .proposal-item {
+    margin: 0 40px;
+  }
+}
+@media (max-width:414px){
+  .proposal-item {
+    margin: 0 20px;
+  }
+  .cus-proposal-item {
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px;
+    flex-wrap: wrap;
+  }
+  .proposal-item-title{
+  font-size: 24px;
+  font-weight: 600;
+  }
+  .proposal-item-title-right {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .proposal-txt-info{
+    font-size: 16px;
+  }
+  .proposal-item-txt{
+  .game{
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 0px;
+    }
+  }
+  
+}
+@media (max-width: 375px){
+  .proposal-item-title{
+  font-size: 18px;
+  font-weight: 600;
+  }
+  .proposal-item-title-right {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .proposal-txt-info{
+    font-size: 14px;
+  }
+  .proposal-item-txt{
+  .game{
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: 0px;
+    }
+  }
+}
+// for ft-ad-design-page
+.ad-design-contact{
+  p{
+    font-size: 18px;
+  }
+}
+.ad-design-btn{
+  margin: 0 auto;
+}
+@media (max-width: 1231px){
+  .cus-ad-size{
+    display: block;
+  }
+  .ad-exm-txt{
+    margin-bottom: 0.2rem;
+  }
+}
+@media (max-width: 767px){
+  .cus-ad-size{
+    display: block;
+  }
+  .ad-exm-txt{
+    margin-bottom: 0.2rem;
+  }
+}
+@media (max-width: 575px){
+  .cus-ad-design{
+    .cus-ad-design-wrap{
+    padding-left: 20px;
+    padding-right: 20px;
+    }
+  }
+  .cus-ad-size{
+    display: flex;
+  }
+  .ad-exm-txt{
+    margin-bottom: 0.5rem;
+  }
+  .cus-ad-img{
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 414px){
+  .ad-design-content{
+    .ft-red-title{
+    font-size: 20px;
+    margin-bottom: 10px !important;
+    }
+  }
+  .ad-design-text{
+    p{
+      font-size: 14px;
+    }
+  }
+  .ad-design-size-title{
+    .ft-red-title{
+      font-size: 20px;
+      margin-bottom: 10px !important;
+    }
+  }
+}
+@media (max-width: 320px){
+  .ad-design-content{
+    .ft-red-title{
+    font-size: 18px;
+    margin-bottom: 10px !important;
+    }
+  }
+  .ad-design-text{
+    p{
+      font-size: 14px;
+    }
+  }
+  .ad-design-size-title{
+    .ft-red-title{
+      font-size: 18px;
+      margin-bottom: 10px !important;
+    }
+  }
+}
+// for ft-ad-project-page
+.ad-project-red-note{
+  color: $brilliantRed;
+}
+// for section 1
+.ad-project-txt{
+  p{
+    font-size: 18px;
+    letter-spacing: 0.05rem;
+  }
+}
+.ad-project-img-1{
+  background-image: url('./assets/image/ft_img/adproject/img_event.jpg');
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+.ad-project-img-2{
+  background-image: url('./assets/image/ft_img/adproject/img_platform.png');
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+.ad-project-img-3{
+  background-image: url('./assets/image/ft_img/adproject/img_cooperation.png');
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+@media (max-width: 768px){
+  .ad-project-img-1, .ad-project-img-2, .ad-project-img-3{
+    height: 260px;
+  } 
+}
+@media (max-width: 414px){
+  .ad-project-img-1, .ad-project-img-2, .ad-project-img-3{
+    height: 100px;
+  } 
+  .ad-project-txt{
+  p{
+    font-size: 16px;
+    letter-spacing: 0.05rem;
+  }
+  }
+  .ad-project-sec1{
+    margin-bottom: 10px;
+  }
+}
+// for section 2
+.ad-project-service-img-1{
+  background-image: url('./assets/image/ft_img/adproject/img_dailytemp.png');
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+.ad-project-service-img-2{
+  background-image: url('./assets/image/ft_img/adproject/img_ad.jpg');
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+.ad-project-service-img-3{
+  background-image: url('./assets/image/ft_img/adproject/img_marketing.jpg');
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+}
+.ad-project-service-img-4{
+  background-image: url('./assets/image/ft_img/adproject/img_tv.png');
+  height: 300px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+@media (max-width: 768px){
+  .ad-project-service-img-1, .ad-project-service-img-2, .ad-project-service-img-3, .ad-project-service-img-4{
+    height: 260px;
+  } 
+}
+@media (max-width: 414px){
+  .ad-project-service-img-1, .ad-project-service-img-2, .ad-project-service-img-3, .ad-project-service-img-4{
+    height: 100px;
+  } 
+  .ad-project-txt{
+  p{
+    font-size: 16px;
+    letter-spacing: 0.05rem;
+  }
+  }
+  .ad-project-sec2{
+    margin-bottom: 10px;
+  }
+}
+// for .ad-project-table
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #aaa;
+}
+th, td {
+  text-align: left;
+  padding: 6px;
+  border:1px solid #aaa;
+}
+th, td { 
+  min-width: 200px; 
+}
+.table-color{
+  background-color: #eee;
+}
+@media (max-width: 414px){
+  th, td { 
+  min-width: 100px; 
+  }
+}
+// for footer-web-page
+// footer-web-top
+.web-top-icon{
+  padding-right: 10px;
+  width: 14%;
+}
+.web-top-title-left{
+  display: flex;
+  margin-bottom: 10px;
+}
+.web-top-title-right{
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: flex-end;
+}
+@media (max-width: 1100px){
+  .cus-web{
+    .cus-web-wrap{
+      padding-right: 20px;
+      padding-left: 20px;
+    }
+  }
+}
+@media (max-width: 767px){
+  .web-top-title-left {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .web-top-icon {
+    padding-bottom: 20px;
+    padding-right: 0px;
+    width: 18%;
+  }
+  .web-top-title-right {
+    text-align: center;
+    display: block;
+    margin-bottom: 10px;
+  }  
+}
+// footer-web-bottom
+.web-bottom-img{
+  margin-bottom: 30px;
+}
+.cus-web-bottom{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+//web-bottom-text
+.web-bottom-text{
+  text-align: right;
+}
+.web-why{
+  font-size: 2rem;
+}
+.web-service{
+  font-size: 2.8rem;
+}
+.web-bottom-text-red{
+  color: $brilliantRed;
+}
+.web-start{
+  font-size: 3.2rem;
+  padding-bottom: 0.5rem;
+}
+.web-bottom-text-block{
+  font-size: 3rem;
+  border: 1px solid #000;
+  background-color: #000;
+  color: #fff;
+  padding: 0px 10px;
+}
+@media (max-width: 1214px){
+  .web-bottom-text-block {
+    font-size: 2.2rem;
+    padding: 0px 10px;
+  }
+}
+@media (max-width:991px){
+  .web-order{
+    order: 1;
+  }
+}
+@media (max-width: 500px){
+  .web-why{
+    font-size: 1.4rem;
+  }
+  .web-service{
+    font-size: 2.2rem;
+  }
+  .web-start{
+    font-size: 2.6rem;
+    padding-bottom: 0.5rem;
+  }
+  .web-bottom-text-block {
+    font-size: 1.6rem;
+    padding: 0px 10px;
+  }
+}
+// 設定web bottom 區塊順序
+@media (max-width: 991px){
+  .cus-web-bottom{
+    >.ft-web{
+      order: -1;
+    }
+  }
+}
+@media (max-width: 380px){
+  .web-bottom-article{
+    font-size: 14px;
+  }
+  .web-why{
+    font-size: 1.4rem;
+  }
+  .web-service{
+    font-size: 2rem;
+  }
+  .web-start{
+    font-size: 2.2rem;
+    padding-bottom: 0.5rem;
+  }
+  .web-bottom-text-block {
+    font-size: 1.4rem;
+    padding: 0px 10px;
+  }
+}
+// for footer-member-level-page
+.level-text{
+  letter-spacing: 0.05rem;
+  p{
+    font-size: 18px;
+  }
+}
+.level-note-blue{
+  color: blue;
+}
+.level-note-red{
+  color: $brilliantRed;
+}
+.level-txt{
+  font-size: 18px;
+  letter-spacing: 0.05rem;
+}
+.level-coin-text{
+  font-size: 18px;
+  letter-spacing: 0.05rem;
+}
+// footer-member-level-honor-icon
+.member-honer-txt{
+  font-size: 1.125rem;
+  letter-spacing: 0.05rem;
+}
+.level-text{
+  margin-top: 40px;
+}
+.member-note{
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.member-type{
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+@media (max-width: 615px){
+  .member-main{
+    font-size: 2rem;
+  }
+}
+@media (max-width: 575px){
+  .cus-member-level .cus-member-level-wrap {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .member-honer-txt{
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  }
+  .level-text{
+    margin-top: 0px;
+  }
+}
+@media (max-width: 414px){
+  .memeber-icon-name{
+    font-size: 18px;
+  }
+  .member-main{
+    font-size: 1.8rem;
+  }
+  .level-text{
+    font-size: 14px;
+  }
+  .level-coin{
+    font-size: 1rem;
+  }
+  .level-coin-text{
+    font-size: 14px;
+  }
+  .member-note{
+    font-size: 1.2rem;
+  }
+  .member-type{
+    font-size: 1rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 375px){
+   .member-main{
+    font-size: 1.4rem;
+  }
+  .memeber-icon-name{
+    font-size: 15px;
+  }
+}
+// for rwd
+@media (max-width: 540px){
+  .ft-main-title{
+    margin-bottom: 20px;
+  }
+  .ft .faq{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .ft .terms-service{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .ft .terms-privacy{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .ft .member-equity{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .ft .ad-stand{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

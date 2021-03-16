@@ -328,7 +328,9 @@ export default {
       showSideBar: false,
       query: {},
       tokenResult: {},
-      idTokenDecode: {}
+      idTokenDecode: {},
+      user: [],
+      login_status: false
     }
   },
   methods: {
@@ -361,27 +363,6 @@ export default {
       URL += '&bot_prompt=normal'
       window.open(URL, '_self') // 轉跳到該網址
     },
-    loginRes () {
-      const vm = this
-      const formData = new FormData()
-      const config = {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }
-      formData.append('email', this.data.email)
-      formData.append('password', this.data.password)
-      formData.append('login_type', this.data.login_type)
-      formData.append('social_id', this.data.social_id)
-      vm.$http.post('/apipath/api/login', formData, config).then((response) => {
-        console.log(response)
-        if (response.data.status) {
-          vm.login_status = response.data.status
-          alert(response.data.msg)
-          $('#loginModal').modal('hide')
-        }
-      })
-    },
     userlogin () {
       const vm = this
       // const api = `${process.env.VUE_APP_APIPATH}api/login`
@@ -395,6 +376,32 @@ export default {
       if (vm.data.email !== '' && vm.data.password !== '') {
         vm.loginRes()
       }
+    },
+    loginRes () {
+      const vm = this
+      const formData = new FormData()
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      formData.append('email', this.data.email)
+      formData.append('password', this.data.password)
+      formData.append('login_type', this.data.login_type)
+      formData.append('social_id', this.data.social_id)
+      axios.post('/apipath/api/login', formData, config).then((response) => {
+        console.log(response)
+        if (response.data.status) {
+          vm.login_status = response.data.status
+          vm.$store.dispatch('updateLoginStatus', response.data.status)
+          vm.$store.dispatch('loginRes', response.data.data)
+          vm.$store.dispatch('getUserToken', response.data.token)
+          alert(response.data.msg)
+          $('#loginModal').modal('hide')
+        } else {
+          alert(response.data.msg)
+        }
+      })
     }
   },
   mounted () {
@@ -411,11 +418,11 @@ export default {
       this.tokenResult = res.data // 回傳的結果
       this.idTokenDecode = jwtDecode(res.data.id_token) // 把結果的id_token做解析
     })
-  },
-  computed: {
-    login_status () {
-      return this.$store.state.login_status
-    }
   }
+  // computed: {
+  //   login_status () {
+  //     return this.$store.state.login_status
+  //   }
+  // }
 }
 </script>

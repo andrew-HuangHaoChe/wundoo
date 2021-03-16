@@ -13,7 +13,7 @@
   }
   @media(max-width:576px) {
     padding-top: $block-lg;
-    min-height: 312px;
+    min-height: 250px;
   }
   .build-hg-btn {
     margin-bottom: 30px;
@@ -523,9 +523,24 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 430px;
+  min-height: 512px;
+  margin-top: 92px;
+  margin-bottom: 30px;
+  @media(max-width:1024px) {
+    margin-top: $block-sm * 7;
+  }
+  @media(max-width:768px) {
+    margin-bottom: $font-size-md;
+  }
+  @media(max-width:576px) {
+    padding-top: $block-lg;
+    min-height: 250px;
+  }
   .row {
-    padding: $block-md 0 $block-md 0;
+    padding: $block-md 0;
+    @media(max-width:768px) {
+      padding: 0;
+    }
     .lhgmana-setting {
       a {
         padding: 0 $block-md;
@@ -907,7 +922,18 @@ input[type="file"] {
   background-image: url('./assets/image/travel/travel_banner.png');
   background-size: cover;
   background-repeat: no-repeat;
-  padding: $block-lg * 3 0 0 0;
+  min-height: 512px;
+  margin: 92px 0 $block-md 0;
+  @media(max-width:1024px) {
+    margin-top: $block-sm * 7;
+  }
+  @media(max-width:768px) {
+    margin-bottom: $font-size-md;
+  }
+  @media(max-width:576px) {
+    padding-top: $block-lg;
+    min-height: 250px;
+  }
   @media(max-width:576px) {
     padding-top: $block-lg;
   }

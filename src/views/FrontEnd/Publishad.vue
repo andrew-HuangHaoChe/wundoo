@@ -40,7 +40,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board1" name="radio-group" @click="edittype='one', adcropSize = 1">
+                  <input type="radio" id="board1" name="radio-group" @click="edittype='one', adcropSize = '1'">
                   <label for="board1">版型1</label>
                 </p>
               </div>
@@ -64,7 +64,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board2" name="radio-group" @click="edittype='two', adcropSize = 4 / 3">
+                  <input type="radio" id="board2" name="radio-group" @click="edittype='two', adcropSize = '4 / 3'">
                   <label for="board2">版型2</label>
                 </p>
               </div>
@@ -88,7 +88,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board3" name="radio-group" @click="edittype='three', adcropSize = 16 / 9">
+                  <input type="radio" id="board3" name="radio-group" @click="edittype='three', adcropSize = '16 / 9'">
                   <label for="board3">版型3</label>
                 </p>
               </div>
@@ -112,7 +112,7 @@
             <div class="d-flex flex-column align-items-start">
               <div class="d-flex align-items-center mb-2">
                 <p class="mb-0">
-                  <input type="radio" id="board4" name="radio-group" @click="edittype='four', adcropSize = 21 / 9">
+                  <input type="radio" id="board4" name="radio-group" @click="edittype='four', adcropSize = '21 / 9'">
                   <label for="board4">版型4</label>
                 </p>
               </div>

@@ -1,11 +1,46 @@
 .every_banner {
   position: relative;
+  min-height: 512px;
+  padding-top: 153px;
+  @media(max-width: 1440px) {
+    padding-top: 146px;
+  }
+  @media(max-width: 1024px) {
+    padding-top: 121px;
+  }
+  @media(max-width: 768px) {
+    padding-top: 111px;
+    min-height: 294px;
+  }
+  @media(max-width: 576px) {
+    background-image: url('./assets/image/tempeveryday/nav_banner.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 250px;
+    padding-top: 0;
+    margin-top: 76px;
+  }
+  @media(max-width: 320px) {
+    margin-top: 74px;
+  }
+  img:first-child {
+    @media(max-width: 576px) {
+      display: none;
+    }
+  }
 }
 .everytemp {
   position: absolute;
-  top: 0;
+  top: 92px;
   left: 0;
   width: 100%;
+  @media(max-width: 1024px) {
+    top:82px;
+  }
+  @media(max-width: 576px) {
+    display: none;
+  }
 }
 
 .rule_of_activity_block {

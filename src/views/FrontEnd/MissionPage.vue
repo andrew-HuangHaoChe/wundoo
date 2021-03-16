@@ -335,7 +335,7 @@ export default {
       return this.$refs.mySwiper.swiper
     }
   },
-  methode: {
+  methods: {
     prev () {
       this.$refs.mySwiper.swiper.slidePrev()
     },

@@ -101,7 +101,7 @@
             <div class="d-flex align-items-center">
               <i class="far fa-comment-dots mr-1"></i>
               <p class="comment_count mb-0 mr-3">9999</p>
-              <a class="lhgdrop" @:click.native="isshowdrop">
+              <a class="lhgdrop" @click="isshowdrop">
                 <i class="fas fa-ellipsis-v" style="cursor: pointer; font-size: 24px;"></i>
               </a>
             </div>

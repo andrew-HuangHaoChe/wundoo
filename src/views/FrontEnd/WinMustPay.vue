@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="mustpay_header d-flex align-items-end text-white mb-5">
+    <div class="mustpay_header d-flex align-items-end text-white">
       <div class="container custom-container-width">
         <div class="row">
           <div class="col-lg-12 local-laoya">
@@ -67,9 +67,9 @@
           </div>
         </div>
       </div>
-        <Pagenation></Pagenation>
+      <Pagenation class="my-5"></Pagenation>
     <!--獵場文章 End-->
-      </div>
+    </div>
   </div>
 </template>
 <script>

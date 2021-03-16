@@ -1,0 +1,22 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+ <title/>
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <path id="svg_1" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none" d="m0.5,20.5a3,3 0 0 0 3,3l20,0l0,-20l-20,0"/>
+  <path id="svg_2" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none" d="m0.5,20.5a3,3 0 0 1 3,-3l0,0l0,-17l0,0a3,3 0 0 0 -3,3l0,17"/>
+  <polyline id="svg_3" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" points="7.897 20.5 10.494 11.237 13.091 20.5" fill="none"/>
+  <line id="svg_4" y2="15.54852" y1="15.54852" x2="13.08108" x1="9.28558" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none"/>
+  <line id="svg_5" y2="6.50281" y1="8.30282" x2="10.49421" x1="10.49421" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none"/>
+  <path id="svg_6" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none" d="m11.04459,13.20058a2.51012,2.51012 0 0 0 2.043,-2.418a2.54576,2.54576 0 0 0 -2.60695,-2.47976a2.54576,2.54576 0 0 0 -2.60694,2.47976a2.51318,2.51318 0 0 0 2.068,2.42538"/>
+  <path id="svg_7" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none" d="m9.94175,13.55186"/>
+  <path id="svg_8" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none" d="m11.04459,13.54409"/>
+  <path id="svg_9" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none" d="m19.57742,6.9402c0,-0.2783 -0.1162,-0.43739 -0.20809,-0.43739l-1.59986,0c-0.08985,0 -0.192,0.153 -0.192,0.4381l0,10.5619c0,0.05059 0.8023,2.5736 0.8023,2.5736c0.07225,0.2907 0.3078,0.32549 0.3897,0.0002c0,0 0.808,-2.5231 0.808,-2.5738l-0.00005,-10.56261z"/>
+  <line id="svg_10" y2="17.50281" y1="17.50281" x2="19.57742" x1="17.57742" stroke-linejoin="round" stroke-linecap="round" stroke="#fa5814" fill="none"/>
+  <rect stroke="#fa5814" id="svg_11" width="24" height="24" fill="none"/>
+ </g>
+</svg>
