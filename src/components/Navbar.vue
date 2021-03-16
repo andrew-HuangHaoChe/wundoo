@@ -330,7 +330,8 @@ export default {
       tokenResult: {},
       idTokenDecode: {},
       user: [],
-      login_status: false
+      login_status: false,
+      formData: new FormData()
     }
   },
   methods: {
@@ -379,29 +380,33 @@ export default {
     },
     loginRes () {
       const vm = this
-      const formData = new FormData()
       const config = {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       }
-      formData.append('email', this.data.email)
-      formData.append('password', this.data.password)
-      formData.append('login_type', this.data.login_type)
-      formData.append('social_id', this.data.social_id)
-      axios.post('/apipath/api/login', formData, config).then((response) => {
-        console.log(response)
-        if (response.data.status) {
-          vm.login_status = response.data.status
-          vm.$store.dispatch('updateLoginStatus', response.data.status)
-          vm.$store.dispatch('loginRes', response.data.data)
-          vm.$store.dispatch('getUserToken', response.data.token)
-          alert(response.data.msg)
-          $('#loginModal').modal('hide')
-        } else {
-          alert(response.data.msg)
-        }
-      })
+      vm.formData.append('email', this.data.email)
+      vm.formData.append('password', this.data.password)
+      vm.formData.append('login_type', this.data.login_type)
+      vm.formData.append('social_id', this.data.social_id)
+      for (var value of vm.formData.values()) {
+        console.log(value)
+      }
+      const formlogin = vm.formData
+      vm.$store.dispatch('loginUser', { formlogin, config })
+      // axios.post('/apipath/api/login', vm.formData, config).then((response) => {
+      //   console.log(response)
+      //   if (response.data.status) {
+      //     vm.login_status = response.data.status
+      //     vm.$store.dispatch('updateLoginStatus', response.data.status)
+      //     vm.$store.dispatch('loginRes', response.data.data)
+      //     vm.$store.dispatch('getUserToken', response.data.token)
+      //     alert(response.data.msg)
+      //     $('#loginModal').modal('hide')
+      //   } else {
+      //     alert(response.data.msg)
+      //   }
+      // })
     }
   },
   mounted () {

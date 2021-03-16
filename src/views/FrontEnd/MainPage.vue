@@ -31,6 +31,7 @@ export default {
   },
   created () {
     const vm = this
+    this.$axios.defaults.headers.common.Authorization = 'Bearer ' + localStorage.getItem('accessToken')
     this.$router.options.routes.forEach(route => {
       this.items.push({
         name: route.name,

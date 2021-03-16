@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import axios from 'axios'
 import Vuex from 'vuex'
 // import axios from 'axios'
 Vue.use(Vuex)
@@ -18,6 +19,15 @@ export default new Vuex.Store({
     getUserToken (context, payload) {
       context.commit('SETTOKEN', payload)
       localStorage.setItem('token', payload)
+    },
+    loginUser (context, payload) {
+      axios.post('/apipath/api/login', payload.formlogin, payload.config).then((response) => {
+        console.log(response)
+        if (response.data.token) {
+          // save token
+          localStorage.setItem('accessToken', response.data.token)
+        }
+      })
     }
   },
   mutations: {

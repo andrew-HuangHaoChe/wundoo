@@ -25,15 +25,16 @@ const gauthOption = {
   prompt: 'select_account'
 }
 Swiper.use([Navigation, Pagination, Scrollbar, EffectCoverflow])
+Vue.prototype.$axios = axios
 Vue.use(VueAwesomeSwiper)
 Vue.use(CKEditor)
 Vue.use(VuejsClipper)
 Vue.use(GoogleAuth, gauthOption)
 Vue.use(VueAxios, axios)
-Vue.prototype.$axios = axios
 Vue.use(Vuex)
 axios.defaults.withCredentials = true
 Vue.config.productionTip = false
+Vue.prototype.$axios = axios
 new Vue({
   router,
   store,

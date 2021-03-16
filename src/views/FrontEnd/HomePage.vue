@@ -758,6 +758,9 @@ export default {
   },
   mounted: function () {
     $('#everydaySignModal').modal('show')
+  },
+  created () {
+    this.$axios.defaults.headers.common.Authorization = 'Bearer ' + localStorage.getItem('accessToken')
   }
 }
 </script>
