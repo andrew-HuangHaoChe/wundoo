@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row">
+    <div class="row pt-9">
       <div class="col-sm-0 col-md-6 login-left-block">
         <div class="d-flex justify-content-end">
           <div class="sign-bubble">
@@ -136,6 +136,12 @@ export default {
   },
   data () {
     return {
+      data: {
+        email: '',
+        password: '',
+        login_type: '',
+        social_id: ''
+      },
       query: {},
       tokenResult: {},
       idTokenDecode: {},
@@ -199,6 +205,12 @@ export default {
           alert(response.data.msg)
         }
       })
+    },
+    movetoSign () {
+      this.$router.push('/signUp')
+    },
+    movetoRepass () {
+      this.$router.push('/repassWord')
     }
   },
   mounted () {

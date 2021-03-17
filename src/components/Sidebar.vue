@@ -8,33 +8,30 @@
               ><i class="fas fa-times text-dark"></i
             ></a>
           </div>
-          <div class="d-flex justify-content-center member-block pb-3">
+          <div class="d-flex justify-content-center member-block pb-3" v-if="login_check == 1">
             <div>
-              <div class="member-photo">
+              <MemberAvatar/>
+              <!-- <div class="member-photo">
                 <img src="../assets/image/account/badge_red.svg" alt="" />
-              </div>
+              </div> -->
             </div>
             <div class="ml-3">
-              <span class="member-name">貓貓candy粗乃完粗乃玩</span>
-              <p class="member-mail mb-0">@wewewefwvfb</p>
+              <span class="member-name">{{ userinformation.nickname }}</span>
+              <p class="member-mail mb-0">{{ userinformation.email }}</p>
               <div>
-                <span class="member-level"
-                  ><img
-                    src="../assets/image/icon/ic_vip皇冠.svg"
-                    alt=""
-                  />VIP會員</span
-                >
-                <span class="member-lv"
-                  ><img
-                    src="../assets/image/badge/Lv20.png"
-                    alt=""
-                  />Lv.55老鷹</span
-                >
+                <span v-if="userinformation.vip == 1" class="member-level">
+                  <img src="../assets/image/icon/ic_vip皇冠.svg" alt=""/>VIP會員
+                </span>
+                <span class="member-lv">
+                  <!-- <img src="../assets/image/badge/Lv20.png"/> -->
+                  Lv.{{ userinformation.level }}
+                </span>
               </div>
             </div>
           </div>
           <div class="aside-menu">
-            <router-link to="/postdiary" class="btn wanna-post d-flex align-items-center mb-2" style="width:60%; color: #FFFFFF;">
+            <a v-if="login_check == 0" class="text-center">愛台灣<br>和我們一起從溫度開始</a>
+            <router-link to="/postdiary" class="btn wanna-post d-flex align-items-center mb-2 sidebtn" v-if="login_check == 1">
               <img
                 src="../assets/image/icon/postIcon.svg"
                 alt=""
@@ -106,86 +103,88 @@
                   </li>
               </div>
               <!--1220px 後才收進選單end-->
-              <li class="pb-2">
-                <router-link to="/membercenter" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_person.svg" alt="" class="pr-1">
-                    個人主頁
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/memberdiary" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_book.svg" alt="" class="pr-1"/>
-                  <span>我的日記</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/ptphuntground" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_fence.svg" alt="" class="pr-1"/>
-                  <span>我的獵場</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/giftCab" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_gift.svg" alt="" class="pr-1"/>
-                  <span>我的禮物櫃</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/giftshop" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_shop.svg" alt="" class="pr-1" />
-                  <span>部落商店</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/tradingRecord" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_list.svg" alt="" class="pr-1"/>
-                  <span>交易紀錄</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/myadmgmt" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_AD.svg" alt="" class="pr-1"/>
-                  <span>我的廣告</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/myticket" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_ticket.svg" alt="" class="pr-1"/>
-                  <span>我的票券</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/favArticles" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_collect.svg" alt="" class="pr-1"/>
-                  <span>收藏的文章</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <a class="d-flex align-items-center" data-toggle="collapse" aria-expanded="false" aria-controls="particpage" href="#particpage">
-                  <img src="../assets/image/navbar/mb/ic_join.svg" alt="" class="pr-1"/>
-                  <span>曾參與的</span>
-                  <i class="fas fa-sort-down pb-1 ml-1" style="font-size:18px;"></i>
-                </a>
-                <div class="particpage-block collapse" id="particpage">
-                  <div class="d-flex flex-column align-items-center">
-                    <router-link to="/participated">抽獎</router-link>
-                    <router-link to="/particRace">競賽</router-link>
-                    <router-link to="/particMission">任務</router-link>
+              <div v-if="login_check == 1">
+                <li class="pb-2">
+                  <router-link to="/membercenter" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_person.svg" alt="" class="pr-1">
+                      個人主頁
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/memberdiary" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_book.svg" alt="" class="pr-1"/>
+                    <span>我的日記</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/ptphuntground" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_fence.svg" alt="" class="pr-1"/>
+                    <span>我的獵場</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/giftCab" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_gift.svg" alt="" class="pr-1"/>
+                    <span>我的禮物櫃</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/giftshop" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_shop.svg" alt="" class="pr-1" />
+                    <span>部落商店</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/tradingRecord" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_list.svg" alt="" class="pr-1"/>
+                    <span>交易紀錄</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/myadmgmt" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_AD.svg" alt="" class="pr-1"/>
+                    <span>我的廣告</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/myticket" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_ticket.svg" alt="" class="pr-1"/>
+                    <span>我的票券</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/favArticles" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_collect.svg" alt="" class="pr-1"/>
+                    <span>收藏的文章</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <a class="d-flex align-items-center" data-toggle="collapse" aria-expanded="false" aria-controls="particpage" href="#particpage">
+                    <img src="../assets/image/navbar/mb/ic_join.svg" alt="" class="pr-1"/>
+                    <span>曾參與的</span>
+                    <i class="fas fa-sort-down pb-1 ml-1" style="font-size:18px;"></i>
+                  </a>
+                  <div class="particpage-block collapse" id="particpage">
+                    <div class="d-flex flex-column align-items-center">
+                      <router-link to="/participated">抽獎</router-link>
+                      <router-link to="/particRace">競賽</router-link>
+                      <router-link to="/particMission">任務</router-link>
+                    </div>
                   </div>
-                </div>
-              </li>
-              <li class="py-2">
-                <router-link to="/personalSetting" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_setting.svg" alt="" class="pr-1"/>
-                  <span>個人設定</span>
-                </router-link>
-              </li>
-              <li class="py-2">
-                <router-link to="/" class="d-flex align-items-center">
-                  <img src="../assets/image/navbar/mb/ic_signout.svg" alt="" class="pr-1"/>
-                  <span>登出</span>
-                </router-link>
-              </li>
+                </li>
+                <li class="py-2">
+                  <router-link to="/personalSetting" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_setting.svg" alt="" class="pr-1"/>
+                    <span>個人設定</span>
+                  </router-link>
+                </li>
+                <li class="py-2">
+                  <router-link to="/" class="d-flex align-items-center">
+                    <img src="../assets/image/navbar/mb/ic_signout.svg" alt="" class="pr-1"/>
+                    <span>登出</span>
+                  </router-link>
+                </li>
+              </div>
             </ul>
           </div>
         </div>
@@ -194,10 +193,23 @@
   </div>
 </template>
 <script>
+import MemberAvatar from '../components/MemberAvatar.vue'
 export default {
   props: ['open'],
+  components: {
+    MemberAvatar
+  },
   data () {
     return {
+    }
+  },
+  computed: {
+    userinformation () {
+      const userInf = JSON.parse(this.$store.state.user)
+      return userInf
+    },
+    login_check () {
+      return this.$store.state.login_status
     }
   }
 }

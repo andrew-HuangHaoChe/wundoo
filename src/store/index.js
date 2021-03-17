@@ -6,8 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     token: '',
-    login_status: false,
-    user: []
+    login_status: localStorage.getItem('accessToken') ? 1 : 0,
+    user: localStorage.getItem('user') ? localStorage.getItem('user') : [],
+    accessToken: localStorage.getItem('accessToken') ? localStorage.getItem('accessToken') : ''
   },
   actions: {
     updateLoginStatus (context, status) {
@@ -24,8 +25,17 @@ export default new Vuex.Store({
       axios.post('/apipath/api/login', payload.formlogin, payload.config).then((response) => {
         console.log(response)
         if (response.data.token) {
+          alert(response.data.msg)
           // save token
           localStorage.setItem('accessToken', response.data.token)
+          // save userInf
+          localStorage.setItem('user', JSON.stringify(response.data.data))
+          // const userinf = localStorage.getItem('user')
+          // console.log(JSON.parse(userinf).email) 從localstorage取值相應的方法
+          context.commit('USERINFO', response.data.data)
+          window.location.reload()
+          console.log(response)
+          // window.location.reload()
         }
       })
     }

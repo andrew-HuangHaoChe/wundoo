@@ -128,7 +128,7 @@
                       </li>
                     </ul>
                   </li>
-                  <li class="nav-item d-flex" v-if="!login_status">
+                  <li class="nav-item d-flex" v-if="login_check == 0">
                     <ol class="d-flex list-unstyled home-login">
                       <li class="d-flex align-items-center">
                         <a
@@ -140,12 +140,10 @@
                       </li>
                     </ol>
                   </li>
-                  <li class="nav-item d-flex" v-if="login_status">
+                  <li class="nav-item d-flex" v-if="login_check == 1">
                     <ol class="d-flex list-unstyled home-login">
                       <li class="d-flex align-items-center">
-                        <a>
-                          <MemberAvatar></MemberAvatar>
-                        </a>
+                        <MemberAvatar></MemberAvatar>
                       </li>
                     </ol>
                   </li>
@@ -419,16 +417,16 @@ export default {
       client_id: process.env.VUE_APP_LINE_CHANELL_ID,
       client_secret: process.env.VUE_APP_LINE_CHANELL_SECRET
     })
-    axios.post('https://api.line.me/oauth2/v2.1/token', options, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(res => {
+    axios.post('/line/oauth2/v2.1/token', options, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).then(res => {
       console.log(res)
       this.tokenResult = res.data // 回傳的結果
       this.idTokenDecode = jwtDecode(res.data.id_token) // 把結果的id_token做解析
     })
+  },
+  computed: {
+    login_check () {
+      return this.$store.state.login_status
+    }
   }
-  // computed: {
-  //   login_status () {
-  //     return this.$store.state.login_status
-  //   }
-  // }
 }
 </script>

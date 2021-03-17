@@ -7,7 +7,7 @@ export default new VueRouter({
     return { x: 0, y: 0 }
   },
   mode: 'history', // 用來搭配後端的路由模式
-  base: process.env.NODE_ENV === 'production' ? '/temperature/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/wundoo' : '/',
   routes: [
     {
       path: '*',
@@ -100,7 +100,7 @@ export default new VueRouter({
           path: '/adstep',
           name: '刊登廣告方案',
           component: () => import('../views/FrontEnd/Publishad.vue'),
-          meta: { requiresAuth: true }
+          meta: { requiresAuth: false }
         },
         {
           path: '/adstepTwo',

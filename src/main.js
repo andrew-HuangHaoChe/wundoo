@@ -45,13 +45,14 @@ router.beforeEach((to, from, next) => {
   console.log(to.fullPath)
   const formData = new FormData()
   formData.append('uri', to.fullPath)
-  formData.append('token', localStorage.getItem('token'))
+  formData.append('token', localStorage.getItem('accessToken'))
   if (to.meta.requiresAuth) {
     axios.post('/apipath/api/flow', formData).then((res) => {
       console.log(res)
       if (res.data.status) {
         next()
       } else {
+        alert(res.data.msg + '!')
         next({
           path: '/redirectLogin'
         })

@@ -46,15 +46,14 @@ export default {
   },
   mounted () {
     const vm = this
-    console.log(this.pageUri)
+    // console.log(this.pageUri)
     vm.pageUri.forEach(path => {
       vm.uri.push({
         path: path.path,
-        name: path.name,
-        login: path.meta.requiresAuth
+        name: path.name
       })
       if (path.children !== undefined) {
-        console.log(path.children)
+        // console.log(path.children)
         path.children.forEach(child => {
           vm.uri.push({
             path: child.path
@@ -62,9 +61,9 @@ export default {
         })
       }
     })
-    vm.uri.forEach(printurl => {
-      console.log('uri:', printurl.path, '頁面名稱:', printurl.name, '是否需要登入:', printurl.login)
-    })
+    // vm.uri.forEach(printurl => {
+    //   console.log('uri:', printurl.path, '頁面名稱:', printurl.name, '是否需要登入:', printurl.login)
+    // })
   }
 }
 </script>

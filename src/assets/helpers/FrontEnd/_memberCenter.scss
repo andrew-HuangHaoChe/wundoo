@@ -456,7 +456,6 @@
   background-position: center;
   background-size: cover;
   border-radius: 50%;
-  border: 2px solid #F5B230;
 }
 .ava-cate {
   position: absolute;
@@ -470,6 +469,19 @@
   line-height: $block-md;
   letter-spacing: 0.6px;
   color: #000000;
+}
+
+//部落border
+.mountainBorder {
+  border: 2px solid #f6b841;
+}
+
+.landBorder {
+  border: 2px solid #E1273A;
+}
+
+.ocenBorder {
+  border: 2px solid #2B79BA;
 }
 
 //收藏文章圖片

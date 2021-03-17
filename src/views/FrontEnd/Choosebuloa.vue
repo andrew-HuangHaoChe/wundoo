@@ -55,21 +55,21 @@ export default {
       vm.isMountain = true
       vm.isLand = false
       vm.isocen = false
-      vm.tribe = '高山'
+      vm.tribe = 1
     },
     land () {
       const vm = this
       vm.isMountain = false
       vm.isLand = true
       vm.isocen = false
-      vm.tribe = '平原'
+      vm.tribe = 2
     },
     ocen () {
       const vm = this
       vm.isMountain = false
       vm.isLand = false
       vm.isocen = true
-      vm.tribe = '海洋'
+      vm.tribe = 3
     },
     tribecheck () { // 確定有選擇部落才能跳頁
       const vm = this

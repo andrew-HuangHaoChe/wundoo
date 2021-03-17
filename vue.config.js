@@ -10,6 +10,13 @@ module.exports = {
             pathRewrite:{                   //路径重写
                 '/apipath':''                     //选择忽略拦截器里面的单词
             }
+            },
+            '/line': {
+                target: 'https://api.line.me',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/line': 'https://api.line.me'
+                }
             }
         }
     }

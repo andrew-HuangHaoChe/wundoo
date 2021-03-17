@@ -113,8 +113,7 @@ export default {
       // Round
       roundedCanvas = this.getRoundedCanvas(croppedCanvas)
       this.headerImage = roundedCanvas.toDataURL()
-      this.postImg()
-      this.$emit('imgUrl', this.headerImage)
+      this.postImg(this.headerImage)
       $('#cropperModal').modal('hide')
     },
     getRoundedCanvas (sourceCanvas) {
@@ -132,8 +131,14 @@ export default {
       context.fill()
       return canvas
     },
-    postImg () {
-      // 这边写图片的上传
+    postImg (data) { // 先將base64傳到後端去做處理，他會回傳一段正確的路徑
+      const formData = new FormData()
+      formData.append('image', data)
+      this.$http.post('/apipath/api/img_upload', formData).then((response) => {
+        console.log(response)
+        this.url = response.data.path
+        this.$emit('imgUrl', this.url) // 透過emit將值傳到LoginandSignup.vue去做註冊的處理
+      })
     }
   }
 }
