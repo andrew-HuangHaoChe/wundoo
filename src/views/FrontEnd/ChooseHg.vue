@@ -68,7 +68,7 @@ export default {
   },
   created () {
     const vm = this
-    vm.$http.get('/apipath/api/club/local').then((response) => {
+    vm.$http.get('/mainpath/local').then((response) => {
       vm.hgData = response.data.data
     })
   }
