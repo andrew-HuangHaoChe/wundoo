@@ -1,19 +1,22 @@
 module.exports = {
     publicPath: './',
-    devServer:{                //记住，别写错了devServer
-        host:'localhost',        //设置本地服务器   选填
-        port:8080,				//设置本地默认端口  选填
-        proxy:{                 //设置代理，必须填
-            '/apipath':{              //设置拦截器  拦截器格式   斜杠+拦截器名字，名字可以自己定
-            target: 'https://app.wundoo.com.tw/', // 'https://app.wundoo.com.tw/',     //代理的目标地址，这是豆瓣接口地址网址
-            changeOrigin:true,              //是否设置同源，输入是的
-            pathRewrite:{                   //路径重写
-                '/apipath':''                     //选择忽略拦截器里面的单词
-            }
+    devServer: {
+        host:'localhost', // 設定local服務器(選填)
+        https: true,
+        port:8080, // 設定本地端默認port號(選填)
+        proxy: { // 設定代理，必填
+            '/apipath': { // 設定攔截器、攔截器格式，斜槓+攔截器名稱，名字可以自己定
+                target: 'https://app.wundoo.com.tw/', // 代理的目標網址，這裡放api domian
+                changeOrigin: true, // 是否設置同源
+                ws: true,
+                pathRewrite: { // 路徑重寫
+                    '^/apipath': '/' // 選擇忽略連結器裡面的單詞
+                }
             },
             '/line': {
                 target: 'https://api.line.me',
                 changeOrigin: true,
+                ws: true, 
                 pathRewrite: {
                     '^/line': 'https://api.line.me'
                 }
@@ -21,8 +24,9 @@ module.exports = {
             '/mainpath': {
                 target: 'https://app.wundoo.com.tw/api/club',
                 changeOrigin: true,
+                ws: true, 
                 pathRewrite: {
-                    'mainpath': ''
+                    '^mainpath': 'https://app.wundoo.com.tw/api/club'
                 }
             }
         }

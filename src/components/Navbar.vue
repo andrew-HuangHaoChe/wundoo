@@ -155,7 +155,7 @@
                 <div class="d-flex align-items-center">
                   <button
                     class="btn homemenu sidemenu burgerbtn px-0 pb-0"
-                    @click="sideBaropen"
+                    @click.stop="sideBaropen"
                   >
                     <i class="fas fa-bars fa-2x"></i>
                   </button>
@@ -408,6 +408,10 @@ export default {
     }
   },
   mounted () {
+    $(document).on('click', () => {
+      this.showSideBar = false
+      console.log(123)
+    })
     this.query = this.$route.query // 接網址的參數
     console.log(this.query.code)
     const options = Qs.stringify({ // POST的參數  用Qs是要轉成form-urlencoded 因為LINE不吃JSON格式

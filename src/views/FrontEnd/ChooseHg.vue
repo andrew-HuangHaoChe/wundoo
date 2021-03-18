@@ -68,7 +68,8 @@ export default {
   },
   created () {
     const vm = this
-    vm.$http.get('/mainpath/local').then((response) => {
+    // const api = `${process.env.VUE_APP_APIPATH}`
+    vm.$http.get('/apipath/api/club/local').then((response) => {
       vm.hgData = response.data.data
     })
   }

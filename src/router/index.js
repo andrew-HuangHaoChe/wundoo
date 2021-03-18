@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 Vue.use(VueRouter)
+
 export default new VueRouter({
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   },
-  mode: 'history', // 用來搭配後端的路由模式
+  history: 'history',
   base: process.env.NODE_ENV === 'production' ? '/wundoo' : '/',
   routes: [
     {
